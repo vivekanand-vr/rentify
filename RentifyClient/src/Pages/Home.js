@@ -1,0 +1,26 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const Home = () => {
+    const navigate = useNavigate();
+    const handleOnClick = () => {
+        navigate('/properties');
+    }
+    return (
+        <div className="background">
+        <div className="landing-page">
+            <div className="text-content">
+                <h1>Rentify - Where Renting Meets Simplicity</h1>
+                <p>
+                    RENTIFY is a web application designed to simplify the rental process for both property owners and tenants. 
+                    In the post-pandemic world, the demand for real estate has surged, especially in cities with high populations and IT offices.
+                    RENTIFY aims to bridge the gap between property owners and tenants by providing a platform where they can easily connect based on their requirements.
+                </p>
+                <button onClick={handleOnClick}>View Properties</button>
+            </div>
+        </div>
+        </div>
+      );
+};
+
+export default Home;
