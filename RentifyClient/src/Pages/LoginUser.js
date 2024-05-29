@@ -25,7 +25,7 @@ const LoginUser = ({ onLogin }) => {
       }
     })
     .then(response => {
-      if (response.data === 'Register your details first.' || response.data === 'Incorrect password, try again !') {
+      if (response.data === 'Register your details first.' || response.data === 'Incorrect password, try again!') {
         setError(response.data);
       } else {
         // Handle successful login

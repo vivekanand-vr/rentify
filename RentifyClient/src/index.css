@@ -1,8 +1,11 @@
 /* 
  *  Common Styles for all components
  */
-body {
-  background-color: #708090;
+ html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(109.6deg, rgb(245, 239, 249) 30.1%, rgb(207, 211, 236) 100.2%);
   font-family: 'Poppins', sans-serif;
 }
 
@@ -23,7 +26,7 @@ body {
  */
  .background {
   width: 100%;
-  height: 90.6vh;
+  height: 92.7vh;
   overflow: hidden;
   background-image: url('./Assets/Home.jpg');
   background-size: cover;
@@ -39,7 +42,7 @@ body {
 }
 
 .text-content {
-  background-color: rgba(182, 179, 179, 0.7); /* Light grey with 60% opacity */
+  background-color: rgba(141, 135, 135, 0.7);
   padding: 20px;
   border-radius: 10px;
   max-width: 900px;
@@ -47,28 +50,39 @@ body {
 }
 
 .landing-page h1 {
-  color: black;
+  color: white;
+  font-weight: 800;
   font-size: 4rem;
 }
 
 .landing-page p {
-  color: black;
+  color: white;
   font-size: 1.5rem;
 }
 
 .landing-page button {
-  background-color: #007bff;
-  color: white;
+  background-color: #ffeb3b;
+  color: black;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 1.2rem;
+  font-weight: 600;
   margin-top: 20px;
   cursor: pointer;
   border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.landing-page button:hover {
+  color: white;
+  background-color: #FF6500;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
-.landing-page button:hover{
-  background-color: red;
+.landing-page button:active {
+  transform: translateY(2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* 
@@ -77,7 +91,7 @@ body {
 .navbar {
   background-color: #1F51FF;
   color: white;
-  padding: 10px;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,6 +119,7 @@ body {
 }
 
 .navbar-menu ul li {
+  cursor: pointer;
   margin: 0 10px;
 }
 
@@ -131,7 +146,7 @@ body {
 .property-search input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #514e4e;
   border-right: none;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -140,7 +155,7 @@ body {
 .search-button {
   padding: 10px;
   background-color: #1F51FF;
-  border: 1px solid #ccc;
+  border: 1px solid #514e4e;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   color: white;
@@ -172,15 +187,16 @@ body {
 /* 
  *  Styles for Each Property Card in Home Page
  */
-.property-card {
-  border: 1px solid #4682B4;
-  border-radius: 5px;
+ .property-card {
+  border: 1px solid black;
+  border-radius: 5px; 
   width: 300px;
   padding: 15px;
   margin-top: 10px;
   position: relative;
-  background-color: #f0f8ff; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .property-card:hover {
@@ -190,7 +206,6 @@ body {
 
 .property-card h4 {
   margin: 0 0 8px;
-  color: #2f4f4f; 
 }
 
 .property-card p {
@@ -200,22 +215,25 @@ body {
 
 .property-card .rent {
   font-weight: 600; 
-  color: darkblue; 
 }
 
 .property-card button {
   margin-top: 12px;
   padding: 8px 16px;
-  background-color: #9A8C98;
   color: white;
+  background-color: #4682A9;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .property-card button:hover {
-  background-color: #C14953; 
+  background-color: #2a3536;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
 .owner-details {
@@ -236,15 +254,16 @@ body {
   }
   
  .my-properties-heading {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 44px;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 50px;
   font-weight: bold;
-  color: white;
+  text-shadow: 2px 2px 2px rgba(42, 53, 54, 0.5);
+  color: #074a38;
 }
 
 .my-properties-page .property-card button {
-  margin: 10px;
+  margin: 5px 5px;
 }
 
 /* 
@@ -305,7 +324,7 @@ body {
 form button {
   width: calc(100% - 20px); 
   padding: 10px;
-  background-color: #007bff;
+  background-color: #0ca279;
   color: white;
   border: none;
   border-radius: 4px;
@@ -313,10 +332,15 @@ form button {
   cursor: pointer;
   margin-left: 10px; 
   margin-top: 10px; 
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 form button:hover {
-  background-color: #0056b3;
+  background-color: #074a38;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
 /*
@@ -371,14 +395,19 @@ form button:hover {
   display: block;
   width: 200px; 
   padding: 10px;
-  background-color: #9A8C98;
+  background-color: 	#0ca279;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: large;
   cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .profile-page button:hover {
-  background-color: #C14953;
+  background-color: #074a38;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }

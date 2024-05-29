@@ -30,7 +30,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
       <p className='rent'>Rent: ₹{property.rent}/month</p>
       
       <button onClick={handleViewDetails}>
-        {isExpanded ? 'Hide Details' : 'View More Details'}
+        {isExpanded ? 'Hide Details' : 'More Details'}
       </button>
       {isExpanded && ownerDetails && (
         <div className="owner-details">

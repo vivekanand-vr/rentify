@@ -16,7 +16,7 @@ const Navbar = ({ isLoggedIn, userName, handleLogout }) => {
             <>
               <li><Link to="/add-property">Add Property</Link></li>
               <li><Link to="/profile">Profile</Link></li>
-              <li><button onClick={handleLogout}>Logout</button></li>
+              <li onClick={handleLogout}>Logout</li>
             </>
           ) : (
             <>
