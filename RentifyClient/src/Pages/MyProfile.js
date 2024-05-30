@@ -36,7 +36,7 @@ const MyProfile = ({ userId }) => {
           <div className="profile-value">{user.country}</div>
         </div>
         <div className="profile-row">
-          <label>Phone Number:</label>
+          <label>Mobile:</label>
           <div className="profile-value">{user.phoneNumber}</div>
         </div>
       </div>

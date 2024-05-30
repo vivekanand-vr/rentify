@@ -12,13 +12,13 @@
 .error {
   color: red;
   text-align: center;
-  margin-bottom: 15px;
+  margin: 5px 0;
 }
 
 .success {
   color: green;
   text-align: center;
-  margin-bottom: 15px;
+  margin: 5px 0;
 }
 
 /* 
@@ -278,7 +278,7 @@
 }
 
 .login-container, .register-container, .add-property-container, .update-container {
-  background: white;
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   padding: 20px;
   border: 1px solid black;
   border-radius: 8px;
@@ -305,8 +305,9 @@
 
 .form-group label {
   display: block;
+  margin-left: 10px;
   margin-bottom: 5px;
-  color: black;
+  font-weight: 500;
 }
 
 .form-group input, .form-group textarea {
@@ -347,7 +348,7 @@ form button:hover {
  * Styles for Profile Page
  */
  .profile-page {
-  max-width: 600px;
+  max-width: 550px;
   margin: 30px auto; 
   padding: 20px;
   background-color: #f9f9f9;
@@ -372,13 +373,14 @@ form button:hover {
 .profile-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .profile-row label {
   font-size: large;
   font-weight: bold;
-  width: 180px;
+  margin-top: 10px;
+  width: 150px;
 }
 
 .profile-value {
@@ -391,7 +393,7 @@ form button:hover {
 }
 
 .profile-page button {
-  margin: 20px auto; 
+  margin: 10px auto; 
   display: block;
   width: 200px; 
   padding: 10px;
