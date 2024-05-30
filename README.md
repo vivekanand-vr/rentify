@@ -11,7 +11,7 @@
 
 ## Technologies Used
 
-- **Frontend** : Axios, Bootstrap, React JS
+- **Frontend** : Axios, Yup, Formik, React JS
 - **Backend** : Java, Maven, Spring Boot, REST-APIs, MySQL Database
 
 ## Project Structure
@@ -40,7 +40,7 @@
 
 ### User Authentication
 
-- **Register**: Users can create an account.
+- **Register**: Users can create an account, and user details are validated.
 - **Login**: Users can log in to the application.
 - **Logout**: Users can log out from the application.
 
