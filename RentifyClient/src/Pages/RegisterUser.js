@@ -39,7 +39,7 @@ const RegisterUser = () => {
           setError('');
           setTimeout(() => {
             navigate('/');
-          }, 2000); // 2 seconds delay
+          }, 2000); 
         })
         .catch(error => {
           console.error('There was an error registering the user:', error);
@@ -53,8 +53,10 @@ const RegisterUser = () => {
     <div className="form-page">
       <div className="register-container">
         <h2>REGISTER YOUR DETAILS</h2>
+
         {error && <div className="error">{error}</div>}
         {successMessage && <div className="success">{successMessage}</div>}
+        
         <form onSubmit={formik.handleSubmit}>
           <div className="form-group">
             <label>First Name:</label>

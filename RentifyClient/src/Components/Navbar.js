@@ -1,7 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from '../Actions/loginActions';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = ({ isLoggedIn, userName, handleLogout }) => {
+const Navbar = () => {
+  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
+  const userName = useSelector(state => state.login.userName);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate('/');
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
