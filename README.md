@@ -11,7 +11,7 @@
 
 ## Technologies Used
 
-- **Frontend** : Axios, Yup, Formik, React JS
+- **Frontend** : Axios, Yup, Formik, Redux Toolkit, React JS
 - **Backend** : Java, Maven, Spring Boot, REST-APIs, MySQL Database
 
 ## Project Structure
@@ -34,6 +34,22 @@
 - **MyProfile** : Displays user's profile information.
 - **MyPropertyList** : Lists properties added by the user.
 - **UpdateProperty** : Form to update the property details.
+
+### Redux Configuration
+
+#### Actions
+
+- **loginActions**: Contains actions for login and logout.
+- **userActions**: Contains actions for setting user details.
+
+#### Reducers
+
+- **loginReducer**: Manages login state.
+- **userReducer**: Manages user details state.
+
+#### Store Configuration
+
+- **redux-store**: Configures and exports the Redux store, combining `loginReducer` and `userReducer`.
 
 
 ## Features
