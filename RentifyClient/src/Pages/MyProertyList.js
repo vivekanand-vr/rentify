@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 import PropertyCard2 from '../Components/PropertyCard2';
 
-
-const MyPropertyList = ({ userId }) => {
+const MyPropertyList = () => {
+  const userId = useSelector(state => state.login.userId);
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
@@ -24,9 +25,7 @@ const MyPropertyList = ({ userId }) => {
           properties.map(property => (
             <PropertyCard2 key={property.id} property={property} onDelete={handleDelete} />
           ))
-        ) : (
-          <p>No properties available.</p>
-        )}
+        ) : ( <p>No properties available.</p> )}
       </div>
     </div>
   );

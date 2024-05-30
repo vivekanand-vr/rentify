@@ -17,7 +17,6 @@ const UpdateForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
-    // Fetch property details from backend
     axios.get(`http://localhost:9999/Rentify/properties/${id}`)
       .then(response => {
         setFormData(response.data);
@@ -52,35 +51,43 @@ const UpdateForm = () => {
       <div className="update-container">
         <h2>UPDATE PROPERTY DETAILS</h2>
         {successMessage && <p>{successMessage}</p>}
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Name:</label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} required />
           </div>
+
           <div className="form-group">
             <label>City:</label>
             <input type="text" name="city" value={formData.city} onChange={handleChange} required />
           </div>
+
           <div className="form-group">
             <label>State:</label>
             <input type="text" name="state" value={formData.state} onChange={handleChange} required />
           </div>
+
           <div className="form-group">
             <label>Country:</label>
             <input type="text" name="country" value={formData.country} onChange={handleChange} required />
           </div>
+
           <div className="form-group">
             <label>Area:</label>
             <input type="number" name="area" value={formData.area} onChange={handleChange} required />
           </div>
+
           <div className="form-group">
             <label>Rent:</label>
             <input type="number" name="rent" value={formData.rent} onChange={handleChange} required />
           </div>
+
           <div className="form-group">
             <label>Description:</label>
             <textarea name="description" value={formData.description} onChange={handleChange} required />
           </div>
+
           <button type="submit">Update Property</button>
         </form>
       </div>

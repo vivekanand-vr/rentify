@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropertyCard from '../Components/PropertyCard';
 import PropertySearch from '../Components/PropertySearch';
-import { filterProperties } from '../Utils/FilterProperties'
+import { filterProperties } from '../Utils/FilterProperties';
+import { useSelector } from 'react-redux';
 
-const PropertiesList = ({ isLoggedIn }) => {
+const PropertiesList = () => {
+  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
   const [properties, setProperties] = useState([]);
   const [expandedPropertyId, setExpandedPropertyId] = useState(null);
   const [searchKeyword, setSearchKeyword] = useState('');
@@ -46,9 +48,8 @@ const PropertiesList = ({ isLoggedIn }) => {
               onExpand={handleExpand}
             />
           ))
-        ) : (
-          <p>No properties match the current search criteria.</p>
-        )}
+        ) : ( <p>No properties match the current search criteria.</p>)
+        }
       </div>
     </div>
   );
