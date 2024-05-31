@@ -21,6 +21,7 @@
 - **Controller Layer**: Handles HTTP requests and responses.
 - **Service Layer**: Contains business logic.
 - **Repository Layer**: Interacts with the database.
+- **Configuration**: Contains Spring Boot configuration and Cors Configuration.
 
 ### Frontend Components
 
@@ -28,7 +29,7 @@
 - **Search Bar**: For searching properties by name or location.
 - **Home** : Landing page which gives brief of the app.
 - **PropertyList** : Shows a list of available properties.
-- **RegisterUser** : User registration form.
+- **Sign In** : User Sign in form.
 - **LoginPage** : User login form.
 - **AddProperty** : Form to add a new property.
 - **MyProfile** : Displays user's profile information.
@@ -56,7 +57,7 @@
 
 ### User Authentication
 
-- **Register**: Users can create an account, and user details are validated.
+- **Sign in**: Users can sign in with their details.
 - **Login**: Users can log in to the application.
 - **Logout**: Users can log out from the application.
 
@@ -72,7 +73,7 @@
 
 ### User APIs
 
-- **POST : /user/register**: Register a new user.
+- **POST : /user/signin**: Sign in a user.
 - **POST : /user/login**: Log in a user.
 - **GET  : /user/{id}**: Get user details by ID.
 
