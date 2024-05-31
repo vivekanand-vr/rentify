@@ -3,7 +3,8 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../Actions/loginActions';
 
 /* Yup Validation Schema */
 const validationSchema = Yup.object({
@@ -17,10 +18,11 @@ const validationSchema = Yup.object({
     .matches(/[0-9]/, "Password must contain at least one number")
 });
 
-const RegisterUser = () => {
+const SignIn = () => {
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
@@ -28,15 +30,20 @@ const RegisterUser = () => {
       lastName: '',
       email: '',
       phoneNumber: '',
-      country: '',
+      city: '',
       password: ''
     },
     validationSchema,
     onSubmit: values => {
-      axios.post('http://localhost:9999/Rentify/user/register', values)
+      axios.post('http://localhost:9999/Rentify/user/signin', values)
         .then(response => {
-          setSuccessMessage('You have registered successfully! Now Login with your credentials');
+          setSuccessMessage('You have signed in sucessfully');
           setError('');
+
+          /* Updating the Login State after Signup */
+          const userId = response.data;
+          dispatch(loginUser(userId, values.firstName));
+
           setTimeout(() => {
             navigate('/');
           }, 2000); 
@@ -52,7 +59,7 @@ const RegisterUser = () => {
   return (
     <div className="form-page">
       <div className="register-container">
-        <h2>REGISTER YOUR DETAILS</h2>
+        <h2>SIGN IN</h2>
 
         {error && <div className="error">{error}</div>}
         {successMessage && <div className="success">{successMessage}</div>}
@@ -89,8 +96,8 @@ const RegisterUser = () => {
           </div>
 
           <div className="form-group">
-            <label>Country:</label>
-            <input type="text" name="country" value={formik.values.country} 
+            <label>City:</label>
+            <input type="text" name="city" value={formik.values.country} 
                    onChange={formik.handleChange} onBlur={formik.handleBlur} required />
           </div>
 
@@ -109,4 +116,4 @@ const RegisterUser = () => {
   );
 }
 
-export default RegisterUser;
+export default SignIn;

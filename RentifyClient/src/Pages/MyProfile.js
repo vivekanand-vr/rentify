@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { setUser } from '../Actions/userActions';
 import axios from 'axios';
 
@@ -7,6 +8,7 @@ const MyProfile = () => {
   const user = useSelector(state => state.user);
   const userId = useSelector(state => state.login.userId);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`http://localhost:9999/Rentify/user/${userId}`)
@@ -39,8 +41,8 @@ const MyProfile = () => {
         </div>
 
         <div className="profile-row">
-          <label>Country:</label>
-          <div className="profile-value">{user.country}</div>
+          <label>City:</label>
+          <div className="profile-value">{user.city}</div>
         </div>
 
         <div className="profile-row">
@@ -49,7 +51,10 @@ const MyProfile = () => {
         </div>
         
       </div>
-      <button onClick={() => window.location.href = '/my-properties'}>View My Properties</button>
+      <div className='button-container'>
+        <button onClick={() => navigate('/properties')}>Back</button>
+        <button onClick={() => navigate('/my-properties')}>View My Properties</button>
+      </div>
     </div>
   );
 }

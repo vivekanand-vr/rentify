@@ -392,12 +392,16 @@ form button:hover {
   background-color: #fff;
 }
 
+.profile-page .button-container {
+  text-align: center;
+}
+
 .profile-page button {
-  margin: 10px auto; 
-  display: block;
-  width: 200px; 
-  padding: 10px;
-  background-color: 	#0ca279;
+  margin: 10px; 
+  display: inline-block; 
+  width: auto; 
+  padding: 10px 20px;
+  background-color: #0ca279;
   color: white;
   border: none;
   border-radius: 5px;

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import PropertiesList from './Pages/PropertyList';
 import MyPropertyList from './Pages/MyProertyList';
-import RegisterUser from './Pages/RegisterUser';
+import SignIn from './Pages/SignIn';
 import LoginUser from './Pages/LoginUser';
 import AddProperty from './Pages/AddProperty';
 import Navbar from './Components/Navbar';
@@ -17,7 +17,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/login" element={<LoginUser/>} />
-        <Route path="/register" element={<RegisterUser />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/add-property" element={<AddProperty />} />
         <Route path="/profile" element={<MyProfile />} />
         <Route path="/my-properties" element={<MyPropertyList />} />

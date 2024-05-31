@@ -32,8 +32,11 @@ const LoginUser = () => {
         }
       })
       .then(response => {
-        if (response.data === 'Register your details first.' || response.data === 'Incorrect password, try again!') {
+        if (response.data === 'You need to sign in first.' || response.data === 'Incorrect password, try again!') {
           setError(response.data);
+          setTimeout(() => {
+            navigate('/signin');
+          }, 2000);
         } else {
           // Incase of Correct credentials, Username and Id is recieved as a String seperated by s space
           const [userName, userId] = response.data.split(' '); 
