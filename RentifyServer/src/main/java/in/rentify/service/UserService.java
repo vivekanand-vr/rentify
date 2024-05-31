@@ -15,11 +15,11 @@ public class UserService {
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    public String saveUser(User user) {
+    public Long saveUser(User user) {
         // Encrypt the password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
-        return "User has been registered successfully";
+        User savedUser = userRepository.save(user);
+        return savedUser.getId();
     }
     
     public User findByEmail(String email) {
@@ -29,7 +29,7 @@ public class UserService {
     public String authenticateUser(String email, String password) {
         User user = userRepository.findByEmail(email);
         if (user == null) {
-            return "Register your details first.";
+            return "You need to sign in first.";
         }
         // Compare the provided password with the stored encrypted password
         if (passwordEncoder.matches(password, user.getPassword())) {

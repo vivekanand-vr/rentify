@@ -16,8 +16,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/register")
-    public String registerUser(@RequestBody User user) {
+    @PostMapping("/signin")
+    public Long registerUser(@RequestBody User user) {
         return userService.saveUser(user);
     }
 
