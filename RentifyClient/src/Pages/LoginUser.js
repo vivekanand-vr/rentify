@@ -92,8 +92,10 @@ const LoginUser = () => {
               <div className="error">{formik.errors.password}</div>
             ) : null}
           </div>
-
-          <button type="submit" disabled={formik.isSubmitting}>Login</button>
+          
+          <div className='button-container'>
+            <button type="submit" disabled={formik.isSubmitting}>Login</button>
+          </div>
         </form>
       </div>
     </div>

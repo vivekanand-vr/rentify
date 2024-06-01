@@ -87,8 +87,10 @@ const UpdateForm = () => {
             <label>Description:</label>
             <textarea name="description" value={formData.description} onChange={handleChange} required />
           </div>
-
-          <button type="submit">Update Property</button>
+          <div className='button-container'>
+            <button onClick={() => navigate('/my-properties')}>Cancel</button>
+            <button type="submit">Update Property</button>
+          </div>
         </form>
       </div>
     </div>

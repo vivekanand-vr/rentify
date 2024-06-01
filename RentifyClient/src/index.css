@@ -42,6 +42,7 @@ body {
 
 .text-content {
   background-color: rgba(141, 135, 135, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
   max-width: 900px;
@@ -60,9 +61,9 @@ body {
 }
 
 .landing-page button {
+  border: 2px solid white;
   background-color: #ffeb3b;
   color: black;
-  border: none;
   padding: 15px 30px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -284,7 +285,7 @@ body {
   width: 450px;
 }
 
-/* Property Details need extra space */
+/* Property Details need extra width, and it's h2 needs extra space  */
 .add-property-container, .update-container{
   width: 600px;
 }
@@ -292,9 +293,16 @@ body {
 .form-page h2 {
   text-align: center;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 34px;
   color: #333;
+}
+
+.form-page .signin-span {
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .form-group {
@@ -321,9 +329,9 @@ body {
 }
 
 form button {
-  width: calc(100% - 20px); 
+  width: calc(50% - 20px); 
   padding: 10px;
-  background-color: #0ca279;
+  background-color: rgb(2 132 199);
   color: white;
   border: none;
   border-radius: 4px;
@@ -390,16 +398,16 @@ form button:hover {
   background-color: #fff;
 }
 
-.profile-page .button-container {
+.button-container {
   text-align: center;
 }
 
 .profile-page button {
   margin: 10px; 
   display: inline-block; 
-  width: auto; 
+  width: calc(50% - 20px); 
   padding: 10px 20px;
-  background-color: #0ca279;
+  background-color: rgb(2 132 199);
   color: white;
   border: none;
   border-radius: 5px;

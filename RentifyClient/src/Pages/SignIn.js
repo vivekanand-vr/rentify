@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -61,6 +62,8 @@ const SignIn = () => {
       <div className="register-container">
         <h2>SIGN IN</h2>
 
+        <span className='signin-span'>Already have an account ? <Link to={"/login"}>Login</Link></span>
+
         {error && <div className="error">{error}</div>}
         {successMessage && <div className="success">{successMessage}</div>}
         
@@ -108,8 +111,10 @@ const SignIn = () => {
             {formik.touched.password && formik.errors.password ? 
             ( <div className="error">{formik.errors.password}</div> ) : null}
           </div>
-
-          <button type="submit">Register</button>
+          
+          <div className='button-container'>
+            <button type="submit">Register</button>
+          </div>
         </form>
       </div>
     </div>

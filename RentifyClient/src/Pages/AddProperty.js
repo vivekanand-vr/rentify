@@ -105,7 +105,10 @@ const AddProperty = () => {
             <input type="text" name="ownerId" value={formData.ownerId} readOnly />
           </div>
 
-          <button type="submit">Add Property</button>
+          <div>
+            <button onClick={() => navigate('/properties')}>Cancel</button>
+            <button type="submit">Add Property</button>
+          </div>
         </form>
       </div>
     </div>
