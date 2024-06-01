@@ -32,12 +32,16 @@ const LoginUser = () => {
         }
       })
       .then(response => {
-        if (response.data === 'You need to sign in first.' || response.data === 'Incorrect password, try again!') {
-          setError(response.data);
+        if (response.data === 'You need to sign in first.') {
+          setError("Email not registered. " + response.data);
           setTimeout(() => {
             navigate('/signin');
           }, 2000);
-        } else {
+        }
+        else if (response.data === 'Incorrect password, try again!'){
+          setError(response.data);
+        }
+        else {
           // Incase of Correct credentials, Username and Id is recieved as a String seperated by s space
           const [userName, userId] = response.data.split(' '); 
           dispatch(loginUser(userId, userName));
