@@ -25,16 +25,18 @@
 
 ### Frontend Components
 
-- **Navbar** : Displays navigation links.
+- **Navbar**: Displays navigation links.
 - **Search Bar**: For searching properties by name or location.
-- **Home** : Landing page which gives brief of the app.
-- **PropertyList** : Shows a list of available properties.
-- **Sign In** : User Sign in form.
-- **LoginPage** : User login form.
-- **AddProperty** : Form to add a new property.
-- **MyProfile** : Displays user's profile information.
-- **MyPropertyList** : Lists properties added by the user.
-- **UpdateProperty** : Form to update the property details.
+- **Home**: Landing page which gives brief of the app.
+- **PropertyList**: Shows a list of available properties.
+- **Sign In**: User Sign in form.
+- **LoginPage**: User login form.
+- **AddProperty**: Form to add a new property.
+- **MyProfile**: Displays user's profile information.
+- **MyPropertyList**: Lists properties added by the user.
+- **UpdateProperty**: Form to update the property details.
+- **ShimmerCard**: Skeleton loading effect for property cards during data fetching.
+
 
 ### Redux Configuration
 
