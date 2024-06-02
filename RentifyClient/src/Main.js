@@ -21,7 +21,7 @@ function App() {
         <Route path="/add-property" element={<AddProperty />} />
         <Route path="/profile" element={<MyProfile />} />
         <Route path="/my-properties" element={<MyPropertyList />} />
-        <Route path="/update-property/:id" element={<UpdateProperty />} />
+        <Route path="/update-property" element={<UpdateProperty />} />
         <Route path="/properties" element={<PropertiesList />} />
         <Route path="/" element={<Home />} />
       </Routes>

@@ -6,8 +6,10 @@ const PropertyCard2 = ({ property, onDelete }) => {
   const navigate = useNavigate();
 
   const handleUpdate = () => {
-    navigate(`/update-property/${property.id}`);
+    // Send the Property object to UpdateProperty Component as a state variable
+    navigate(`/update-property`, { state: { property } });
   };
+
 
   const handleDelete = () => {
     axios.delete(`http://localhost:9999/Rentify/properties/${property.id}`)
@@ -21,7 +23,6 @@ const PropertyCard2 = ({ property, onDelete }) => {
       <p>{property.city}, {property.state}, {property.country}</p>
       <p>Price: ₹{property.rent}/month</p>
       <p>Area: {property.area} square ft.</p>
-      <p>{property.description}</p>
       <button onClick={handleUpdate}>Update</button>
       <button onClick={handleDelete}>Delete</button>
     </div>

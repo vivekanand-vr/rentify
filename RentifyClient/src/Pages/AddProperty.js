@@ -17,6 +17,9 @@ const AddProperty = () => {
     description: '',
     area: '',
     rent: '',
+    deposit: '',
+    propertyType: '', 
+    furnishing: '', 
     ownerId: userId, 
   });
 
@@ -44,8 +47,9 @@ const AddProperty = () => {
     })
       .then((response) => {
         setSuccess(true);
+        console.log(formData);
         setTimeout(() => {
-          navigate('/');
+          navigate('/properties');
         }, 2000);
       })
       .catch((error) => {
@@ -98,6 +102,36 @@ const AddProperty = () => {
           <div className="form-group">
             <label>Rent (per month):</label>
             <input type="number" name="rent" value={formData.rent} onChange={handleChange} required />
+          </div>
+
+          <div className="form-group">
+            <label>Deposit Amount:</label>
+            <input type="number" name="deposit" value={formData.deposit} onChange={handleChange} required />
+          </div>
+
+          <div className="form-group">
+            <label>Number of Bedrooms:</label>
+            <input type="number" name="bedrooms" value={formData.bedrooms} onChange={handleChange} min="1" max="10" required />
+          </div>
+
+          <div className="form-group">
+            <label>Property Type:</label>
+            <select name="propertyType" value={formData.propertyType} onChange={handleChange} required>
+              <option value="" disabled>Select property type</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Independent House/Villa">Independent House/Villa</option>
+              <option value="Gated Community Villa">Gated Community Villa</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Furnishing:</label>
+            <select name="furnishing" value={formData.furnishing} onChange={handleChange} required>
+              <option value="" disabled>Select furnishing</option>
+              <option value="Furnished">Furnished</option>
+              <option value="Semi-furnished">Semi-furnished</option>
+              <option value="Unfurnished">Unfurnished</option>
+            </select>
           </div>
 
           <div className="form-group">
