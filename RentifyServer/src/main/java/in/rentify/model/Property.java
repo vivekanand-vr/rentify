@@ -23,5 +23,9 @@ public class Property {
     private String description;
     private Double area; 
     private Double rent;
+    private Double deposit;
+    private Integer bedrooms;
+    private String propertyType;
+    private String furnishing;
     private Long ownerId;
 }

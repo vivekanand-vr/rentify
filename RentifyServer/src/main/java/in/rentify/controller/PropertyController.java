@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.rentify.dto.PropertyDTO;
 import in.rentify.model.Property;
 import in.rentify.service.PropertyService;
 
@@ -42,20 +41,15 @@ public class PropertyController {
         return ResponseEntity.ok(properties);
     }
     
-    @GetMapping("/{id}")
-    public Property getPropertyById(@PathVariable Long id){
-    	return propertyService.getPropertyById(id);
-    }
-    
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProperty(@PathVariable Long id) {
         propertyService.deleteProperty(id);
         return ResponseEntity.ok("Property deleted successfully");
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Property> updateProperty(@PathVariable Long id, @RequestBody PropertyDTO propertyDTO) {
-        Property updatedProperty = propertyService.updateProperty(id, propertyDTO);
+    @PutMapping
+    public ResponseEntity<Property> updateProperty(@RequestBody Property property) {
+        Property updatedProperty = propertyService.updateProperty(property);
         return ResponseEntity.ok(updatedProperty);
     }
 }
