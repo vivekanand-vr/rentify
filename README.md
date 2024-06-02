@@ -81,11 +81,10 @@
 
 ### Property APIs
 
-- **POST : /property**: Add a new property.
+- **POST : /properties**: Add a new property.
 - **GET : /properties**: Get all properties.
-- **GET  : /property/{id}**: Get property details by ID.
-- **PUT  : /property/{id}**: Update property details.
-- **DELETE : /property/{id}**: Delete a property.
+- **PUT  : /properties**: Update property details.
+- **DELETE : /properties/{id}**: Delete a property.
 
 ## Setting up the Rentify-Server (Backend)
 
