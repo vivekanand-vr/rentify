@@ -2,7 +2,6 @@ package in.rentify.controller;
 
 import in.rentify.dto.LoginDetails;
 import in.rentify.service.UserService;
-
 import in.rentify.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +29,12 @@ public class UserController {
     @GetMapping("/{id}")
     public User getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
+    }
+    
+    @PutMapping
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
+        User updatedUser = userService.updateUser(user);
+        return ResponseEntity.ok(updatedUser);
     }
 }
 

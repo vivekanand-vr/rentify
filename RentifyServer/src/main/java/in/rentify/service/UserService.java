@@ -50,4 +50,8 @@ public class UserService {
         }
         return null; 
     }
+    
+    public User updateUser(User updatedUser) {
+        return userRepository.save(updatedUser);
+    }
 }
