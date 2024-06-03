@@ -32,7 +32,7 @@
 - **Sign In**: User Sign in form.
 - **LoginPage**: User login form.
 - **AddProperty**: Form to add a new property.
-- **MyProfile**: Displays user's profile information.
+- **MyProfile**: Displays user's profile information, also allows users to edit details.
 - **MyPropertyList**: Lists properties added by the user.
 - **UpdateProperty**: Form to update the property details.
 - **ShimmerCard**: Skeleton loading effect for property cards during data fetching.
@@ -62,6 +62,7 @@
 - **Sign in**: Users can sign in with their details.
 - **Login**: Users can log in to the application.
 - **Logout**: Users can log out from the application.
+- **Edit Details**: Users can edit their details (name, city).
 
 ### Property Management
 
@@ -78,6 +79,7 @@
 - **POST : /user/signin**: Sign in a user.
 - **POST : /user/login**: Log in a user.
 - **GET  : /user/{id}**: Get user details by ID.
+- **PUT : /user**: Update user details.
 
 ### Property APIs
 
