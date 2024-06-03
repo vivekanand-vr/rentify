@@ -224,7 +224,6 @@ body {
   background-color: rgb(2 132 199);
   border: none;
   border-radius: 5px;
-  font-weight: 500;
   transition: all 0.2s ease;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
@@ -295,7 +294,6 @@ body {
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 34px;
-  color: #333;
 }
 
 .form-page .signin-span {
@@ -344,7 +342,6 @@ form button {
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: large;
   cursor: pointer;
   margin-left: 10px; 
   margin-top: 10px; 
@@ -360,7 +357,7 @@ form button:hover {
  * Styles for Profile Page
  */
  .profile-page {
-  max-width: 550px;
+  max-width: 500px;
   margin: 30px auto; 
   padding: 20px;
   background-color: #f9f9f9;
@@ -369,13 +366,25 @@ form button:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.profile-page h2 {
-  text-align: center;
-  padding: 10px;
-  font-size: 34px;
-  font-weight: 700;
-  color: #333; 
+.profile-header {
+  display: flex;
+  justify-content: center;
+  
+  h2 {
+    text-align: center;
+    padding: 10px;
+    font-size: 34px;
+    font-weight: 700;
+  }
+  .edit-icon {
+    cursor: pointer;
+    color: #1F51FF;
+    font-size: 28px;
+    margin-left: 5px;
+    margin-top: 15px;
+  }
 }
+
 
 .profile-details {
   display: flex;
@@ -389,15 +398,23 @@ form button:hover {
 }
 
 .profile-row label {
-  font-size: large;
   font-weight: bold;
   margin-top: 10px;
   width: 150px;
 }
 
-.profile-value {
+.profile-value-disabled {
+  color: #8e8d8d; 
   flex-grow: 1;
-  font-size: large;
+  padding: 8px;
+  background-color: #f0f0f0; 
+  border: 1px solid #4682B4; 
+  border-radius: 5px;
+  cursor: not-allowed; 
+}
+
+.profile-value, .profile-row input {
+  flex-grow: 1;
   padding: 8px;
   border: 1px solid #4682B4; 
   border-radius: 5px;
@@ -417,7 +434,6 @@ form button:hover {
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: large;
   cursor: pointer;
   transition: all 0.2s ease;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
