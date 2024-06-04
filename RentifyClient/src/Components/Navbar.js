@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../Actions/loginActions';
 import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const isLoggedIn = useSelector(state => state.login.isLoggedIn);
@@ -12,6 +13,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(logoutUser());
+    toast.info("You have logged out successfully.");
     navigate('/');
   };
 

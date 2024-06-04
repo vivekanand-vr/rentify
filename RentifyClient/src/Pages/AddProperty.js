@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { toast } from "react-toastify";
 
 const AddProperty = () => {
 
   /* Getting the Login details from store */
   const userId = useSelector(state => state.login.userId);
   const isLoggedIn = useSelector(state => state.login.isLoggedIn);
-
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     name: '',
     city: '',
@@ -23,10 +25,6 @@ const AddProperty = () => {
     ownerId: userId, 
   });
 
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
-  const navigate = useNavigate();
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -36,7 +34,7 @@ const AddProperty = () => {
     e.preventDefault();
 
     if (!isLoggedIn) {
-      setError('Please log in to add a property.');
+      toast.error('Please log in to add a property.');
       return;
     }
 
@@ -46,14 +44,11 @@ const AddProperty = () => {
       },
     })
       .then((response) => {
-        setSuccess(true);
-        console.log(formData);
-        setTimeout(() => {
-          navigate('/properties');
-        }, 2000);
+        toast.success("Property added successfully.")
+        setTimeout(() => { navigate('/properties'); }, 2000);
       })
       .catch((error) => {
-        setError('There was an error adding the property.');
+        toast.error('There was an error adding the property.');
       });
   };
 
@@ -64,9 +59,6 @@ const AddProperty = () => {
       <div className="add-property-container">
 
         <h2>ADD PROPERTY DETAILS</h2>
-
-        {error && <div className="error">{error}</div>}
-        {success && <div className="success">Property added successfully!</div>}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">

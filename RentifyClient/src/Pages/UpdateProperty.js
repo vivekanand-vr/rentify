@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { toast } from "react-toastify";
 
 const UpdateForm = () => {
   const { pid } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const { property } = location.state || {}; // Destructure the property object from location state
-
   const [formData, setFormData] = useState({
     id: pid,
     name: '',
@@ -21,8 +21,6 @@ const UpdateForm = () => {
     furnishing: '', 
     description: ''
   });
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState('');
 
   // Set current property details in the formdata to modify
   useEffect(() => {
@@ -38,14 +36,12 @@ const UpdateForm = () => {
     e.preventDefault();
     axios.put(`http://localhost:9999/Rentify/properties`, formData)
       .then(response => {
-        setSuccess(true);
-        setTimeout(() => {
-          navigate('/my-properties');
-        }, 2000);
+        toast.success("Property details updated successfully.")
+        setTimeout(() => { navigate('/my-properties'); }, 2000);
       })
       .catch(error => {
-        setError('There was an error adding the property.');
-        console.error('Error updating property:', error);
+        toast.error('There was an error updating the property.');
+        console.error(error);
       });
   };
 
@@ -53,8 +49,6 @@ const UpdateForm = () => {
     <div className="form-page">
       <div className="update-container">
         <h2>UPDATE PROPERTY DETAILS</h2>
-        {error && <div className="error">{error}</div>}
-        {success && <div className="success">Property updated successfully!</div>}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -126,6 +120,7 @@ const UpdateForm = () => {
             <button onClick={() => navigate('/my-properties')}>Cancel</button>
             <button type="submit">Update Property</button>
           </div>
+
         </form>
       </div>
     </div>

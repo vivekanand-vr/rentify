@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import PropertiesList from './Pages/PropertyList';
@@ -10,6 +11,7 @@ import Navbar from './Components/Navbar';
 import MyProfile from './Pages/MyProfile';
 import UpdateProperty from './Pages/UpdateProperty';
 import './index.css';
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -25,8 +27,9 @@ function App() {
         <Route path="/properties" element={<PropertiesList />} />
         <Route path="/" element={<Home />} />
       </Routes>
+      <ToastContainer autoClose={2000} position="top-center" theme='colored' />
     </Router>
   );
-}
+}                                                                                                                        
 
 export default App;
