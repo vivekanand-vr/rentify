@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../Actions/loginActions';
+import { toast } from "react-toastify";
 
 /* Yup Validation Schema */
 const validationSchema = Yup.object({
@@ -20,8 +21,6 @@ const validationSchema = Yup.object({
 });
 
 const SignIn = () => {
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -38,21 +37,16 @@ const SignIn = () => {
     onSubmit: values => {
       axios.post('http://localhost:9999/Rentify/user/signin', values)
         .then(response => {
-          setSuccessMessage('You have signed in sucessfully');
-          setError('');
+          toast.success('You have signed in sucessfully');
 
           /* Updating the Login State after Signup */
           const userId = response.data;
           dispatch(loginUser(userId, values.firstName));
-
-          setTimeout(() => {
-            navigate('/');
-          }, 2000); 
+          setTimeout(() => { navigate('/'); }, 2000); 
         })
         .catch(error => {
-          console.error('There was an error registering the user:', error);
-          setError('There was an error registering the user.');
-          setSuccessMessage('');
+          console.error('There was an error Signing in:', error);
+          toast.error('There was an error Signing in.')
         });
     }
   });
@@ -63,9 +57,6 @@ const SignIn = () => {
         <h2>SIGN IN</h2>
 
         <span className='signin-span'>Already have an account ? <Link to={"/login"}>Login</Link></span>
-
-        {error && <div className="error">{error}</div>}
-        {successMessage && <div className="success">{successMessage}</div>}
         
         <form onSubmit={formik.handleSubmit}>
           <div className="form-group">
@@ -115,6 +106,7 @@ const SignIn = () => {
           <div className='button-container'>
             <button type="submit">Register</button>
           </div>
+
         </form>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUser } from '../Actions/userActions';
+import { toast } from "react-toastify";
 import { FaEdit } from 'react-icons/fa';
 import axios from 'axios';
 
@@ -26,10 +27,12 @@ const MyProfile = () => {
     axios.put(`http://localhost:9999/Rentify/user`, formData)
     .then(response =>{
       dispatch(setUser(response.data));
+      toast.success("Profile Details Updated Sucessfully.")
       setEditMode(false);
     })
     .catch(error =>{
       console.error('There was an error updating the UserDetails', error);
+      toast.error('There was an error updating the UserDetails');
     });
   };
 
