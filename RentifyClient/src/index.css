@@ -325,6 +325,20 @@ body {
   margin-left: 10px; 
 }
 
+.image-group {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+}
+#image-input{
+  width: calc(100% - 20px);
+  margin-right: 10px;
+}
+.preview-image {
+  max-width: 400px;
+  border: 1px solid black;
+}
+
 .form-group select {
   width: calc(100% - 20px);
   padding: 10px;
