@@ -26,8 +26,11 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
     <div className="property-card">
       <h4>{property.name}</h4>
       <p>{property.city}, {property.state}, {property.country}</p>
-      <p>Area: {property.area} square ft.</p>
-      <p className='rent'>Rent: ₹{property.rent}/month</p>
+      <p><span>Property Type: </span>{property.propertyType} {property.bedrooms} BHK </p>
+      <p><span>Area:</span> {property.area} square ft.</p>
+      <p><span>Furnishing:</span> {property.furnishing} </p>
+      <p><span>Rent:</span> ₹{property.rent} &nbsp; <span>Deposit:</span> ₹{property.deposit}</p>
+
       
       <button onClick={handleViewDetails}>
         {isExpanded ? 'Hide Details' : 'More Details'}
@@ -38,6 +41,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
         <p>{property.description}</p>
         <br />
         <h5>Owner Contact</h5>
+          <p>Name :  {ownerDetails.firstName} {ownerDetails.lastName} </p>
           <p>Email : {ownerDetails.email}</p>
           <p>Phone : {ownerDetails.phoneNumber}</p>
         </div>

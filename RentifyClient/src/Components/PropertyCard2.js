@@ -19,12 +19,16 @@ const PropertyCard2 = ({ property, onDelete }) => {
 
   return (
     <div className="property-card">
-      <h3>{property.name}</h3>
+      <h4>{property.name}</h4>
       <p>{property.city}, {property.state}, {property.country}</p>
-      <p>Price: ₹{property.rent}/month</p>
-      <p>Area: {property.area} square ft.</p>
-      <button onClick={handleUpdate}>Update</button>
-      <button onClick={handleDelete}>Delete</button>
+      <p><span>Property Type: </span>{property.propertyType} {property.bedrooms} BHK </p>
+      <p><span>Area:</span> {property.area} square ft.</p>
+      <p><span>Furnishing:</span> {property.furnishing} </p>
+      <p><span>Rent:</span> ₹{property.rent} &nbsp; <span>Deposit:</span> ₹{property.deposit}</p>
+      <div className='button-container'>
+        <button onClick={handleUpdate}>Update</button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   );
 }

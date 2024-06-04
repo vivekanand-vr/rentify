@@ -191,7 +191,7 @@ body {
   border: 1px solid rgb(181, 177, 177);
   background-color: white;
   border-radius: 5px; 
-  width: 300px;
+  width: 350px;
   padding: 15px;
   margin-top: 10px;
   position: relative;
@@ -213,14 +213,19 @@ body {
   color: #333; 
 }
 
+.property-card span{
+  font-weight: 600;
+}
+
 .property-card .rent {
   font-weight: 600; 
 }
 
 .property-card button {
-  margin-top: 12px;
-  padding: 8px 16px;
+  margin-top: 15px;
+  padding: 8px 12px;
   color: white;
+  width: calc(50% - 20px);
   background-color: rgb(2 132 199);
   border: none;
   border-radius: 5px;
