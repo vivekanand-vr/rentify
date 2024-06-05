@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toast } from "react-toastify";
+import { ImageUploader } from '../Components/ImageUploader';
 
 const AddProperty = () => {
 
@@ -10,7 +11,7 @@ const AddProperty = () => {
   const userId = useSelector(state => state.login.userId);
   const isLoggedIn = useSelector(state => state.login.isLoggedIn);
   const navigate = useNavigate();
-
+  
   const [formData, setFormData] = useState({
     name: '',
     city: '',
@@ -22,14 +23,8 @@ const AddProperty = () => {
     deposit: '',
     propertyType: '', 
     furnishing: '', 
-    imageFile: null,
     ownerId: userId, 
   });
-
-  const handleImage = (e) =>{
-     const file = e.target.files[0];
-    setFormData({ ...formData, imageFile: file });
-  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -87,14 +82,11 @@ const AddProperty = () => {
             <input type="text" name="country" value={formData.country} onChange={handleChange} required />
           </div>
 
-          <div className="image-input-group">
-            <label>Upload Property Image:</label>
-            <input id='image-input' type='file' accept='image/*' onChange={ e => handleImage(e)}></input>
-            <div className='image-group'>
-                { formData.imageFile && <img className='preview-image' alt='property' src={formData.imageFile}></img> }
-            </div>
+          <div className='form-group'>
+            <label>Property Image:</label>
+            <ImageUploader />
           </div>
-
+          
           <div className="form-group">
             <label>Description:</label>
             <textarea name="description" value={formData.description} onChange={handleChange} required />
