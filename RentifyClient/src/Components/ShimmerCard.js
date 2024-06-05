@@ -8,6 +8,7 @@ const ShimmerCard = () => {
     <div className="shimmer-card">
       <Skeleton height={24} width={'100%'} baseColor={baseColor} className="shimmer-title" />
       <Skeleton height={14} width={`100%`} baseColor={baseColor} className="shimmer-text" />
+      <Skeleton height={250} width={`100%`} baseColor={baseColor} className="shimmer-text" />
       <Skeleton height={14} width={`100%`} baseColor={baseColor} className="shimmer-text" />
       <Skeleton height={14} width={`100%`} baseColor={baseColor} className="shimmer-text" />
       <Skeleton height={32} width={'40%'} baseColor={baseColor} className="shimmer-button" />

@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
   const [ownerDetails, setOwnerDetails] = useState(null);
-
+  const navigate = useNavigate();
+  /*
+      For transformations we need to import `AdvancedImage` tag and render image within it.
+      Refer "https://cloudinary.com/documentation/react_integration"
+   */
+  const imageUrl = `https://res.cloudinary.com/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload/${property.imageId}`;
+  
   useEffect(() => {
     if (isExpanded && isLoggedIn) {
       // Fetch owner details from the backend
@@ -18,7 +25,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
       onExpand(property.id);
     } else {
       // Redirect to login if not logged in
-      window.location.href = '/login';
+      navigate('/login');
     }
   };
 
@@ -26,12 +33,12 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
     <div className="property-card">
       <h4>{property.name}</h4>
       <p>{property.city}, {property.state}, {property.country}</p>
+      <img src={imageUrl} alt='property' />
       <p><span>Property Type: </span>{property.propertyType} {property.bedrooms} BHK </p>
       <p><span>Area:</span> {property.area} square ft.</p>
       <p><span>Furnishing:</span> {property.furnishing} </p>
       <p><span>Rent:</span> ₹{property.rent} &nbsp; <span>Deposit:</span> ₹{property.deposit}</p>
-
-      
+       
       <button onClick={handleViewDetails}>
         {isExpanded ? 'Hide Details' : 'More Details'}
       </button>

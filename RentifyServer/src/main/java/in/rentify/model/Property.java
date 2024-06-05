@@ -27,5 +27,6 @@ public class Property {
     private Integer bedrooms;
     private String propertyType;
     private String furnishing;
+    private String imageId;
     private Long ownerId;
 }

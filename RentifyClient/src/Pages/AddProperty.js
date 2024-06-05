@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toast } from "react-toastify";
+import { ImageUploader } from '../Components/ImageUploader';
 
 const AddProperty = () => {
 
@@ -20,10 +21,16 @@ const AddProperty = () => {
     area: '',
     rent: '',
     deposit: '',
-    propertyType: '', 
-    furnishing: '', 
-    ownerId: userId, 
+    bedrooms: '',
+    propertyType: '',
+    furnishing: '',
+    imageId: '',
+    ownerId: userId,
   });
+
+  const handleImageUpload = (imageId) => {
+    setFormData({ ...formData, imageId });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,6 +53,7 @@ const AddProperty = () => {
       .then((response) => {
         toast.success("Property added successfully.")
         setTimeout(() => { navigate('/properties'); }, 2000);
+        console.log(formData);
       })
       .catch((error) => {
         toast.error('There was an error adding the property.');
@@ -81,6 +89,11 @@ const AddProperty = () => {
             <input type="text" name="country" value={formData.country} onChange={handleChange} required />
           </div>
 
+          <div className='form-group'>
+            <label>Property Image:</label>
+            <ImageUploader onImageUpload={handleImageUpload} />
+          </div>
+          
           <div className="form-group">
             <label>Description:</label>
             <textarea name="description" value={formData.description} onChange={handleChange} required />
