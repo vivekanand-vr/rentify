@@ -21,10 +21,16 @@ const AddProperty = () => {
     area: '',
     rent: '',
     deposit: '',
-    propertyType: '', 
-    furnishing: '', 
-    ownerId: userId, 
+    bedrooms: '',
+    propertyType: '',
+    furnishing: '',
+    imageId: '',
+    ownerId: userId,
   });
+
+  const handleImageUpload = (imageId) => {
+    setFormData({ ...formData, imageId });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,6 +53,7 @@ const AddProperty = () => {
       .then((response) => {
         toast.success("Property added successfully.")
         setTimeout(() => { navigate('/properties'); }, 2000);
+        console.log(formData);
       })
       .catch((error) => {
         toast.error('There was an error adding the property.');
@@ -84,7 +91,7 @@ const AddProperty = () => {
 
           <div className='form-group'>
             <label>Property Image:</label>
-            <ImageUploader />
+            <ImageUploader onImageUpload={handleImageUpload} />
           </div>
           
           <div className="form-group">

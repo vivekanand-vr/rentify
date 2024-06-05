@@ -191,12 +191,19 @@ body {
   border: 1px solid rgb(181, 177, 177);
   background-color: white;
   border-radius: 5px; 
-  width: 350px;
+  width: 400px;
   padding: 15px;
   margin-top: 10px;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.property-card img {
+  width: 100%;
+  height: auto;
+  margin: 5px 0;
+  border-radius: 5px;
 }
 
 .property-card:hover {
@@ -497,7 +504,7 @@ form button:hover {
 .shimmer-card {
   border: 1px solid lightgray;
   border-radius: 5px;
-  width: 300px;
+  width: 400px;
   padding: 15px;
   margin-top: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
