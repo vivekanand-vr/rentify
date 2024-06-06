@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.18</version>
+		<version>3.2.6</version>
 		<relativePath/>
 		<!--  lookup parent from repository  -->
 		</parent>
@@ -40,7 +40,7 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-	<!--  https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml  -->
+<!--  https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml  -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
@@ -60,6 +60,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+		
+		<!-- Spring Security -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-security</artifactId>
+	    </dependency>
 		
 		<dependency>
     		<groupId>org.apache.commons</groupId>
