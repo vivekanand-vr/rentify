@@ -11,7 +11,7 @@
 
 ## Technologies Used
 
-- **Frontend** : Axios, Yup, Formik, Toastify, Redux Toolkit, React JS
+- **Frontend** : Axios, Yup, Formik, Toastify, Cloudinary, Redux Toolkit, React JS
 - **Backend** : Java, Maven, Spring Boot, REST-APIs, MySQL Database
 
 ## Project Structure
@@ -32,6 +32,7 @@
 - **Sign In**: User Sign in form.
 - **LoginPage**: User login form.
 - **AddProperty**: Form to add a new property.
+- **ImageUploader**: Component to upload property image.
 - **MyProfile**: Displays user's profile information, also allows users to edit details.
 - **MyPropertyList**: Lists properties added by the user.
 - **UpdateProperty**: Form to update the property details.
