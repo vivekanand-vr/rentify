@@ -8,6 +8,7 @@ import SignIn from './Pages/SignIn';
 import LoginUser from './Pages/LoginUser';
 import AddProperty from './Pages/AddProperty';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import MyProfile from './Pages/MyProfile';
 import UpdateProperty from './Pages/UpdateProperty';
 import './index.css';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/properties" element={<PropertiesList />} />
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
       <ToastContainer autoClose={2000} position="top-center" theme='colored' />
     </Router>
   );

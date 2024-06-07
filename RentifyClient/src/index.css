@@ -4,6 +4,7 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 75vh;
   background-color: rgb(224 231 255);
   font-family: 'Poppins', sans-serif;
 }
@@ -25,7 +26,7 @@ body {
  */
  .background {
   width: 100%;
-  height: 92.7vh;
+  height: 100vh;
   overflow: hidden;
   background-image: url('./Assets/Home.jpg');
   background-size: cover;
@@ -91,6 +92,7 @@ body {
 .navbar {
   background-color: #1F51FF;
   color: white;
+  z-index:1000;
   padding: 0 10px;
   display: flex;
   justify-content: space-between;
@@ -179,7 +181,8 @@ body {
 .property-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 25px;
   padding: 15px;
   margin: 0 10px;
 }
@@ -201,13 +204,13 @@ body {
 
 .property-card img {
   width: 100%;
-  height: auto;
+  height: 250px;
   margin: 5px 0;
   border-radius: 5px;
 }
 
 .property-card:hover {
-  transform: scale(1.02); 
+  transform: scale(1.025); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
@@ -218,6 +221,11 @@ body {
 .property-card p {
   margin: 4px 0;
   color: #333; 
+}
+
+#location {
+  margin-top: -5px;
+  margin-bottom: 5px;
 }
 
 .property-card span{
@@ -282,7 +290,6 @@ body {
   justify-content: center;
   margin: 30px auto; 
   padding: 20px;
-  height: 100%;
 }
 
 .login-container, .register-container, .add-property-container, .update-container {
@@ -509,3 +516,96 @@ form button:hover {
   margin-top: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* 
+ *  Styles for Footer Component
+ */
+ .footer {
+  background-color: #2a2a2a;
+  color: rgb(156 163 175);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: auto;
+  bottom: 0;
+}
+
+.footer-container {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-logo img {
+  max-width: 120px;
+  display: inline-block;
+  z-index: 1; /* Ensure the logo is above the lines */
+}
+
+.footer-logo::before,
+.footer-logo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(156 163 175);;
+  z-index: 0;
+}
+
+.footer-logo::before {
+  left: 0;
+  margin-right: 20px;
+}
+
+.footer-logo::after {
+  right: 0;
+  margin-left: 20px;
+}
+
+.footer-logo::before {
+  width: calc(50% - 85px);
+}
+
+.footer-logo::after {
+  width: calc(50% - 85px);
+}
+
+.footer-social-links {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social-links a {
+  font-size: 20px;
+  color: rgb(156 163 175);
+  transition: color 0.3s;
+}
+
+.footer-social-links a:hover {
+  color: #1F51FF;
+}
+
+.footer-bottom {
+  width: 100%;
+  position: relative;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  position: relative;
+  padding: 10px 5px;
+}
+

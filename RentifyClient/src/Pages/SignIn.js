@@ -52,64 +52,66 @@ const SignIn = () => {
   });
 
   return (
-    <div className="form-page">
-      <div className="register-container">
-        <h2>SIGN IN</h2>
+    <body>
+      <div className="form-page">
+        <div className="register-container">
+          <h2>SIGN IN</h2>
 
-        <span className='signin-span'>Already have an account ? <Link to={"/login"}>Login</Link></span>
-        
-        <form onSubmit={formik.handleSubmit}>
-          <div className="form-group">
-            <label>First Name:</label>
-            <input type="text" name="firstName" value={formik.values.firstName}
-                   onChange={formik.handleChange} onBlur={formik.handleBlur} required />
-            {formik.touched.firstName && formik.errors.firstName ? 
-            (<div className="error">{formik.errors.firstName}</div>) : null}
-          </div>
-
-          <div className="form-group">
-            <label>Last Name:</label>
-            <input type="text" name="lastName" value={formik.values.lastName} 
-                   onChange={formik.handleChange} onBlur={formik.handleBlur} required />
-          </div>
-
-          <div className="form-group">
-            <label>Email:</label>
-            <input type="email" name="email" value={formik.values.email} 
-                   onChange={formik.handleChange} onBlur={formik.handleBlur} required />
-            {formik.touched.email && formik.errors.email ? 
-            ( <div className="error">{formik.errors.email}</div> ) : null}
-          </div>
-
-          <div className="form-group">
-            <label>Phone Number:</label>
-            <input type="text" name="phoneNumber" value={formik.values.phoneNumber} 
-                   onChange={formik.handleChange} onBlur={formik.handleBlur} required />
-            {formik.touched.phoneNumber && formik.errors.phoneNumber ? 
-            ( <div className="error">{formik.errors.phoneNumber}</div> ) : null}
-          </div>
-
-          <div className="form-group">
-            <label>City:</label>
-            <input type="text" name="city" value={formik.values.country} 
-                   onChange={formik.handleChange} onBlur={formik.handleBlur} required />
-          </div>
-
-          <div className="form-group">
-            <label>Set Password:</label>
-            <input type="password" name="password" value={formik.values.password} 
-                   onChange={formik.handleChange} onBlur={formik.handleBlur} required />
-            {formik.touched.password && formik.errors.password ? 
-            ( <div className="error">{formik.errors.password}</div> ) : null}
-          </div>
+          <span className='signin-span'>Already have an account ? <Link to={"/login"}>Login</Link></span>
           
-          <div className='button-container'>
-            <button type="submit">Register</button>
-          </div>
+          <form onSubmit={formik.handleSubmit}>
+            <div className="form-group">
+              <label>First Name:</label>
+              <input type="text" name="firstName" value={formik.values.firstName}
+                    onChange={formik.handleChange} onBlur={formik.handleBlur} required />
+              {formik.touched.firstName && formik.errors.firstName ? 
+              (<div className="error">{formik.errors.firstName}</div>) : null}
+            </div>
 
-        </form>
+            <div className="form-group">
+              <label>Last Name:</label>
+              <input type="text" name="lastName" value={formik.values.lastName} 
+                    onChange={formik.handleChange} onBlur={formik.handleBlur} required />
+            </div>
+
+            <div className="form-group">
+              <label>Email:</label>
+              <input type="email" name="email" value={formik.values.email} 
+                    onChange={formik.handleChange} onBlur={formik.handleBlur} required />
+              {formik.touched.email && formik.errors.email ? 
+              ( <div className="error">{formik.errors.email}</div> ) : null}
+            </div>
+
+            <div className="form-group">
+              <label>Phone Number:</label>
+              <input type="text" name="phoneNumber" value={formik.values.phoneNumber} 
+                    onChange={formik.handleChange} onBlur={formik.handleBlur} required />
+              {formik.touched.phoneNumber && formik.errors.phoneNumber ? 
+              ( <div className="error">{formik.errors.phoneNumber}</div> ) : null}
+            </div>
+
+            <div className="form-group">
+              <label>City:</label>
+              <input type="text" name="city" value={formik.values.country} 
+                    onChange={formik.handleChange} onBlur={formik.handleBlur} required />
+            </div>
+
+            <div className="form-group">
+              <label>Set Password:</label>
+              <input type="password" name="password" value={formik.values.password} 
+                    onChange={formik.handleChange} onBlur={formik.handleBlur} required />
+              {formik.touched.password && formik.errors.password ? 
+              ( <div className="error">{formik.errors.password}</div> ) : null}
+            </div>
+            
+            <div className='button-container'>
+              <button type="submit">Register</button>
+            </div>
+
+          </form>
+        </div>
       </div>
-    </div>
+    </body>
   );
 }
 

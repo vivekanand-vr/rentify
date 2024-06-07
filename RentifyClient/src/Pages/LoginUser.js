@@ -61,32 +61,34 @@ const LoginUser = () => {
   });
 
   return (
-    <div className="form-page">
-      <div className="login-container">
-        <h2>LOGIN</h2>
-        
-        <form onSubmit={formik.handleSubmit}>
-          <div className="form-group">
-            <label>Email:</label>
-            <input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} required />
-            {formik.touched.email && formik.errors.email ? 
-                ( <div className="error">{formik.errors.email}</div> ) : null}
-          </div>
-
-          <div className="form-group">
-            <label>Password:</label>
-            <input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} required />
-            {formik.touched.password && formik.errors.password ? 
-                ( <div className="error">{formik.errors.password}</div> ) : null}
-          </div>
+    <body>
+      <div className="form-page">
+        <div className="login-container">
+          <h2>LOGIN</h2>
           
-          <div className='button-container'>
-            <button type="submit" disabled={formik.isSubmitting}>Login</button>
-          </div>
+          <form onSubmit={formik.handleSubmit}>
+            <div className="form-group">
+              <label>Email:</label>
+              <input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} required />
+              {formik.touched.email && formik.errors.email ? 
+                  ( <div className="error">{formik.errors.email}</div> ) : null}
+            </div>
 
-        </form>
+            <div className="form-group">
+              <label>Password:</label>
+              <input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} required />
+              {formik.touched.password && formik.errors.password ? 
+                  ( <div className="error">{formik.errors.password}</div> ) : null}
+            </div>
+            
+            <div className='button-container'>
+              <button type="submit" disabled={formik.isSubmitting}>Login</button>
+            </div>
+
+          </form>
+        </div>
       </div>
-    </div>
+    </body>
   );
 };
 

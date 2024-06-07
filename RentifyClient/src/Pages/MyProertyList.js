@@ -18,16 +18,18 @@ const MyPropertyList = () => {
   };
 
   return (
-    <div className='my-properties'>
-      <h2 className="my-properties-heading">MY PROPERTIES</h2>
-      <div className="my-properties-page">
-        {properties.length > 0 ? (
-          properties.map(property => (
-            <PropertyCard2 key={property.id} property={property} onDelete={handleDelete} />
-          ))
-        ) : ( <p>No properties available.</p> )}
+    <body>
+      <div className='my-properties'>
+        <h2 className="my-properties-heading">MY PROPERTIES</h2>
+        <div className="my-properties-page">
+          {properties.length > 0 ? (
+            properties.map(property => (
+              <PropertyCard2 key={property.id} property={property} onDelete={handleDelete} />
+            ))
+          ) : ( <p>No properties available.</p> )}
+        </div>
       </div>
-    </div>
+    </body>
   );
 }
 

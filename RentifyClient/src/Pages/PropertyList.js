@@ -37,33 +37,35 @@ const PropertiesList = () => {
   };
 
   return (
-    <div className="home-page">
-      <PropertySearch
-        searchKeyword={searchKeyword}
-        setSearchKeyword={setSearchKeyword}
-        onSearch={handleSearch}
-      />
-      <div className="property-list">
-        {loading ? (
-          // Render 20 shimmer cards while loading
-          Array.from({ length: 20 }).map((_, index) => <ShimmerCard key={index} />)
-        ) : (
-          filteredProperties.length > 0 ? (
-            filteredProperties.map(property => (
-              <PropertyCard
-                key={property.id}
-                property={property}
-                isLoggedIn={isLoggedIn}
-                isExpanded={property.id === expandedPropertyId}
-                onExpand={handleExpand}
-              />
-            ))
+    <body>
+      <div className="home-page">
+        <PropertySearch
+          searchKeyword={searchKeyword}
+          setSearchKeyword={setSearchKeyword}
+          onSearch={handleSearch}
+        />
+        <div className="property-list">
+          {loading ? (
+            // Render 20 shimmer cards while loading
+            Array.from({ length: 20 }).map((_, index) => <ShimmerCard key={index} />)
           ) : (
-            <p>No properties match the current search criteria.</p>
-          )
-        )}
+            filteredProperties.length > 0 ? (
+              filteredProperties.map(property => (
+                <PropertyCard
+                  key={property.id}
+                  property={property}
+                  isLoggedIn={isLoggedIn}
+                  isExpanded={property.id === expandedPropertyId}
+                  onExpand={handleExpand}
+                />
+              ))
+            ) : (
+              <p>No properties match the current search criteria.</p>
+            )
+          )}
+        </div>
       </div>
-    </div>
+    </body>
   );
 }
 
