@@ -37,6 +37,7 @@
 - **MyPropertyList**: Lists properties added by the user.
 - **UpdateProperty**: Form to update the property details.
 - **ShimmerCard**: Skeleton loading effect for property cards during data fetching.
+- **Footer**: Displays company info & social links.
 
 
 ### Redux Configuration
