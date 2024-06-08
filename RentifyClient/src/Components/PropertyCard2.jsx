@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { deleteAsset } from '../Utils/DeleteAsset';
 import axios from 'axios';
 
 const PropertyCard2 = ({ property, onDelete }) => {
@@ -14,7 +15,9 @@ const PropertyCard2 = ({ property, onDelete }) => {
     axios.delete(`http://localhost:9999/Rentify/properties/${property.id}`)
       .then(() => onDelete(property.id))
       .catch(error => console.error('There was an error deleting the property:', error));
-      
+    
+    // Delete corresponding image from the Cloudinary
+    deleteAsset(property.imageId);
   };
 
   return (

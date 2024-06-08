@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 75.8vh;
+  min-height: 77vh;
   background-color: rgb(224 231 255);
   font-family: 'Poppins', sans-serif;
 }
@@ -174,14 +174,12 @@ body {
   margin-left: 5px;
 }
 
-
 /* 
  *  Styles for Home Page
  */
 .property-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 25px;
   padding: 15px;
   margin: 0 10px;

@@ -46,7 +46,7 @@ const PropertiesList = () => {
         />
         <div className="property-list">
           {loading ? (
-            // Render 20 shimmer cards while loading
+            // Render 10 shimmer cards while loading
             Array.from({ length: 20 }).map((_, index) => <ShimmerCard key={index} />)
           ) : (
             filteredProperties.length > 0 ? (
@@ -60,7 +60,7 @@ const PropertiesList = () => {
                 />
               ))
             ) : (
-              <p>No properties match the current search criteria.</p>
+              <p>No properties available.</p>
             )
           )}
         </div>
