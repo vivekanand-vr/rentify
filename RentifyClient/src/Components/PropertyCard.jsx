@@ -9,7 +9,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
       For transformations we need to import `AdvancedImage` tag and render image within it.
       Refer "https://cloudinary.com/documentation/react_integration"
    */
-  const imageUrl = `https://res.cloudinary.com/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload/${property.imageId}`;
+  const imageUrl = `https://res.cloudinary.com/${import.meta.env.VITE_APP_CLOUDINARY_CLOUD_NAME}/image/upload/${property.imageId}`;
   
   useEffect(() => {
     if (isExpanded && isLoggedIn) {

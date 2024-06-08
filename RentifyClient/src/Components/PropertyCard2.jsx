@@ -10,11 +10,11 @@ const PropertyCard2 = ({ property, onDelete }) => {
     navigate(`/update-property`, { state: { property } });
   };
 
-
   const handleDelete = () => {
     axios.delete(`http://localhost:9999/Rentify/properties/${property.id}`)
       .then(() => onDelete(property.id))
       .catch(error => console.error('There was an error deleting the property:', error));
+      
   };
 
   return (
