@@ -42,9 +42,9 @@ export const ImageUploader = ({ onImageUpload }) => {
   const uploadToCloudinary = (file) => {
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('upload_preset', process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET);
+    formData.append('upload_preset', import.meta.env.VITE_APP_CLOUDINARY_UPLOAD_PRESET);
 
-    axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`, formData)
+    axios.post(`https://api.cloudinary.com/v1_1/${import.meta.env.VITE_APP_CLOUDINARY_CLOUD_NAME}/image/upload`, formData)
       .then(response => {
         const publicId = response.data.public_id;
         // Pass the public ID to the parent component

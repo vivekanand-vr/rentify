@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 75vh;
+  min-height: 75.8vh;
   background-color: rgb(224 231 255);
   font-family: 'Poppins', sans-serif;
 }
@@ -185,6 +185,7 @@ body {
   gap: 25px;
   padding: 15px;
   margin: 0 10px;
+  margin-bottom: 20px;
 }
 
 /* 
@@ -584,17 +585,16 @@ form button:hover {
   display: flex;
   margin-bottom: 5px;
   justify-content: center;
-  gap: 15px;
+  gap: 18px;
 }
 
 .footer-social-links a {
-  font-size: 20px;
   color: rgb(156 163 175);
   transition: color 0.3s;
 }
 
 .footer-social-links a:hover {
-  color: #1F51FF;
+  color: white;
 }
 
 .footer-bottom {
