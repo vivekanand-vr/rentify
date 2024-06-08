@@ -11,8 +11,9 @@
 
 ## Technologies Used
 
-- **Frontend** : Axios, Yup, Formik, Toastify, Cloudinary, Redux Toolkit, React JS
+- **Frontend** : Vite, Redux Toolkit, React JS
 - **Backend** : Java, Maven, Spring Boot, REST-APIs, MySQL Database
+- **Additional Packages** : Axios, Yup, Formik, Toastify, Skeleton, Cloudinary
 
 ## Project Structure
 
