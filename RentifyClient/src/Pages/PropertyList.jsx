@@ -5,6 +5,7 @@ import PropertySearch from '../Components/PropertySearch';
 import ShimmerCard from "../Components/ShimmerCard";
 import { filterProperties } from '../Utils/FilterProperties';
 import { useSelector } from 'react-redux';
+import { TbMoodSad } from "react-icons/tb";
 
 const PropertiesList = () => {
   const isLoggedIn = useSelector(state => state.login.isLoggedIn);
@@ -47,7 +48,7 @@ const PropertiesList = () => {
         <div className="property-list">
           {loading ? (
             // Render 10 shimmer cards while loading
-            Array.from({ length: 20 }).map((_, index) => <ShimmerCard key={index} />)
+            Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)
           ) : (
             filteredProperties.length > 0 ? (
               filteredProperties.map(property => (
@@ -60,7 +61,9 @@ const PropertiesList = () => {
                 />
               ))
             ) : (
-              <p>No properties available.</p>
+              <div className='message-div'>
+                <h4>Sorry, no properties available <TbMoodSad /></h4> 
+              </div>
             )
           )}
         </div>

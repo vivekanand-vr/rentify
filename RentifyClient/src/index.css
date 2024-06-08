@@ -184,6 +184,13 @@ body {
   padding: 15px;
   margin: 0 10px;
   margin-bottom: 20px;
+
+  .message-div {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* 
@@ -273,8 +280,11 @@ body {
  .my-properties-heading {
   margin-top: 20px;
   margin-left: 10px;
-  font-size: 40px;
-  font-weight: bold;
+  font-weight: 600;
+}
+
+.h-icon {
+  margin-top: -8px;
 }
 
 .my-properties-page .property-card button {
@@ -441,13 +451,11 @@ form button:hover {
   }
   .edit-icon {
     cursor: pointer;
-    color: #1F51FF;
-    font-size: 28px;
+    font-size: 25px;
     margin-left: 5px;
-    margin-top: 15px;
+    margin-top: 18px;
   }
 }
-
 
 .profile-details {
   display: flex;
@@ -506,7 +514,9 @@ form button:hover {
   background-color: rgb(8 51 68);
 }
 
-/* Shimmer Effect Styles */
+/* 
+ *  Shimmer Effect Styles 
+ */
 .shimmer-card {
   border: 1px solid lightgray;
   border-radius: 5px;

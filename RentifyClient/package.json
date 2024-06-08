@@ -1,7 +1,8 @@
 {
-  "name": "RentifyClient",
+  "name": "rentify-client",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@cloudinary/react": "^1.13.0",
     "@cloudinary/url-gen": "^1.19.0",

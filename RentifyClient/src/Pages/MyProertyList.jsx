@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { TbHomeStar } from "react-icons/tb";
+import { FcAdvertising } from "react-icons/fc";
 import axios from 'axios';
 import PropertyCard2 from '../Components/PropertyCard2';
 
@@ -20,13 +22,13 @@ const MyPropertyList = () => {
   return (
     <body>
       <div className='my-properties'>
-        <h2 className="my-properties-heading">MY PROPERTIES</h2>
+        <h2 className="my-properties-heading">MY PROPERTIES <TbHomeStar className='h-icon' /></h2>
         <div className="my-properties-page">
           {properties.length > 0 ? (
             properties.map(property => (
               <PropertyCard2 key={property.id} property={property} onDelete={handleDelete} />
             ))
-          ) : ( <p>No properties available.</p> )}
+          ) : ( <h5>You haven't posted any property ads. Go ahead and post your first ad! <FcAdvertising className='h-icon' /></h5> )}
         </div>
       </div>
     </body>
