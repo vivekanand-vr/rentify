@@ -2,10 +2,10 @@ package in.rentify.service;
 
 import in.rentify.dao.UserRepository;
 import in.rentify.model.User;
+import in.rentify.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -15,40 +15,49 @@ public class UserService {
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    public Long saveUser(User user) {
+    public UserDTO saveUser(User user) {
         // Encrypt the password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User savedUser = userRepository.save(user);
-        return savedUser.getId();
+        
+        //Fill all the details in DTO object and return
+        UserDTO userDto = new UserDTO();
+        userDto.setId(savedUser.getId());
+        userDto.setFirstName(savedUser.getFirstName());
+        userDto.setLastName(savedUser.getLastName());
+        userDto.setEmail(savedUser.getEmail());
+        userDto.setPhoneNumber(savedUser.getPhoneNumber());
+        userDto.setCity(savedUser.getCity());
+        return userDto;
     }
     
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
-    public String authenticateUser(String email, String password) {
+    public UserDTO authenticateUser(String email, String password) {
         User user = userRepository.findByEmail(email);
+        UserDTO userDto = new UserDTO();
+        
         if (user == null) {
-            return "You need to sign in first.";
+        	userDto.setStatus("You need to sign in first.");
+        	return userDto;
         }
         // Compare the provided password with the stored encrypted password
         if (passwordEncoder.matches(password, user.getPassword())) {
-            return user.getFirstName() + " " + user.getId();
-        } else {
-            return "Incorrect password, try again!";
+            userDto.setStatus("success");
+            userDto.setId(user.getId());
+            userDto.setFirstName(user.getFirstName());
+            userDto.setLastName(user.getLastName());
+            userDto.setEmail(user.getEmail());
+            userDto.setPhoneNumber(user.getPhoneNumber());
+            userDto.setCity(user.getCity());
+            return userDto;
+        } 
+        else {
+        	userDto.setStatus("Incorrect password, try again!");
+        	return userDto;
         }
-    }
-    
-    public User getUserById(Long userId) {
-        Optional<User> userOptional = userRepository.findById(userId);
-        
-        //Return User details after nullifying the password
-        if (userOptional.isPresent()) {
-            User user = userOptional.get();
-            user.setPassword(null);  
-            return user;
-        }
-        return null; 
     }
     
     public User updateUser(User updatedUser) {
