@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser } from '../Actions/loginActions';
+import { logoutUser } from '../Actions/userActions';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 const Navbar = () => {
   const isLoggedIn = useSelector(state => state.login.isLoggedIn);
-  const userName = useSelector(state => state.login.userName);
+  const userName = useSelector(state => state.user.firstName);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

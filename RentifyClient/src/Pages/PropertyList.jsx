@@ -3,7 +3,6 @@ import axios from 'axios';
 import PropertyCard from '../Components/PropertyCard';
 import PropertySearch from '../Components/PropertySearch';
 import ShimmerCard from "../Components/ShimmerCard";
-import { filterProperties } from '../Utils/FilterProperties';
 import { useSelector } from 'react-redux';
 import { TbMoodSad } from "react-icons/tb";
 

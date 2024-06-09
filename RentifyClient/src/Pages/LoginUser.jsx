@@ -30,21 +30,19 @@ const LoginUser = () => {
         }
       })
       .then(response => {
-        if (response.data === 'You need to sign in first.') {
+        if (response.data.status === 'You need to sign in first.') {
           toast.error("Email not found. You need to sign in first.");
           // Navigate to Signin after 2 seconds
           setTimeout(() => { navigate('/signin'); }, 2000);
         }
-        else if (response.data === 'Incorrect password, try again!'){
-          console.log(response.data);
+        else if (response.data.status === 'Incorrect password, try again!'){
           toast.error("Invalid Credentials");
 
         }
         else {
-          // Incase of Correct credentials, Username and Id is recieved as a String seperated by s space
-          const [userName, userId] = response.data.split(' '); 
-          dispatch(loginUser(userId, userName));
-          dispatch(setUser({ userId, userName }));
+          console.log(response.data);
+          dispatch(loginUser())
+          dispatch(setUser(response.data));
 
           toast.success("Login successful! Redirecting...");
           setTimeout(() => { navigate('/');} , 2000); // Navigate to home after 2 seconds

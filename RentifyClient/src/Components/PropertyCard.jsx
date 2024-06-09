@@ -37,7 +37,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
       <h4>{property.name}</h4>
       <p id='location'>{property.city}, {property.state}, {property.country}</p>
       <img src={imageUrl} alt='property' />
-      <p><span>Property Type:</span>{property.propertyType} {property.bedrooms} BHK </p>
+      <p><span>Property Type: </span>{property.propertyType} {property.bedrooms} BHK </p>
       <p><span>Area <RxDimensions /></span> {property.area} square ft.</p>
       <p><span>Furnishing <RiSofaLine /></span> {property.furnishing} </p>
       <p><span>Rent: </span> <LuIndianRupee />{property.rent} &nbsp; <span>Deposit:</span> <LuIndianRupee />{property.deposit}</p>

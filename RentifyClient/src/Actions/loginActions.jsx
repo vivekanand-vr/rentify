@@ -1,7 +1,6 @@
 /* Action Creators */
-export const loginUser = (userId, userName) => ({
+export const loginUser = () => ({
   type: 'LOGIN_USER',
-  payload: { userId, userName }
 });
 
 export const logoutUser = () => ({

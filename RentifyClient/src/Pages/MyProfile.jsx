@@ -8,7 +8,6 @@ import axios from 'axios';
 
 const MyProfile = () => {
   const user = useSelector(state => state.user);
-  const userId = useSelector(state => state.login.userId);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -43,16 +42,6 @@ const MyProfile = () => {
       [name]: value
     });
   };
-
-  useEffect(() => {
-    axios.get(`http://localhost:9999/Rentify/user/${userId}`)
-      .then(response => {
-        dispatch(setUser(response.data));
-      })
-      .catch(error => {
-        console.error('There was an error fetching the user details:', error);
-      });
-  }, [dispatch, userId]);
 
   return (
     <body>

@@ -6,7 +6,7 @@ import axios from 'axios';
 import PropertyCard2 from '../Components/PropertyCard2';
 
 const MyPropertyList = () => {
-  const userId = useSelector(state => state.login.userId);
+  const userId = useSelector(state => state.user.id);
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
