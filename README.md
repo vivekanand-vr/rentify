@@ -40,24 +40,6 @@
 - **ShimmerCard**: Skeleton loading effect for property cards during data fetching.
 - **Footer**: Displays company info & social links.
 
-
-### Redux Configuration
-
-#### Actions
-
-- **loginActions**: Contains actions for login and logout.
-- **userActions**: Contains actions for setting user details.
-
-#### Reducers
-
-- **loginReducer**: Manages login state.
-- **userReducer**: Manages user details state.
-
-#### Store Configuration
-
-- **redux-store**: Configures and exports the Redux store, combining `loginReducer` and `userReducer`.
-
-
 ## Features
 
 ### User Authentication
@@ -81,13 +63,13 @@
 
 - **POST : /user/signin**: Sign in a user.
 - **POST : /user/login**: Log in a user.
-- **GET  : /user/{id}**: Get user details by ID.
 - **PUT : /user**: Update user details.
 
 ### Property APIs
 
 - **POST : /properties**: Add a new property.
 - **GET : /properties**: Get all properties.
+- **GET : /properties/{id}**: Get propeties of user.
 - **PUT  : /properties**: Update property details.
 - **DELETE : /properties/{id}**: Delete a property.
 
