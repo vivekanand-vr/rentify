@@ -32,6 +32,11 @@ public class UserController {
         User updatedUser = userService.updateUser(user);
         return ResponseEntity.ok(updatedUser);
     }
+    
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable Long id) {
+        return userService.getUserById(id);
+    }
 }
 
 
