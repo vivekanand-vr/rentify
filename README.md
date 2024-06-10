@@ -61,6 +61,7 @@
 
 ### User APIs
 
+- **GET : /user/id**: Get user details by userId.
 - **POST : /user/signin**: Sign in a user.
 - **POST : /user/login**: Log in a user.
 - **PUT : /user**: Update user details.
@@ -75,7 +76,7 @@
 
 ## Setting up the Rentify-Server (Backend)
 
-1. #### Clone the repository:
+1. Clone the repository
 
 ```
 git clone https://github.com/your-repo/rentify.git
@@ -84,9 +85,9 @@ git clone https://github.com/your-repo/rentify.git
 cd RentifyServer
 ```
 
-2. #### Set up the database:Create a MySQL database named rentify.
-3. #### Update the database configuration in `application.properties` file.
-4. #### Build and run the backend:
+2. Set up the database: Create a MySQL database named rentify.
+3. Update the database configuration in `application.properties` file.
+4. Build and run the backend
 ```
 mvn clean install
 ```
@@ -95,9 +96,10 @@ mvn spring-boot:run
 ```
 
 ## Setting up the Rentify-Client (Frontend)
-1. #### Navigate to the frontend directory:
-2. #### Install dependencies:
-3. #### Run the frontend:
+
+1. Navigate to the frontend directory
+2. Install dependencies
+3. Run the frontend
 
 Execute these commands one by one :
 
