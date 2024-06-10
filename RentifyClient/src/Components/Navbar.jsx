@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
   const userName = useSelector(state => state.user.firstName);
   const dispatch = useDispatch();
   const navigate = useNavigate();

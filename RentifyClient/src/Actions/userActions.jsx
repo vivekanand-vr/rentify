@@ -7,7 +7,6 @@
     payload: user
   });
   
-  export const logoutUser = (user) => ({
+  export const logoutUser = () => ({
     type: 'LOGOUT_USER',
-    payload: user
   });

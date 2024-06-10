@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../Actions/loginActions';
 import { setUser } from '../Actions/userActions';
 
 const validationSchema = Yup.object({
@@ -40,12 +39,11 @@ const LoginUser = () => {
 
         }
         else {
-          console.log(response.data);
-          dispatch(loginUser())
+          // console.log(response.data);
           dispatch(setUser(response.data));
-
           toast.success("Login successful! Redirecting...");
-          setTimeout(() => { navigate('/');} , 2000); // Navigate to home after 2 seconds
+          // Navigate to home after 2 seconds
+          setTimeout(() => { navigate('/');} , 2000); 
         }
       })
       .catch(error => {

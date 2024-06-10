@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { TbMoodSad } from "react-icons/tb";
 
 const PropertiesList = () => {
-  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
   const [properties, setProperties] = useState([]);
   const [expandedPropertyId, setExpandedPropertyId] = useState(null);
   const [searchKeyword, setSearchKeyword] = useState('');
@@ -25,7 +25,7 @@ const PropertiesList = () => {
         setLoading(false);
         console.error('There was an error fetching the properties:', error);
       })
-  }, []);
+  }, [isLoggedIn]);
 
   const handleExpand = (propertyId) => {
     setExpandedPropertyId(propertyId === expandedPropertyId ? null : propertyId);
