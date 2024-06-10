@@ -11,6 +11,7 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import MyProfile from './Pages/MyProfile';
 import UpdateProperty from './Pages/UpdateProperty';
+import Error from './Pages/Error';
 import './index.css';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/update-property" element={<UpdateProperty />} />
         <Route path="/properties" element={<PropertiesList />} />
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
       <ToastContainer autoClose={2000} position="top-center" theme='colored' />

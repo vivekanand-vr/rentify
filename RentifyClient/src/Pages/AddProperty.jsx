@@ -8,8 +8,8 @@ import { ImageUploader } from '../Components/ImageUploader';
 const AddProperty = () => {
 
   /* Getting the Login details from store */
-  const userId = useSelector(state => state.login.userId);
-  const isLoggedIn = useSelector(state => state.login.isLoggedIn);
+  const userId = useSelector(state => state.user.id);
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
   const navigate = useNavigate();
   
   const [formData, setFormData] = useState({
