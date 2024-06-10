@@ -1,7 +1,7 @@
+# RENTIFY - Where Renting Meets Simplicity
 
 <div align="center">
- <h1 style="font-size: larger;"> RENTIFY - Where Renting Meets Simplicity </h1>
- <kbd> <img src="https://github.com/vivekanand-vr/Rentify/assets/116813193/bfe1d3cb-5b06-4db6-abe6-484f61087b7c" alt="banner"> </kbd>
+ <kbd> <img src="https://github.com/vivekanand-vr/Rentify/assets/116813193/f8eac940-7e7f-4c72-9973-3aef5f9ddc2a)" alt="banner"> </kbd>
 </div>
 
 ## Overview
@@ -39,6 +39,7 @@
 - **UpdateProperty**: Form to update the property details.
 - **ShimmerCard**: Skeleton loading effect for property cards during data fetching.
 - **Footer**: Displays company info & social links.
+- **Error**: 404 Error page for invalid paths.
 
 ## Features
 
