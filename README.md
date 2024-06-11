@@ -17,29 +17,24 @@
 
 ## Project Structure
 
-### Backend Components
+### Frontend Pages
+
+- **Home**: Landing page which gives brief of the platform.
+- **PropertyList**: Shows a list of available properties.
+- **Sign In**: User Sign in form.
+- **LoginPage**: User login form.
+- **AddProperty**: Form to add a new property.
+- **MyProfile**: Displays user's profile information, also allows users to edit details.
+- **MyPropertyList**: Lists properties added by the user.
+- **UpdateProperty**: Form to update the property details.
+- **Error**: 404 Error page for invalid paths.
+
+### Backend Layers
 
 - **Controller Layer**: Handles HTTP requests and responses.
 - **Service Layer**: Contains business logic.
 - **Repository Layer**: Interacts with the database.
 - **Configuration**: Contains Spring Boot configuration and Cors Configuration.
-
-### Frontend Components
-
-- **Navbar**: Displays navigation links.
-- **Search Bar**: For searching properties by name or location.
-- **Home**: Landing page which gives brief of the app.
-- **PropertyList**: Shows a list of available properties.
-- **Sign In**: User Sign in form.
-- **LoginPage**: User login form.
-- **AddProperty**: Form to add a new property.
-- **ImageUploader**: Component to upload property image.
-- **MyProfile**: Displays user's profile information, also allows users to edit details.
-- **MyPropertyList**: Lists properties added by the user.
-- **UpdateProperty**: Form to update the property details.
-- **ShimmerCard**: Skeleton loading effect for property cards during data fetching.
-- **Footer**: Displays company info & social links.
-- **Error**: 404 Error page for invalid paths.
 
 ## Features
 
@@ -57,6 +52,7 @@
 - **View Properties**: All users can view the list of available properties.
 - **View Property Details**: Logged-in users can view detailed information about a property.
 - **My Properties**: Logged-in users can view, update, and delete their properties.
+- **Pagination**: Properties are fetched all at once and displayed in a paginated view, ensuring efficient navigation through large lists of properties.
 
 ## API Endpoints
 
