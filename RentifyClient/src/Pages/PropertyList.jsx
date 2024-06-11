@@ -5,6 +5,8 @@ import PropertySearch from '../Components/PropertySearch';
 import ShimmerCard from "../Components/ShimmerCard";
 import { useSelector } from 'react-redux';
 import { TbMoodSad } from "react-icons/tb";
+import Pagination from '../Components/Pagination';
+import { filterProperties } from '../Utils/FilterProperties';
 
 const PropertiesList = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
@@ -13,6 +15,8 @@ const PropertiesList = () => {
   const [searchKeyword, setSearchKeyword] = useState('');
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const propertiesPerPage = 4;
 
   useEffect(() => {
     axios.get('http://localhost:9999/Rentify/properties')
@@ -34,6 +38,15 @@ const PropertiesList = () => {
   const handleSearch = () => {
     const result = filterProperties(properties, searchKeyword);
     setFilteredProperties(result);
+    setCurrentPage(1); // Reset to first page after search
+  };
+
+  const indexOfLastProperty = currentPage * propertiesPerPage;
+  const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
+  const currentProperties = filteredProperties.slice(indexOfFirstProperty, indexOfLastProperty);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
   };
 
   return (
@@ -46,11 +59,10 @@ const PropertiesList = () => {
         />
         <div className="property-list">
           {loading ? (
-            // Render 10 shimmer cards while loading
             Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)
           ) : (
-            filteredProperties.length > 0 ? (
-              filteredProperties.map(property => (
+            currentProperties.length > 0 ? (
+              currentProperties.map(property => (
                 <PropertyCard
                   key={property.id}
                   property={property}
@@ -66,6 +78,12 @@ const PropertiesList = () => {
             )
           )}
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalItems={filteredProperties.length}
+          itemsPerPage={propertiesPerPage}
+          onPageChange={handlePageChange}
+        />
       </div>
     </body>
   );
