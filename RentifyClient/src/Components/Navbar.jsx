@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser } from '../Actions/userActions';
+import { logoutUser } from '../Redux/Actions/userActions';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 

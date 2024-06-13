@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setUser } from '../Actions/userActions';
+import { setUser } from '../Redux/Actions/userActions';
 import { toast } from "react-toastify";
 import { FaEdit } from 'react-icons/fa';
-import { UPDATE_USER } from '../Utils/Constants';
+import { API_ENDPOINTS } from '../Services/Endpoints';
 import axios from 'axios';
 
 const MyProfile = () => {
@@ -24,7 +24,7 @@ const MyProfile = () => {
   }
   const handleSaveClick = () => {
     /* Update the User Details in the backend */
-    axios.put(UPDATE_USER, formData)
+    axios.put(API_ENDPOINTS.user.update, formData)
     .then(response =>{
       dispatch(setUser(response.data));
       toast.success("Profile Details Updated Sucessfully.")

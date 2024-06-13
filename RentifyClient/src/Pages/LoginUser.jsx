@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../Actions/userActions';
-import { LOGIN_USER } from '../Utils/Constants';
+import { setUser } from '../Redux/Actions/userActions';
+import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -24,7 +24,7 @@ const LoginUser = () => {
     },
     validationSchema,
     onSubmit: (values, { setSubmitting }) => {
-      axios.post(LOGIN_USER, values, {
+      axios.post(API_ENDPOINTS.user.login, values, {
         headers: {
           'Content-Type': 'application/json'
         }

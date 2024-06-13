@@ -1,7 +1,7 @@
 import axios from 'axios';
 import CryptoJS from 'crypto-js';
 
-export const deleteAsset = (publicId) => {
+export const deleteAsset = async (publicId) => {
   const cloudName = import.meta.env.VITE_APP_CLOUDINARY_CLOUD_NAME;
   const apiKey = import.meta.env.VITE_APP_CLOUDINARY_API_KEY;
   const apiSecret = import.meta.env.VITE_APP_CLOUDINARY_API_SECRET;

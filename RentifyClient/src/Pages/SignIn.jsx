@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../Actions/userActions';
+import { setUser } from '../Redux/Actions/userActions';
 import { toast } from "react-toastify";
-import { SIGNIN_USER } from "../Utils/Constants";
+import { API_ENDPOINTS } from '../Services/Endpoints';
 
 /* Yup Validation Schema */
 const validationSchema = Yup.object({
@@ -36,7 +36,7 @@ const SignIn = () => {
     },
     validationSchema,
     onSubmit: values => {
-      axios.post(SIGNIN_USER, values)
+      axios.post(API_ENDPOINTS.user.signin, values)
         .then(response => {
           toast.success('You have signed in sucessfully');
 

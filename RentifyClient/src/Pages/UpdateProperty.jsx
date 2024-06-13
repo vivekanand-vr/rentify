@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { toast } from "react-toastify";
-import { UPDATE_PROPERTY } from '../Utils/Constants';
+import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const UpdateForm = () => {
   const { pid } = useParams();
@@ -35,7 +35,7 @@ const UpdateForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(UPDATE_PROPERTY, formData)
+    axios.put(API_ENDPOINTS.property.update, formData)
       .then(response => {
         toast.success("Property details updated successfully.")
         setTimeout(() => { navigate('/my-properties'); }, 2000);

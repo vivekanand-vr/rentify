@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import { ImageUploader } from '../Components/ImageUploader';
-import { ADD_PROPERTY } from '../Utils/Constants';
+import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const AddProperty = () => {
 
@@ -46,7 +46,7 @@ const AddProperty = () => {
       return;
     }
 
-    axios.post(ADD_PROPERTY, formData, {
+    axios.post(API_ENDPOINTS.property.add, formData, {
       headers: {
         'Content-Type': 'application/json',
       },

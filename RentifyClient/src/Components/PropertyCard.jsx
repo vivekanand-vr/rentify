@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { LuIndianRupee } from "react-icons/lu";
 import { RiSofaLine } from "react-icons/ri";
 import { RxDimensions } from "react-icons/rx";
-import { OWNER_DETAILS, PROPERTY_IMAGE } from '../Utils/Constants';
+import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import axios from 'axios';
 
 const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
@@ -18,7 +18,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
   useEffect(() => {
     if (isExpanded && isLoggedIn) {
       // Fetch owner details from the backend
-      axios.get(OWNER_DETAILS + property.ownerId)
+      axios.get(API_ENDPOINTS.user.details + property.ownerId)
         .then(response => setOwnerDetails(response.data))
         .catch(error => console.error('There was an error fetching the owner details:', error));
     }

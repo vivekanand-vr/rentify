@@ -6,8 +6,8 @@ import ShimmerCard from "../Components/ShimmerCard";
 import Pagination from '../Components/Pagination';
 import { useSelector } from 'react-redux';
 import { TbMoodSad } from "react-icons/tb";
-import { filterProperties } from '../Utils/FilterProperties';
-import { GET_PROPERTIES } from '../Utils/Constants';
+import { filterProperties } from '../Services/FilterProperties';
+import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const PropertiesList = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
@@ -20,7 +20,7 @@ const PropertiesList = () => {
   const propertiesPerPage = 4;
 
   useEffect(() => {
-    axios.get(GET_PROPERTIES)
+    axios.get(API_ENDPOINTS.property.getAll)
       .then(response => {
         setProperties(response.data);
         setFilteredProperties(response.data); 
