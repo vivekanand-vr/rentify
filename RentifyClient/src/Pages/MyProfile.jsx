@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { setUser } from '../Actions/userActions';
 import { toast } from "react-toastify";
 import { FaEdit } from 'react-icons/fa';
+import { UPDATE_USER } from '../Utils/Constants';
 import axios from 'axios';
 
 const MyProfile = () => {
@@ -23,7 +24,7 @@ const MyProfile = () => {
   }
   const handleSaveClick = () => {
     /* Update the User Details in the backend */
-    axios.put(`http://localhost:9999/Rentify/user`, formData)
+    axios.put(UPDATE_USER, formData)
     .then(response =>{
       dispatch(setUser(response.data));
       toast.success("Profile Details Updated Sucessfully.")

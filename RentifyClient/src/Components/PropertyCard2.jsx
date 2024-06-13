@@ -4,6 +4,7 @@ import { deleteAsset } from '../Utils/DeleteAsset';
 import { LuIndianRupee } from "react-icons/lu";
 import { RiSofaLine } from "react-icons/ri";
 import { RxDimensions } from "react-icons/rx";
+import { DELETE_PROPERTY } from '../Utils/Constants';
 import axios from 'axios';
 
 const PropertyCard2 = ({ property, onDelete }) => {
@@ -15,7 +16,7 @@ const PropertyCard2 = ({ property, onDelete }) => {
   };
 
   const handleDelete = () => {
-    axios.delete(`http://localhost:9999/Rentify/properties/${property.id}`)
+    axios.delete(DELETE_PROPERTY + property.id)
       .then(() => onDelete(property.id))
       .catch(error => console.error('There was an error deleting the property:', error));
     

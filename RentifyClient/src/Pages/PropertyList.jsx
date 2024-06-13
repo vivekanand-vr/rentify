@@ -3,10 +3,11 @@ import axios from 'axios';
 import PropertyCard from '../Components/PropertyCard';
 import PropertySearch from '../Components/PropertySearch';
 import ShimmerCard from "../Components/ShimmerCard";
+import Pagination from '../Components/Pagination';
 import { useSelector } from 'react-redux';
 import { TbMoodSad } from "react-icons/tb";
-import Pagination from '../Components/Pagination';
 import { filterProperties } from '../Utils/FilterProperties';
+import { GET_PROPERTIES } from '../Utils/Constants';
 
 const PropertiesList = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
@@ -19,7 +20,7 @@ const PropertiesList = () => {
   const propertiesPerPage = 4;
 
   useEffect(() => {
-    axios.get('http://localhost:9999/Rentify/properties')
+    axios.get(GET_PROPERTIES)
       .then(response => {
         setProperties(response.data);
         setFilteredProperties(response.data); 

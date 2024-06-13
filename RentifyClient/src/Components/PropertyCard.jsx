@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { LuIndianRupee } from "react-icons/lu";
 import { RiSofaLine } from "react-icons/ri";
 import { RxDimensions } from "react-icons/rx";
+import { OWNER_DETAILS, PROPERTY_IMAGE } from '../Utils/Constants';
 import axios from 'axios';
 
 const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
@@ -12,12 +13,12 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
       For transformations we need to import `AdvancedImage` tag and render image within it.
       Refer "https://cloudinary.com/documentation/react_integration"
    */
-  const imageUrl = `https://res.cloudinary.com/${import.meta.env.VITE_APP_CLOUDINARY_CLOUD_NAME}/image/upload/${property.imageId}`;
+  const imageUrl = PROPERTY_IMAGE + property.imageId;
   
   useEffect(() => {
     if (isExpanded && isLoggedIn) {
       // Fetch owner details from the backend
-      axios.get(`http://localhost:9999/Rentify/user/${property.ownerId}`)
+      axios.get(OWNER_DETAILS + property.ownerId)
         .then(response => setOwnerDetails(response.data))
         .catch(error => console.error('There was an error fetching the owner details:', error));
     }

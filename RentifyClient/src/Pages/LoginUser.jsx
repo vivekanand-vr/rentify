@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../Actions/userActions';
+import { LOGIN_USER } from '../Utils/Constants';
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -23,7 +24,7 @@ const LoginUser = () => {
     },
     validationSchema,
     onSubmit: (values, { setSubmitting }) => {
-      axios.post('http://localhost:9999/Rentify/user/login', values, {
+      axios.post(LOGIN_USER, values, {
         headers: {
           'Content-Type': 'application/json'
         }

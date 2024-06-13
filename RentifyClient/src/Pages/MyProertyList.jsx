@@ -4,13 +4,14 @@ import { TbHomeStar } from "react-icons/tb";
 import { FcAdvertising } from "react-icons/fc";
 import axios from 'axios';
 import PropertyCard2 from '../Components/PropertyCard2';
+import { GET_MY_PROPERTIES } from '../Utils/Constants';
 
 const MyPropertyList = () => {
   const userId = useSelector(state => state.user.id);
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:9999/Rentify/properties/owner/${userId}`)
+    axios.get(GET_MY_PROPERTIES + userId)
       .then(response => setProperties(response.data))
       .catch(error => console.error('There was an error fetching the properties:', error));
   }, [userId]);

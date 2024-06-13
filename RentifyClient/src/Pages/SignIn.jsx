@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../Actions/userActions';
 import { toast } from "react-toastify";
+import { SIGNIN_USER } from "../Utils/Constants";
 
 /* Yup Validation Schema */
 const validationSchema = Yup.object({
@@ -35,7 +36,7 @@ const SignIn = () => {
     },
     validationSchema,
     onSubmit: values => {
-      axios.post('http://localhost:9999/Rentify/user/signin', values)
+      axios.post(SIGNIN_USER, values)
         .then(response => {
           toast.success('You have signed in sucessfully');
 

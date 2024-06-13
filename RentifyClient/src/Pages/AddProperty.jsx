@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import { ImageUploader } from '../Components/ImageUploader';
+import { ADD_PROPERTY } from '../Utils/Constants';
 
 const AddProperty = () => {
 
@@ -45,7 +46,7 @@ const AddProperty = () => {
       return;
     }
 
-    axios.post('http://localhost:9999/Rentify/properties', formData, {
+    axios.post(ADD_PROPERTY, formData, {
       headers: {
         'Content-Type': 'application/json',
       },

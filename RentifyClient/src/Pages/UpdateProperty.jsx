@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { UPDATE_PROPERTY } from '../Utils/Constants';
 
 const UpdateForm = () => {
   const { pid } = useParams();
@@ -34,7 +35,7 @@ const UpdateForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:9999/Rentify/properties`, formData)
+    axios.put(UPDATE_PROPERTY, formData)
       .then(response => {
         toast.success("Property details updated successfully.")
         setTimeout(() => { navigate('/my-properties'); }, 2000);
