@@ -71,6 +71,31 @@
 - **PUT  : /properties**: Update property details.
 - **DELETE : /properties/{id}**: Delete a property.
 
+## Frontend Directory Structure
+```
+RentifyClient/
+        ├─── public/
+        ├─── src/
+        │     ├── Assets/
+        │     ├── Components/
+        │     ├── Pages/
+        │     ├── Redux/
+        │         ├── Actions/
+        │         ├── Reducers/
+        │         ├── Store/
+        │     ├── Services/
+        │     ├── index.css
+        │     ├── index.jsx
+        │     ├── Main.jsx
+        │
+        ├─── .env
+        ├─── .gitignore
+        ├─── index.html
+        ├─── package.json
+        ├─── package-lock.json
+        ├─── vite.config.js
+```
+
 ## Setting up the Rentify-Server (Backend)
 
 1. Clone the repository
