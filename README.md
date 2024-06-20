@@ -71,32 +71,114 @@
 - **PUT  : /properties**: Update property details.
 - **DELETE : /properties/{id}**: Delete a property.
 
-## Frontend Directory Structure
+## Frontend (Client) Directory Structure
 ```
-RentifyClient/
-        ├─── public/
-        ├─── src/
-        │     ├── Assets/
-        │     ├── Components/
-        │     ├── Pages/
-        │     ├── Redux/
-        │         ├── Actions/
-        │         ├── Reducers/
-        │         ├── Store/
-        │     ├── Services/
-        │     ├── index.css
-        │     ├── index.jsx
-        │     ├── Main.jsx
-        │
-        ├─── .env
-        ├─── .gitignore
-        ├─── index.html
-        ├─── package.json
-        ├─── package-lock.json
-        ├─── vite.config.js
+RentifyClient
+          ├─── public
+          ├─── src
+          │       ├── Assets
+          │       ├── Components
+          │       │         ├── Footer.jsx
+          │       │         ├── ImageUploader.jsx
+          │       │         ├── Navbar.jsx
+          │       │         ├── Pagination.jsx
+          │       │         ├── PropertyCard.jsx
+          │       │         ├── PropertyCard2.jsx
+          │       │         ├── PropertySearch.jsx
+          │       │         ├── ShimmerCard.jsx
+          │       ├── Pages
+          │       │         ├── AddProperty.jsx
+          │       │         ├── Error.jsx
+          │       │         ├── Home.jsx
+          │       │         ├── LoginUser.jsx
+          │       │         ├── MyProertyList.jsx
+          │       │         ├── MyProfile.jsx
+          │       │         ├── PropertyList.jsx
+          │       │         ├── SignIn.jsx
+          │       │         ├── UpdateProperty.jsx
+          │       ├── Redux
+          │       |         ├── Actions
+          │       |         │         ├── userActions.jsx
+          │       |         ├── Reducers
+          │       |         │         ├── rootReducer.jsx
+          │       |         │         ├── userReducer.jsx
+          │       |         ├── Store
+          │       |         │         ├── redux-store.jsx
+          │       ├── Services
+          │       |         ├── DeleteAsset.jsx
+          │       |         ├── Endpoints.jsx
+          │       |         ├── FilterProperties.jsx
+          │       ├── index.css
+          │       ├── index.jsx
+          │       ├── Main.jsx
+          │
+          ├─── .env
+          ├─── .gitignore
+          ├─── index.html
+          ├─── package.json
+          ├─── package-lock.json
+          ├─── vite.config.js
 ```
 
-## Setting up the Rentify-Server (Backend)
+## Setting up the Rentify-Client
+
+1. Navigate to the frontend directory
+2. Install dependencies
+3. Run the frontend
+
+Execute these commands one by one :
+
+```
+cd RentifyClient
+```
+```
+npm install
+```
+```
+npm start
+```
+
+## Backend (Server) Directory Structure
+```
+RentifyServer
+        ├── src
+        │     ├── main
+        │     │     ├── java
+        │     │     │     ├── in
+        │     │     │     │     ├── rentify
+        │     │     │     │     │     ├── RentifyServerApplication.java
+        │     │     │     │     │     ├── ServletInitializer.java
+        │     │     │     │     │     ├── config
+        │     │     │     │     │     │       ├── CorsConfig.java
+        │     │     │     │     │     │       ├── SecurityConfig.java
+        │     │     │     │     │     ├── controller
+        │     │     │     │     │     │       ├── PropertyController.java
+        │     │     │     │     │     │       ├── UserController.java
+        │     │     │     │     │     ├── dao
+        │     │     │     │     │     │       ├── PropertyRepository.java
+        │     │     │     │     │     │       ├── UserRepository.java
+        │     │     │     │     │     ├── dto
+        │     │     │     │     │     │       ├── LoginDetails.java
+        │     │     │     │     │     │       ├── UserDTO.java
+        │     │     │     │     │     ├── model
+        │     │     │     │     │     │       ├── Property.java
+        │     │     │     │     │     │       ├── User.java
+        │     │     │     │     │     ├── service
+        │     │     │     │     │             ├── PropertyService.java
+        │     │     │     │     │             ├── UserService.java
+        │     │     ├── resources
+        │     │     │     ├── application.properties
+        │     │     │     ├── static
+        │     │     │     ├── templates
+        │     │     ├── webapp
+        │     ├── test
+        │     │     ├── java
+        │     │     ├── resources
+
+```
+
+
+## Setting up the Rentify-Server
 
 1. Clone the repository
 
@@ -115,24 +197,6 @@ mvn clean install
 ```
 ```
 mvn spring-boot:run
-```
-
-## Setting up the Rentify-Client (Frontend)
-
-1. Navigate to the frontend directory
-2. Install dependencies
-3. Run the frontend
-
-Execute these commands one by one :
-
-```
-cd RentifyClient
-```
-```
-npm install
-```
-```
-npm start
 ```
 
 ## Contribution
