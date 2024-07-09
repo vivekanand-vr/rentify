@@ -65,7 +65,7 @@ const SignIn = () => {
               <input type="text" name="firstName" value={formik.values.firstName}
                     onChange={formik.handleChange} onBlur={formik.handleBlur} required />
               {formik.touched.firstName && formik.errors.firstName ? 
-              (<div className="error">{formik.errors.firstName}</div>) : null}
+              (<div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.firstName}</div>) : null}
             </div>
 
             <div className="form-group">
@@ -79,7 +79,7 @@ const SignIn = () => {
               <input type="email" name="email" value={formik.values.email} 
                     onChange={formik.handleChange} onBlur={formik.handleBlur} required />
               {formik.touched.email && formik.errors.email ? 
-              ( <div className="error">{formik.errors.email}</div> ) : null}
+              ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.email}</div> ) : null}
             </div>
 
             <div className="form-group">
@@ -87,7 +87,7 @@ const SignIn = () => {
               <input type="text" name="phoneNumber" value={formik.values.phoneNumber} 
                     onChange={formik.handleChange} onBlur={formik.handleBlur} required />
               {formik.touched.phoneNumber && formik.errors.phoneNumber ? 
-              ( <div className="error">{formik.errors.phoneNumber}</div> ) : null}
+              ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.phoneNumber}</div> ) : null}
             </div>
 
             <div className="form-group">
@@ -101,7 +101,7 @@ const SignIn = () => {
               <input type="password" name="password" value={formik.values.password} 
                     onChange={formik.handleChange} onBlur={formik.handleBlur} required />
               {formik.touched.password && formik.errors.password ? 
-              ( <div className="error">{formik.errors.password}</div> ) : null}
+              ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.password}</div> ) : null}
             </div>
             
             <div className='button-container'>

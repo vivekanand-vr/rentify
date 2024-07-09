@@ -68,14 +68,14 @@ const LoginUser = () => {
               <label>Email:</label>
               <input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} required />
               {formik.touched.email && formik.errors.email ? 
-                  ( <div className="error">{formik.errors.email}</div> ) : null}
+                  ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.email}</div> ) : null}
             </div>
 
             <div className="form-group">
               <label>Password:</label>
               <input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} required />
               {formik.touched.password && formik.errors.password ? 
-                  ( <div className="error">{formik.errors.password}</div> ) : null}
+                  ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.password}</div> ) : null}
             </div>
             
             <div className='button-container'>

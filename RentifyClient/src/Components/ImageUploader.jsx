@@ -65,21 +65,25 @@ export const ImageUploader = ({ onImageUpload }) => {
 
   return (
     <div>
-      <div className="image-uploader-container" onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop}>
+      <div className="w-[calc(100%_-_20px)] h-[300px] border flex items-center justify-center cursor-pointer text-center mx-auto my-0 rounded-md border-solid border-black" 
+           onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop}>
+        
         <input id="image-input" type="file" accept="image/*" onChange={handleChange} hidden />
+        
         {!selectedImage ? (
-          <div className="upload-placeholder">
+          <div className="flex flex-col items-center text-[gray]">
             <MdCloudUpload size={60} />
-            <p>Click to browse files or drop image here</p>
+            <p className='mt-2.5'>Click to browse files or drop image here</p>
           </div>
         ) : (
-          <img className="uploaded-image" src={selectedImage} alt={fileName} />
+          <img className="w-full h-full object-scale-down" src={selectedImage} alt={fileName} />
         )}
+  
       </div>
       {selectedImage && (
-        <div className="file-details">
+        <div className="w-[calc(100%_-_20px)] flex justify-between items-center bg-[lightgray] mx-2.5 my-auto px-2.5 py-[5px] border-t-[#ddd] border-t border-solid">
           <span className="file-name">{fileName}</span>
-          <MdDelete size={20} className="delete-icon" onClick={handleDelete} />
+          <MdDelete size={20} className="cursor-pointer" onClick={handleDelete} />
         </div>
       )}
     </div>

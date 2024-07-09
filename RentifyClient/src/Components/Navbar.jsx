@@ -18,25 +18,25 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
+    <nav className="bg-[#1F51FF] text-[white] z-[1000] flex justify-between items-center px-2.5 py-0">
+      <div className="text-[white] text-[40px] font-bold no-underline">
         <Link to="/">RENTIFY</Link>
       </div>
-      <div className="welcome-msg">
+      <div className="text-[larger] grow text-center">
         {isLoggedIn && <span>Welcome {userName}!</span>}
       </div>
       <div className="navbar-menu">
-        <ul>
+        <ul className='text-lg flex items-center [list-style:none] m-0 p-0'>
           {isLoggedIn ? (
             <>
-              <li><Link to="/add-property">Add Property</Link></li>
-              <li><Link to="/profile">Profile</Link></li>
-              <li onClick={handleLogout}>Logout</li>
+              <li className='cursor-pointer mx-2.5 my-0'><Link to="/add-property">Add Property</Link></li>
+              <li className='cursor-pointer mx-2.5 my-0'><Link to="/profile">Profile</Link></li>
+              <li className='cursor-pointer mx-2.5 my-0' onClick={handleLogout}>Logout</li>
             </>
           ) : (
             <>
-              <li><Link to="/signin">Sign In</Link></li>
-              <li><Link to="/login">Login</Link></li>
+              <li className='cursor-pointer mx-2.5 my-0'><Link to="/signin">Sign In</Link></li>
+              <li className='cursor-pointer mx-2.5 my-0'><Link to="/login">Login</Link></li>
             </>
           )}
         </ul>
