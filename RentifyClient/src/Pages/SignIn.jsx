@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../Redux/Actions/userActions';
+import { userLogin } from '../Redux/Reducers/userSlice';
 import { toast } from "react-toastify";
 import { API_ENDPOINTS } from '../Services/Endpoints';
 
@@ -41,7 +41,7 @@ const SignIn = () => {
           toast.success('You have signed in sucessfully');
 
           /* Updating the Login State after Signup & storing user details */
-          dispatch(setUser(response.data));
+          dispatch(userLogin(response.data));
           setTimeout(() => { navigate('/'); }, 2000); 
         })
         .catch(error => {
