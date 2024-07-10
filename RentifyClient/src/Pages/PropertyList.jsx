@@ -51,14 +51,13 @@ const PropertiesList = () => {
   };
 
   return (
-    <body>
-      <div className="home-page">
+      <div className="min-h-screen">
         <PropertySearch
           searchKeyword={searchKeyword}
           setSearchKeyword={setSearchKeyword}
           onSearch={handleSearch}
         />
-        <div className="property-list">
+        <div className="flex flex-wrap gap-[25px] mb-4 mx-2.5 my-0 p-[15px]">
           {loading ? (
             Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)
           ) : (
@@ -73,7 +72,7 @@ const PropertiesList = () => {
                 />
               ))
             ) : (
-              <div className='message-div'>
+              <div className='w-full flex justify-center m-5'>
                 <h4>Sorry, no properties available <TbMoodSad /></h4> 
               </div>
             )
@@ -86,7 +85,6 @@ const PropertiesList = () => {
           onPageChange={handlePageChange}
         />
       </div>
-    </body>
   );
 }
 

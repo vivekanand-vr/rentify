@@ -11,7 +11,7 @@
 
 ## Technologies Used
 
-- **Frontend** : Vite, Redux Toolkit, React JS
+- **Frontend** : Vite, Redux Toolkit, React JS, Tailwind CSS
 - **Backend** : Java, Maven, Spring Boot, REST-APIs, MySQL Database
 - **Additional Packages** : Axios, Yup, Formik, Toastify, Skeleton, Cloudinary
 
@@ -70,6 +70,15 @@
 - **GET : /properties/{id}**: Get propeties of user.
 - **PUT  : /properties**: Update property details.
 - **DELETE : /properties/{id}**: Delete a property.
+
+
+## Snapshots
+![Screenshot 2024-07-09 113341](https://github.com/vivekanand-vr/Rentify/assets/116813193/6fc2f9d2-dd40-45b0-bccb-aa919dec6d0a) <br></br>
+![Screenshot 2024-07-09 113402](https://github.com/vivekanand-vr/Rentify/assets/116813193/3f59f1dd-ae8c-46bc-85d4-72fee71f093b) <br></br>
+![Screenshot 2024-07-09 113424](https://github.com/vivekanand-vr/Rentify/assets/116813193/9c5e9b58-d503-49af-83de-f06963b9dca2) <br></br>
+![Screenshot 2024-07-09 113441](https://github.com/vivekanand-vr/Rentify/assets/116813193/5c1a7d05-7df1-46bc-8c7a-d934fa941b5e) <br></br>
+
+
 
 ## Frontend (Client) Directory Structure
 ```

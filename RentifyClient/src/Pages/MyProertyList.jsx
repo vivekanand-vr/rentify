@@ -21,18 +21,18 @@ const MyPropertyList = () => {
   };
 
   return (
-    <body>
+    <div className='min-h-screen'>
       <div className='my-properties'>
-        <h2 className="my-properties-heading">MY PROPERTIES <TbHomeStar className='h-icon' /></h2>
-        <div className="my-properties-page">
+        <h2 className="mt-4 ml-[10px] text-4xl font-semibold flex flex-center">MY PROPERTIES <TbHomeStar className='ml-1.5' /></h2>
+        <div className="flex flex-wrap gap-[20px] p-[20px]">
           {properties.length > 0 ? (
             properties.map(property => (
               <PropertyCard2 key={property.id} property={property} onDelete={handleDelete} />
             ))
-          ) : ( <h5>You haven't posted any property ads. Go ahead and post your first ad! <FcAdvertising className='h-icon' /></h5> )}
+          ) : ( <h5 className='flex items-center'>You haven't posted any property ads. Go ahead and post your first ad! <FcAdvertising className='ml-1 -mt-1 size-5' /></h5> )}
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 
