@@ -58,34 +58,38 @@ const LoginUser = () => {
   });
 
   return (
-    <body>
-      <div className="form-page">
-        <div className="login-container">
-          <h2>LOGIN</h2>
+    <div className='min-h-screen'>
+      <div className="flex justify-center mx-[auto] my-[30px] p-[20px]">
+        <div className="bg-white p-[20px] border-[1px] border-[solid] border-[black] rounded-[8px] [box-shadow:0_4px_8px_rgba(0,_0,_0,_0.1)] w-[450px]">
+          <h2 className='text-center font-bold mb-[10px] text-4xl'>LOGIN</h2>
           
           <form onSubmit={formik.handleSubmit}>
-            <div className="form-group">
-              <label>Email:</label>
-              <input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} required />
+            <div className="mb-4">
+              <label className='block ml-[10px] mb-[5px] font-medium'>Email:</label>
+              <input className='w-[calc(100%-20px)] p-[10px] border-[1px] border-[solid] border-[gray] rounded-[4px] ml-[10px]'
+                      type="email" name="email" value={formik.values.email} onChange={formik.handleChange} required />
               {formik.touched.email && formik.errors.email ? 
                   ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.email}</div> ) : null}
             </div>
 
-            <div className="form-group">
-              <label>Password:</label>
-              <input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} required />
+            <div className="mb-4">
+              <label className='block ml-[10px] mb-[5px] font-medium'>Password:</label>
+              <input className='w-[calc(100%-20px)] p-[10px] border-[1px] border-[solid] border-[gray] rounded-[4px] ml-[10px]'
+                      type="password" name="password" value={formik.values.password} onChange={formik.handleChange} required />
               {formik.touched.password && formik.errors.password ? 
                   ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.password}</div> ) : null}
             </div>
             
-            <div className='button-container'>
-              <button type="submit" disabled={formik.isSubmitting}>Login</button>
+            <div className='text-center'>
+              <button className='bg-green-600 w-[calc(50%-20px)] p-[10px] text-[white] border-[none] rounded-[4px] cursor-pointer ml-[10px] mt-[10px] [transition:all_0.1s_ease] [box-shadow:0_8px_15px_rgba(0,_0,_0,_0.2)]
+                                 hover:bg-slate-600'
+                      type="submit" disabled={formik.isSubmitting}>Login</button>
             </div>
 
           </form>
         </div>
       </div>
-    </body>
+    </div>
   );
 };
 

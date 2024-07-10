@@ -51,14 +51,13 @@ const PropertiesList = () => {
   };
 
   return (
-    <body>
-      <div className="home-page">
+      <div className="min-h-screen">
         <PropertySearch
           searchKeyword={searchKeyword}
           setSearchKeyword={setSearchKeyword}
           onSearch={handleSearch}
         />
-        <div className="flex flex-wrap gap-[25px] mb-5 mx-2.5 my-0 p-[15px]">
+        <div className="flex flex-wrap gap-[25px] mb-4 mx-2.5 my-0 p-[15px]">
           {loading ? (
             Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)
           ) : (
@@ -86,7 +85,6 @@ const PropertiesList = () => {
           onPageChange={handlePageChange}
         />
       </div>
-    </body>
   );
 }
 

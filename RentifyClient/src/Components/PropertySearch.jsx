@@ -12,14 +12,14 @@ const PropertySearch = ({ searchKeyword, setSearchKeyword, onSearch }) => {
 
   return (
     <div className="flex justify-center mt-[30px]">
-      <div className="flex items-center w-[700px]">
-        <input
-          type="text"
-          className='flex-1 border p-2.5 rounded-tl rounded-bl border-r-[none] border-solid border-[#514e4e]'
-          placeholder="Search by property name, city, state, country"
-          value={searchKeyword}
-          onChange={handleInputChange}
-        />
+      <div className="flex items-center w-[700px] border-1 border-gray-400">
+      <input
+        type="text"
+        className="flex-1 p-2.5 rounded-tl rounded-bl"
+        placeholder="Search by property name, city, state, country"
+        value={searchKeyword}
+        onChange={handleInputChange}
+      />
         <button onClick={handleSearchClick} 
                 className="bg-[#1F51FF] border text-[white] cursor-pointer flex items-center p-2.5 rounded-tr rounded-br border-solid border-[#514e4e] hover:bg-[#0056b3]">
           Search <FaSearch className='ml-1.5' />

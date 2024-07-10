@@ -65,7 +65,7 @@ export const ImageUploader = ({ onImageUpload }) => {
 
   return (
     <div>
-      <div className="w-[calc(100%_-_20px)] h-[300px] border flex items-center justify-center cursor-pointer text-center mx-auto my-0 rounded-md border-solid border-black" 
+      <div className="w-[calc(100%_-_20px)] bg-gray-100 h-[300px] flex items-center justify-center cursor-pointer text-center mx-auto my-0 rounded-md border-1 border-gray-500" 
            onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop}>
         
         <input id="image-input" type="file" accept="image/*" onChange={handleChange} hidden />
@@ -81,7 +81,7 @@ export const ImageUploader = ({ onImageUpload }) => {
   
       </div>
       {selectedImage && (
-        <div className="w-[calc(100%_-_20px)] flex justify-between items-center bg-[lightgray] mx-2.5 my-auto px-2.5 py-[5px] border-t-[#ddd] border-t border-solid">
+        <div className="w-[calc(100%-20px)] flex justify-between items-center mx-2.5 my-auto px-2.5 py-[5px] border-t-[#ddd] border-t border-solid">
           <span className="file-name">{fileName}</span>
           <MdDelete size={20} className="cursor-pointer" onClick={handleDelete} />
         </div>

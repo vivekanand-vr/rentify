@@ -34,7 +34,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
   };
 
   return (
-    <div className="border bg-[white] w-[400px] relative shadow-[0_4px_8px_rgba(0,0,0,0.2)] 
+    <div className="border bg-[white] w-[420px] relative shadow-[0_4px_8px_rgba(0,0,0,0.2)] 
                     [transition:transform_0.2s_ease,box-shadow_0.2s_ease] mt-2.5 p-[15px] rounded-md border-solid
                   border-[rgb(181,177,177)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] hover:scale-[1.025]">
       
@@ -44,7 +44,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
         {property.city}, {property.state}, {property.country}
       </p>
 
-      <img className='w-full h-[250px] mx-0 my-[5px] rounded-[5px]'
+      <img className='w-full h-[250px] mx-0 my-2 rounded-sm '
            src={imageUrl} alt='property' />
     
       <p className='text-[#333] mx-0 my-1 flex items-center'>
@@ -57,15 +57,15 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
           {property.area} square ft.
       </p>
       
-      <p className='text-[#333] mx-0 my-1 flex-row items-center'>
-        <span className='font-semibold flex-row'>Furnishing <RiSofaLine className='mx-1' /></span> 
+      <p className='text-[#333] mx-0 my-1 flex items-center'>
+        <span className='font-semibold flex items-center'>Furnishing <RiSofaLine className='mx-1' /></span> 
           {property.furnishing} 
       </p>
       
       <p className='text-[#333] mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center'>Rent:</span> <LuIndianRupee className='mx-1' />
-          {property.rent} &nbsp; 
-        <span className='font-semibold flex items-center'>Deposit:</span> <LuIndianRupee className='mx-1' />{property.deposit}
+        <span className='font-semibold flex items-center'>Rent:</span> <LuIndianRupee className='ml-1' />
+          {property.rent} &nbsp; &nbsp; 
+        <span className='font-semibold flex items-center'>Deposit:</span> <LuIndianRupee className='ml-1' />{property.deposit}
       </p>
        
       <button className='text-[white] w-[calc(50%_-_20px)] bg-sky-600 transition-all duration-[0.2s] ease-[ease] shadow-[0_8px_15px_rgba(0,0,0,0.2)] mt-[15px] px-3 py-2 rounded-[5px] border-[none] hover:bg-[#2a3536] hover:text-[white] hover:shadow-[0_15px_25px_rgba(0,0,0,0.4)]'
@@ -79,9 +79,9 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
         <p>{property.description}</p>
         <br />
         <h5 className='text-xl font-semibold'>Owner Contact</h5>
-          <p className='text-[#333] mx-0 my-1'>Name :  {ownerDetails.firstName} {ownerDetails.lastName} </p>
-          <p className='text-[#333] mx-0 my-1'>Email : {ownerDetails.email}</p>
-          <p className='text-[#333] mx-0 my-1'>Phone : {ownerDetails.phoneNumber}</p>
+          <p className='text-[#333] my-1'>Name :  {ownerDetails.firstName} {ownerDetails.lastName} </p>
+          <p className='text-[#333] my-1'>Email :&nbsp; {ownerDetails.email}</p>
+          <p className='text-[#333] my-1'>Phone : {ownerDetails.phoneNumber}</p>
         </div>
       )}
     </div>
