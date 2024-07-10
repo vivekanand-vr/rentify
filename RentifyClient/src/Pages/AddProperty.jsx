@@ -9,8 +9,8 @@ import { API_ENDPOINTS } from '../Services/Endpoints';
 const AddProperty = () => {
 
   /* Getting the Login details from store */
-  const userId = useSelector(state => state.user.id);
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+  const userId = useSelector((state) => state.userData.id);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const navigate = useNavigate();
   
   const [formData, setFormData] = useState({

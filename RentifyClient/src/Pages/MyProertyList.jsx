@@ -7,7 +7,7 @@ import PropertyCard2 from '../Components/PropertyCard2';
 import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const MyPropertyList = () => {
-  const userId = useSelector(state => state.user.id);
+  const userId = useSelector((state) => state.userData.id);
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {

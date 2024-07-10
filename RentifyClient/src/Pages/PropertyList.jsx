@@ -10,7 +10,7 @@ import { filterProperties } from '../Services/FilterProperties';
 import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const PropertiesList = () => {
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
   const [properties, setProperties] = useState([]);
   const [expandedPropertyId, setExpandedPropertyId] = useState(null);
   const [searchKeyword, setSearchKeyword] = useState('');

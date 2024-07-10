@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logoutUser } from '../Redux/Actions/userActions';
+import { userLogout } from '../Redux/Reducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
-  const userName = useSelector(state => state.user.firstName);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const userName = useSelector((state) => state.userData.firstName);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch(logoutUser());
+    dispatch(userLogout());
     toast.info("You have logged out successfully.");
     navigate('/');
   };

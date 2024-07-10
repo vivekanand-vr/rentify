@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../Redux/Actions/userActions';
+import { userLogin } from '../Redux/Reducers/userSlice';
 import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const validationSchema = Yup.object({
@@ -41,7 +41,7 @@ const LoginUser = () => {
         }
         else {
           // console.log(response.data);
-          dispatch(setUser(response.data));
+          dispatch(userLogin(response.data));
           toast.success("Login successful! Redirecting...");
           // Navigate to home after 2 seconds
           setTimeout(() => { navigate('/');} , 2000); 
