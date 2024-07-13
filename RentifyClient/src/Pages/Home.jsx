@@ -8,7 +8,7 @@ const Home = () => {
         navigate('/properties');
     }
     return (
-        <div className="w-full h-[600px] overflow-hidden bg-[url('./Assets/Home.jpg')] bg-cover bg-center md:h-screen">
+        <div className="w-full overflow-hidden bg-[url('./Assets/Home.jpg')] bg-cover bg-center h-screen">
             <div className="relative flex justify-center items-center md:h-[500px] md:mt-28">
                 <div className="w-80 mt-12 bg-[rgba(0,0,0,0.7)] text-center p-4 rounded-lg md:w-[900px]">
                     <h1 className="text-2xl text-white font-sans font-bold my-3 md:text-[4rem]">Renting Made Simple</h1>

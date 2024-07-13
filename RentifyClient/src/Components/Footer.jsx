@@ -10,21 +10,21 @@ const Footer = () => {
         
         <div id='footer-logo'
              className="relative flex justify-center items-center w-full">
-          <img className='w-24 inline-block z-[1] md:w-32' src={logo} alt="Rentify Logo" />
+          <img className='w-20 inline-block z-[1] md:w-32' src={logo} alt="Rentify Logo" />
         </div>
         
-        <div className="flex justify-center gap-[18px] mb-[5px]">
+        <div className="flex justify-center gap-[18px] my-1">
           <a className='text-gray-400 transition-[color] duration-[0.3s] hover:text-[white]' 
-              href="https://facebook.com" aria-label="Facebook"><FaFacebook className='text-xl md:text-[24px]' />
+              href="https://facebook.com" aria-label="Facebook"><FaFacebook className='text-md md:text-[24px]' />
           </a>
           <a className='text-gray-400 transition-[color] duration-[0.3s] hover:text-[white]' 
-             href="https://twitter.com" aria-label="Twitter"><FaXTwitter className='text-xl md:text-[24px]' />
+             href="https://twitter.com" aria-label="Twitter"><FaXTwitter className='text-md md:text-[24px]' />
           </a>
           <a className='text-gray-400 transition-[color] duration-[0.3s] hover:text-[white]' 
-            href="https://www.instagram.com/vvek_9/" aria-label="Instagram"><FaInstagram className='text-xl md:text-[24px]' />
+            href="https://www.instagram.com/vvek_9/" aria-label="Instagram"><FaInstagram className='text-md md:text-[24px]' />
           </a>
           <a className='text-gray-400 transition-[color] duration-[0.3s] hover:text-[white]' 
-             href="https://www.linkedin.com/in/vivekanand-vernekar/" aria-label="LinkedIn"><FaLinkedin className='text-xl md:text-[24px]' />
+             href="https://www.linkedin.com/in/vivekanand-vernekar/" aria-label="LinkedIn"><FaLinkedin className='text-md md:text-[24px]' />
           </a>
         </div>
 

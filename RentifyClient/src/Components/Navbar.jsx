@@ -89,10 +89,10 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <li className='cursor-pointer mx-2.5 my-0'>
+                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300'>
                   <Link to="/signin" onClick={() => setMobileView(false)}>Sign In</Link>
                 </li>
-                <li className='cursor-pointer mx-2.5 my-0'>
+                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300'>
                   <Link to="/login" onClick={() => setMobileView(false)}>Login</Link>
                 </li>
               </>

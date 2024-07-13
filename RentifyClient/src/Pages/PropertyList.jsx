@@ -73,7 +73,7 @@ const PropertiesList = () => {
               ))
             ) : (
               <div className='w-full flex justify-center m-5'>
-                <h4>Sorry, no properties available <TbMoodSad /></h4> 
+                <h4 className='flex items-center text-base font-semibold'>Sorry, no properties available <TbMoodSad className='ml-1' /></h4> 
               </div>
             )
           )}

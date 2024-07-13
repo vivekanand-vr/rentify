@@ -23,8 +23,8 @@ const MyPropertyList = () => {
   return (
     <div className='min-h-screen'>
       <div className='my-properties'>
-        <h2 className="mt-4 ml-[10px] text-4xl font-semibold flex flex-center">MY PROPERTIES <TbHomeStar className='ml-1.5' /></h2>
-        <div className="flex flex-wrap gap-[20px] p-[20px]">
+        <h2 className="mt-4 ml-[10px] text-3xl md:text-4xl font-semibold flex flex-center">MY PROPERTIES <TbHomeStar className='ml-1.5' /></h2>
+        <div className="flex flex-wrap gap-[20px] p-4">
           {properties.length > 0 ? (
             properties.map(property => (
               <PropertyCard2 key={property.id} property={property} onDelete={handleDelete} />

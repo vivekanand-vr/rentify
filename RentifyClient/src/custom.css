@@ -66,6 +66,14 @@
     cursor: not-allowed;
     color: lightgray;
   }
+
+  @media (max-width: 700px) {
+    .page-button, .nav-button {
+      padding: 5px;
+      margin: 0 5px;
+      font-size: small;
+    }
+  }
   
   
   /* 
@@ -112,11 +120,11 @@
     }
     
     #footer-logo::before {
-      width: calc(50% - 60px);
+      width: calc(50% - 50px);
     }
     
     #footer-logo::after {
-      width: calc(50% - 60px);
+      width: calc(50% - 50px);
     }
   }
   
