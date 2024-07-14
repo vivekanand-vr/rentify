@@ -8,7 +8,7 @@ const Home = () => {
         navigate('/properties');
     }
     return (
-        <div className="w-full overflow-hidden bg-[url('./Assets/Home.jpg')] bg-cover bg-center h-screen">
+        <div className="w-full overflow-hidden bg-[url('./Assets/Home.jpg')] bg-cover bg-center h-[84vh] md:h-screen">
             <div className="relative flex justify-center items-center md:h-[500px] md:mt-28">
                 <div className="w-80 mt-12 bg-[rgba(0,0,0,0.7)] text-center p-4 rounded-lg md:w-[900px]">
                     <h1 className="text-2xl text-white font-sans font-bold my-3 md:text-[4rem]">Renting Made Simple</h1>
@@ -18,7 +18,8 @@ const Home = () => {
                         RENTIFY aims to bridge the gap between property owners and tenants by providing a platform where they can easily connect based on their requirements.
                     </p>
                 <div className="flex justify-center mt-4">
-                    <button className="landing-page-button" onClick={handleOnClick}>View Properties</button>
+                    <button className='text-sm md:text-base mt-3.5 mx-2 p-2 md:p-3 text-white m-1/2 md:w-1/4 bg-blue-600 border-none rounded-md hover:bg-slate-700'
+                            onClick={handleOnClick}>View Properties</button>
                 </div>
                 </div>
             </div>
