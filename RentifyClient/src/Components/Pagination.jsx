@@ -80,7 +80,7 @@ const Pagination = ({ currentPage, totalItems, itemsPerPage, onPageChange }) => 
 
   return (
     <div className="flex justify-center mb-4">
-      <div className="inline-flex justify-center items-center bg-white shadow-[0_2px_10px_rgba(0,0,0,0.1)] p-[5px] rounded-[5px]">
+      <div className="inline-flex justify-center items-center bg-white p-[5px] rounded-[5px]">
         <button onClick={handlePreviousPage} disabled={currentPage === 1} className="nav-button">
           Previous
         </button>
