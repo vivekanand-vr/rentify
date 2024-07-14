@@ -18,7 +18,7 @@ const Home = () => {
                         RENTIFY aims to bridge the gap between property owners and tenants by providing a platform where they can easily connect based on their requirements.
                     </p>
                 <div className="flex justify-center mt-4">
-                    <button className='text-sm md:text-base mt-3.5 mx-2 p-2 md:p-3 text-white m-1/2 md:w-1/4 bg-blue-600 border-none rounded-md hover:bg-slate-700'
+                    <button className='text-sm md:text-base mt-3.5 mx-2 p-2 md:p-3 text-white m-1/2 md:w-1/4 bg-blue-600 border-none rounded-md hover:bg-red-600'
                             onClick={handleOnClick}>View Properties</button>
                 </div>
                 </div>

@@ -65,15 +65,15 @@ export const ImageUploader = ({ onImageUpload }) => {
 
   return (
     <div>
-      <div className="w-[calc(100%_-_20px)] bg-gray-100 h-[300px] flex items-center justify-center cursor-pointer text-center mx-auto my-0 rounded-md border-1 border-gray-500" 
+      <div className="w-[calc(100%_-_20px)] bg-gray-100 h-60 md:h-80 flex items-center justify-center cursor-pointer text-center mx-auto my-0 rounded-md border-1 border-gray-500" 
            onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop}>
         
         <input id="image-input" type="file" accept="image/*" onChange={handleChange} hidden />
         
         {!selectedImage ? (
           <div className="flex flex-col items-center text-[gray]">
-            <MdCloudUpload size={60} />
-            <p className='mt-2.5'>Click to browse files or drop image here</p>
+            <MdCloudUpload className='text-5xl md:text-6xl' />
+            <p className='mt-2.5 text-sm md:text-base'>Click to browse files or drop image here</p>
           </div>
         ) : (
           <img className="w-full h-full object-scale-down" src={selectedImage} alt={fileName} />
