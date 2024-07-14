@@ -57,26 +57,25 @@ const PropertiesList = () => {
           setSearchKeyword={setSearchKeyword}
           onSearch={handleSearch}
         />
-        <div className="flex flex-wrap gap-[25px] mb-4 mx-2.5 my-0 p-[15px]">
-          {loading ? (
-            Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)
-          ) : (
-            currentProperties.length > 0 ? (
-              currentProperties.map(property => (
-                <PropertyCard
-                  key={property.id}
-                  property={property}
-                  isLoggedIn={isLoggedIn}
-                  isExpanded={property.id === expandedPropertyId}
-                  onExpand={handleExpand}
-                />
-              ))
-            ) : (
-              <div className='w-full flex justify-center m-5'>
-                <h4 className='flex items-center text-base font-semibold'>Sorry, no properties available <TbMoodSad className='ml-1' /></h4> 
-              </div>
-            )
-          )}
+        <div className="flex flex-wrap justify-center gap-y-6 gap-x-6 mb-4 mx-2 my-0 p-3">
+            {loading ? ( Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)) :
+             (
+              currentProperties.length > 0 ? (
+                currentProperties.map(property => (
+                  <PropertyCard
+                    key={property.id}
+                    property={property}
+                    isLoggedIn={isLoggedIn}
+                    isExpanded={property.id === expandedPropertyId}
+                    onExpand={handleExpand}
+                  />
+                ))
+              ) : (
+                <div className='w-full flex justify-center m-5'>
+                  <h4 className='flex items-center text-base font-semibold'>Sorry, no properties available <TbMoodSad className='ml-1' /></h4> 
+                </div>
+              )
+            )}
         </div>
         <Pagination
           currentPage={currentPage}

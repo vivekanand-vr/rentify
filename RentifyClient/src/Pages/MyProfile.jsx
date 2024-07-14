@@ -45,79 +45,92 @@ const MyProfile = () => {
   };
 
   return (
-    <div className='min-h-screen'>
-      <div className="w-[500px] bg-white shadow-[0_4px_8px_rgba(0,0,0,0.1)] mx-auto my-[30px] p-4 rounded-lg border-1 border-blue-500">
+    <div className='flex justify-center h-[84vh] md:h-screen'>
+      <div className="w-96 md:w-[500px] h-fit bg-white mx-auto my-5 p-4 rounded-lg border-1 border-black">
         <div className='flex justify-center'>
-            { editMode ? (<h2 className='text-center text-[34px] font-bold p-2.5'>EDIT DETAILS</h2>) :
-                         (<h2 className='text-center text-[34px] font-bold p-2.5'>MY PROFILE</h2>) }
-            { !editMode && <FaEdit className="cursor-pointer text-[25px] ml-[5px] mt-[18px]" onClick={handleEditClick} /> }
+            { editMode ? (<h2 className='text-center text-3xl md:text-4xl font-bold'>EDIT DETAILS</h2>) :
+                         (<h2 className='text-center text-3xl md:text-4xl font-bold'>MY PROFILE</h2>) }
+            { !editMode && <FaEdit className="cursor-pointer text-2xl ml-3 mt-1 md:mt-2" onClick={handleEditClick} /> }
         </div>
         <div className="flex flex-col mt-3">
-          <div className="flex justify-between mb-[15px]">
-            <label className='font-bold w-36 mt-2.5'>First Name:</label>
-            {editMode ? (
-              <input type="text" name="firstName" className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500" 
+          <div className="flex justify-between mb-3">
+            <label className='font-semibold text-sm md:text-base w-24 md:w-28 mt-2'>First Name:</label>
+            {editMode ? 
+              (
+                <input type="text" name="firstName" className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400" 
                      value={formData.firstName} onChange={handleChange} /> 
-              ) : ( <div className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500">
-                      {user.firstName}
-                    </div> )
-            }
-          </div>
-
-          <div className="flex justify-between mb-[15px]">
-            <label className='font-bold w-36 mt-2.5'>Last Name:</label>
-            {editMode ? (
-              <input type="text" name="lastName" className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500" 
-                    value={formData.lastName} onChange={handleChange} />
               ) : 
-              ( <div className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500">{user.lastName}</div> )
+              ( <div className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400">
+                      {user.firstName}
+                    </div> 
+              )
             }
           </div>
 
-          <div className="flex justify-between mb-[15px]">
-            <label className='font-bold w-36 mt-2.5'>Email:</label>
-            {editMode ? (<div className="text-[#8e8d8d] grow bg-[#f0f0f0] cursor-not-allowed p-2 rounded-[5px] border-1 border-[#4682B4]">
+          <div className="flex justify-between mb-3">
+            <label className='font-semibold text-sm md:text-base w-24 md:w-28 mt-2'>Last Name:</label>
+            {editMode ? 
+              (
+                <input type="text" name="lastName" className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400" 
+                       value={formData.lastName} onChange={handleChange} />
+              ) : 
+              ( <div className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400">{user.lastName}</div> )
+            }
+          </div>
+
+          <div className="flex justify-between mb-3">
+            <label className='font-semibold text-sm md:text-base w-24 md:w-28 mt-2'>Email:</label>
+            {editMode ? 
+              (
+                <div className="text-sm md:text-base text-slate-400 grow bg-gray-100 cursor-not-allowed p-2 rounded-md border-1 border-slate-400">
                              {user.email}
-                         </div> ) :
-            (<div className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500">{user.email}</div>)}
+                </div> 
+              ) :
+              ( <div className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400">{user.email}</div>)}
           </div>
 
-          <div className="flex justify-between mb-[15px]">
-            <label className='font-bold w-36 mt-2.5'>City:</label>
-            {editMode ? (
-              <input type="text" name="city" className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500" 
-                     value={formData.city} onChange={handleChange} /> ) 
-              :
-                ( <div className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500">
+          <div className="flex justify-between mb-3">
+            <label className='font-semibold text-sm md:text-base w-24 md:w-28 mt-2'>City:</label>
+            {editMode ? 
+              (
+                  <input type="text" name="city" className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400" 
+                         value={formData.city} onChange={handleChange} /> 
+              ) :
+              ( <div className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400">
                          {user.city}
-                  </div> )
+                  </div> 
+              )
             }
           </div>
 
-          <div className="flex justify-between mb-[15px]">
-            <label className='font-bold w-36 mt-2.5'>Mobile:</label>
-            {editMode ? (<div className="text-[#8e8d8d] grow bg-[#f0f0f0] cursor-not-allowed p-2 rounded-[5px] border-1 border-[#4682B4]">
+          <div className="flex justify-between mb-3">
+            <label className='font-semibold text-sm md:text-base w-24 md:w-28 mt-2'>Mobile:</label>
+            {editMode ? 
+              ( <div className="text-sm md:text-base text-slate-400 grow bg-gray-100 cursor-not-allowed p-2 rounded-md border-1 border-slate-400">
                               {user.phoneNumber}
-                         </div> ) :
-                        (<div className="grow bg-white p-2 rounded-[5px] border-1 border-blue-500">
+                </div> 
+              ) :
+              ( <div className="text-sm md:text-base grow bg-white p-2 rounded-md border-1 border-slate-400">
                               {user.phoneNumber}
-                         </div>)}
+                </div>
+              )
+            }
           </div>
         </div>
 
-        <div className='text-center'>
+        <div className='flex justify-center space-x-5 my-1'>
           {editMode ? (
             <>
-              <button className='inline-block w-[calc(50%_-_20px)] bg-cyan-700 text-[white] cursor-pointer transition-all duration-[0.2s] ease-[ease] shadow-[0_8px_15px_rgba(0,0,0,0.2)] m-2.5 px-5 py-2.5 rounded-[5px] border-[none] hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-1/2 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
                       onClick={handleCancelClick}>Cancel</button>
-              <button className='inline-block w-[calc(50%_-_20px)] bg-cyan-700 text-[white] cursor-pointer transition-all duration-[0.2s] ease-[ease] shadow-[0_8px_15px_rgba(0,0,0,0.2)] m-2.5 px-5 py-2.5 rounded-[5px] border-[none] hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-1/2 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
                       onClick={handleSaveClick}>Save</button>
             </>
           ) : (
             <>
-              <button className='inline-block w-[calc(50%_-_20px)] bg-cyan-700 text-[white] cursor-pointer transition-all duration-[0.2s] ease-[ease] shadow-[0_8px_15px_rgba(0,0,0,0.2)] m-2.5 px-5 py-2.5 rounded-[5px] border-[none] hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-1/2 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
                       onClick={() => navigate('/properties')}>Back</button>
-              <button className='inline-block w-[calc(50%_-_20px)] bg-cyan-700 text-[white] cursor-pointer transition-all duration-[0.2s] ease-[ease] shadow-[0_8px_15px_rgba(0,0,0,0.2)] m-2.5 px-5 py-2.5 rounded-[5px] border-[none] hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-3/5 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
                       onClick={() => navigate('/my-properties')}>My Properties</button>
             </>
           )}

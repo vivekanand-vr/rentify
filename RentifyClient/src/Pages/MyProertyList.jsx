@@ -23,13 +23,13 @@ const MyPropertyList = () => {
   return (
     <div className='min-h-screen'>
       <div className='my-properties'>
-        <h2 className="mt-4 ml-[10px] text-3xl md:text-4xl font-semibold flex flex-center">MY PROPERTIES <TbHomeStar className='ml-1.5' /></h2>
-        <div className="flex flex-wrap gap-[20px] p-4">
+        <h2 className="mt-4 ml-6 text-3xl md:text-4xl font-semibold flex flex-center">MY PROPERTIES <TbHomeStar className='ml-1.5' /></h2>
+        <div className="flex flex-wrap gap-3 p-3">
           {properties.length > 0 ? (
             properties.map(property => (
               <PropertyCard2 key={property.id} property={property} onDelete={handleDelete} />
             ))
-          ) : ( <h5 className='flex items-center'>You haven't posted any property ads. Go ahead and post your first ad! <FcAdvertising className='ml-1 -mt-1 size-5' /></h5> )}
+          ) : ( <h5>You haven't posted any property ads. Go ahead and post your first ad! <FcAdvertising className='inline ml-1 -mt-1 size-5' /></h5> )}
         </div>
       </div>
     </div>
