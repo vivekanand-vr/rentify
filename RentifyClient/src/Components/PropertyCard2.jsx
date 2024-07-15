@@ -1,9 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { deleteAsset } from '../Services/DeleteAsset';
-import { LuIndianRupee } from "react-icons/lu";
-import { RiSofaLine } from "react-icons/ri";
-import { RxDimensions } from "react-icons/rx";
+import { LuIndianRupee, PiBuildings, RiSofaLine, RxDimensions } from '../Services/Icons';
 import { API_ENDPOINTS } from '../Services/Endpoints';
 import axios from 'axios';
 
@@ -31,7 +29,7 @@ const PropertyCard2 = ({ property, onDelete }) => {
       <p className='text-sm -mt-2 mb-2 md:text-base' id='location'> {property.city}, {property.state}, {property.country} </p>
 
       <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center mr-1'>Property Type: </span>
+        <span className='font-semibold flex items-center mr-1'>Property Type :</span>
            {property.propertyType} {property.bedrooms} BHK 
       </p>
 
@@ -46,9 +44,9 @@ const PropertyCard2 = ({ property, onDelete }) => {
       </p>
       
       <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center'>Rent:</span> <LuIndianRupee className='ml-1' />
+        <span className='font-semibold flex items-center'>Rent </span> <LuIndianRupee className='ml-1' />
           {property.rent} &nbsp; &nbsp; 
-        <span className='font-semibold flex items-center'>Deposit:</span> <LuIndianRupee className='ml-1' />{property.deposit}
+        <span className='font-semibold flex items-center'>Deposit </span> <LuIndianRupee className='ml-1' />{property.deposit}
       </p>
 
       <div className='text-center'>

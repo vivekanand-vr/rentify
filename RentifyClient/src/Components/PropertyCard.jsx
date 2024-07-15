@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LuIndianRupee } from "react-icons/lu";
-import { RiSofaLine } from "react-icons/ri";
-import { RxDimensions } from "react-icons/rx";
+import { LuIndianRupee, RiSofaLine, RxDimensions } from '../Services/Icons';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import axios from 'axios';
 
@@ -43,7 +41,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
            src={imageUrl} alt='property' />
     
       <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center mr-1'>Property Type: </span>
+        <span className='font-semibold flex items-center mr-1'>Property Type : </span>
            {property.propertyType} {property.bedrooms} BHK 
       </p>
 
@@ -58,9 +56,9 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
       </p>
       
       <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center'>Rent:</span> <LuIndianRupee className='ml-1' />
+        <span className='font-semibold flex items-center'>Rent </span> <LuIndianRupee className='ml-1' />
           {property.rent} &nbsp; &nbsp; 
-        <span className='font-semibold flex items-center'>Deposit:</span> <LuIndianRupee className='ml-1' />{property.deposit}
+        <span className='font-semibold flex items-center'>Deposit </span> <LuIndianRupee className='ml-1' />{property.deposit}
       </p>
        
       <button className='text-sm md:text-base text-white bg-blue-700 mt-2 px-3 py-2 rounded-md border-[none] hover:bg-slate-700'
