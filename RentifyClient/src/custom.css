@@ -1,15 +1,14 @@
-/* 
- *  Global Styles
- */
+ /* 
+  *  Global Styles
+  */
  body {
-    background-color:rgb(224 231 255);
+    background-color:#cbd5e1;
     font-family: 'Poppins', sans-serif;
   }
 
   /*
    *  Custom Styles for <Pagination />
    */
-  
    .page-button, .nav-button {
     background-color: transparent;
     border: none;
@@ -37,10 +36,9 @@
       font-size: small;
     }
   }
-  
-  
+   
   /* 
-   *  Custom Styles for Footer Component
+   *  Custom Styles for <Footer />
    */
    #footer-logo::before,
    #footer-logo::after {
@@ -92,9 +90,8 @@
   }
   
   /*
-   *  Custom Special Effects For 404 Error Page
+   *  Special Effects For 404 Error Page
    */
-
   #stars {
     width: 1px;
     height: 1px;

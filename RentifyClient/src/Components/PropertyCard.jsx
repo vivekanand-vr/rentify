@@ -63,7 +63,7 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
         <span className='font-semibold flex items-center'>Deposit:</span> <LuIndianRupee className='ml-1' />{property.deposit}
       </p>
        
-      <button className='text-sm md:text-base text-white bg-sky-600 mt-2 px-3 py-2 rounded-md border-[none] hover:bg-slate-700'
+      <button className='text-sm md:text-base text-white bg-blue-700 mt-2 px-3 py-2 rounded-md border-[none] hover:bg-slate-700'
               onClick={handleViewDetails}>
         {isExpanded ? 'Hide Details' : 'More Details'}
       </button>

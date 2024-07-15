@@ -61,13 +61,13 @@ const AddProperty = () => {
       });
   };
 
-  if (!isLoggedIn) { return <p>Please log in to add a property.</p>; }
+  if (!isLoggedIn) { navigate('/login') }
 
   return (
       <div className="flex justify-center mx-[auto] my-3 p-3">
         <div className="bg-white p-3 border-1 border-black rounded-lg w-[600px]">
 
-          <h2 className='text-center font-bold mb-3 text-3xl md:text-4xl'>ADD PROPERTY DETAILS</h2>
+          <h2 className='font-nunito text-center font-bold mb-3 text-3xl md:text-4xl'>ADD PROPERTY DETAILS</h2>
 
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -158,11 +158,11 @@ const AddProperty = () => {
             </div>
 
             <div className='flex justify-center space-x-5 mb-2'>
-              <button className="w-2/5 p-2 md:p-3 bg-green-600 text-[white] border-[none] rounded-md cursor-pointer 
-                                 hover:bg-slate-600" 
+              <button className="w-2/5 p-2 md:p-3 bg-blue-700 text-[white] border-[none] rounded-md cursor-pointer 
+                                 hover:bg-slate-700" 
                       onClick={() => navigate('/properties')}>Cancel</button>
-              <button className="w-2/5 p-2 md:p-3 bg-green-600 text-[white] border-[none] rounded-md cursor-pointer
-                                 hover:bg-slate-600"
+              <button className="w-2/5 p-2 md:p-3 bg-blue-700 text-[white] border-[none] rounded-md cursor-pointer
+                                 hover:bg-slate-700"
                       type="submit">Add Property</button>
             </div>
           </form>

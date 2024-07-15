@@ -49,7 +49,7 @@ const UpdateForm = () => {
   return (
       <div className="flex justify-center mx-[auto] my-3 p-3">
         <div className="bg-white p-3 border-1 border-black rounded-lg w-[600px]">
-          <h2 className='text-center font-bold mb-3 text-3xl md:text-4xl'>UPDATE PROPERTY DETAILS</h2>
+          <h2 className='font-nunito text-center font-bold mb-3 text-3xl md:text-4xl'>UPDATE PROPERTY DETAILS</h2>
 
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
@@ -129,11 +129,11 @@ const UpdateForm = () => {
             </div>
 
             <div className='flex justify-center space-x-5 mb-2'>
-              <button className='w-2/5 p-2 md:p-3 bg-green-600 text-white border-[none] rounded-md cursor-pointer 
-                                 hover:bg-slate-600'
+              <button className='w-2/5 p-2 md:p-3 bg-blue-700 text-white border-[none] rounded-md cursor-pointer 
+                                 hover:bg-slate-700'
                       onClick={() => navigate('/my-properties')}>Cancel</button>
-              <button className='w-[calc(50%-10px)] md:w-2/5 p-2 md:p-3 bg-green-600 text-white border-[none] rounded-md cursor-pointer 
-                                 hover:bg-slate-600'
+              <button className='w-[calc(50%-10px)] md:w-2/5 p-2 md:p-3 bg-blue-700 text-white border-[none] rounded-md cursor-pointer 
+                                 hover:bg-slate-700'
                       type="submit">Update Property</button>
             </div>
 

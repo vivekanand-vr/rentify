@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#1F51FF] text-[white] z-[1000] flex justify-between items-center px-2.5 py-0 relative">
+      <nav className="bg-blue-700 text-[white] z-[1000] flex justify-between items-center px-2.5 py-0 relative">
         <div className="text-[white] text-4xl py-2 font-bold no-underline sm:text-[40px]">
           <Link to="/">RENTIFY</Link>
         </div>
@@ -76,23 +76,23 @@ const Navbar = () => {
           <ul className="text-md flex flex-col space-y-3 [list-style:none] m-0 p-0">
             {isLoggedIn ? (
               <>
-                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300'>
+                <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
                   <Link to="/" onClick={() => setMobileView(false)}>Home</Link>
                 </li>
-                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300'>
+                <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
                   <Link to="/add-property" onClick={() => setMobileView(false)}>Add Property</Link>
                 </li>
-                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300'>
+                <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
                   <Link to="/profile" onClick={() => setMobileView(false)}>Profile</Link>
                 </li>
-                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300' onClick={() => { handleLogout(); setMobileView(false); }}>Logout</li>
+                <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300' onClick={() => { handleLogout(); setMobileView(false); }}>Logout</li>
               </>
             ) : (
               <>
-                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300'>
+                <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
                   <Link to="/signin" onClick={() => setMobileView(false)}>Sign In</Link>
                 </li>
-                <li className='cursor-pointer mx-1 my-1 pb-1 border-b border-gray-300'>
+                <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
                   <Link to="/login" onClick={() => setMobileView(false)}>Login</Link>
                 </li>
               </>

@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../Redux/Reducers/userSlice';
+import { MdOutlineMail, RiLockPasswordLine } from "../Services/Icons";
 import { API_ENDPOINTS } from '../Services/Endpoints';
 
 const validationSchema = Yup.object({
@@ -61,11 +62,11 @@ const LoginUser = () => {
     <div className='h-[84vh] md:h-screen'>
       <div className="flex justify-center mx-[auto] my-6 p-5">
         <div className="bg-white p-2 md:p-4 border-[1px] border-[solid] border-black rounded-lg w-[450px]">
-          <h2 className='text-center font-bold my-3 text-3xl md:text-4xl'>LOGIN</h2>
+          <h2 className='font-nunito text-center font-bold my-3 text-3xl md:text-4xl'>LOGIN</h2>
           
           <form onSubmit={formik.handleSubmit}>
             <div className="mb-4">
-              <label className='block ml-3 mb-1 font-medium'>Email:</label>
+              <label className='relative ml-3 mb-1 font-medium flex items-center'>Email&nbsp; <MdOutlineMail size={18} /> </label>
               <input className='w-[calc(100%-20px)] p-2 md:p-3 border-1 border-slate-400 rounded-sm ml-3'
                       type="email" name="email" value={formik.values.email} onChange={formik.handleChange} required />
               {formik.touched.email && formik.errors.email ? 
@@ -73,7 +74,7 @@ const LoginUser = () => {
             </div>
 
             <div className="mb-4">
-              <label className='block ml-3 mb-1 font-medium'>Password:</label>
+              <label className='ml-3 mb-1 font-medium flex items-center'>Password&nbsp; <RiLockPasswordLine size={18} /></label>
               <input className='w-[calc(100%-20px)] p-2 md:p-3 border-1 border-slate-400 rounded-sm ml-3'
                       type="password" name="password" value={formik.values.password} onChange={formik.handleChange} required />
               {formik.touched.password && formik.errors.password ? 
@@ -81,8 +82,8 @@ const LoginUser = () => {
             </div>
             
             <div className='text-center'>
-              <button className='bg-green-600 w-1/2 md:w-2/5 p-2 text-white border-[none] rounded-md cursor-pointer mb-2
-                                 hover:bg-slate-600'
+              <button className='bg-blue-700 w-1/2 md:w-2/5 p-2 text-white border-[none] rounded-md cursor-pointer mb-2
+                                 hover:bg-slate-700'
                       type="submit" disabled={formik.isSubmitting}>Login</button>
             </div>
 

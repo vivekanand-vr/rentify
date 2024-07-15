@@ -52,11 +52,11 @@ const PropertyCard2 = ({ property, onDelete }) => {
       </p>
 
       <div className='text-center'>
-        <button className='text-sm md:text-base mt-3.5 mx-2 p-2 text-white w-[calc(50%-20px)] bg-blue-600 border-none rounded-md
+        <button className='text-sm md:text-base mt-3.5 mx-2 p-2 text-white w-[calc(50%-20px)] bg-blue-700 border-none rounded-md
                          hover:bg-slate-700' 
                 onClick={handleUpdate}>Update</button>
 
-        <button  className='text-sm md:text-base mt-3.5 mx-2 p-2 text-white w-[calc(50%-20px)] bg-blue-600 border-none rounded-md 
+        <button  className='text-sm md:text-base mt-3.5 mx-2 p-2 text-white w-[calc(50%-20px)] bg-blue-700 border-none rounded-md 
                           hover:bg-slate-700'
                 onClick={handleDelete}>Delete</button>
       </div>

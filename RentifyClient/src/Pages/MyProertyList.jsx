@@ -23,7 +23,7 @@ const MyPropertyList = () => {
   return (
     <div className='min-h-screen'>
       <div className='my-properties'>
-        <h2 className="mt-4 ml-6 text-3xl md:text-4xl font-semibold flex flex-center">MY PROPERTIES <TbHomeStar className='ml-1.5' /></h2>
+        <h2 className="font-nunito mt-4 ml-6 text-3xl md:text-4xl font-extrabold flex flex-center">MY PROPERTIES <TbHomeStar className='ml-1.5' /></h2>
         <div className="flex flex-wrap gap-3 p-3">
           {properties.length > 0 ? (
             properties.map(property => (

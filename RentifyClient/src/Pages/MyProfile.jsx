@@ -48,9 +48,9 @@ const MyProfile = () => {
     <div className='flex justify-center h-[84vh] md:h-screen'>
       <div className="w-96 md:w-[500px] h-fit bg-white mx-auto my-5 p-4 rounded-lg border-1 border-black">
         <div className='flex justify-center'>
-            { editMode ? (<h2 className='text-center text-3xl md:text-4xl font-bold'>EDIT DETAILS</h2>) :
-                         (<h2 className='text-center text-3xl md:text-4xl font-bold'>MY PROFILE</h2>) }
-            { !editMode && <FaEdit className="cursor-pointer text-2xl ml-3 mt-1 md:mt-2" onClick={handleEditClick} /> }
+            { editMode ? (<h2 className='font-nunito text-center text-3xl md:text-4xl font-bold'>EDIT DETAILS</h2>) :
+                         (<h2 className='font-nunito text-center text-3xl md:text-4xl font-bold'>MY PROFILE</h2>) }
+            { !editMode && <FaEdit className="cursor-pointer text-2xl ml-3 mt-1 md:mt-2 text-slate-500 " onClick={handleEditClick} /> }
         </div>
         <div className="flex flex-col mt-3">
           <div className="flex justify-between mb-3">
@@ -121,16 +121,16 @@ const MyProfile = () => {
         <div className='flex justify-center space-x-5 my-1'>
           {editMode ? (
             <>
-              <button className='text-sm md:text-base inline-block w-1/2 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-1/2 bg-blue-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-slate-700'
                       onClick={handleCancelClick}>Cancel</button>
-              <button className='text-sm md:text-base inline-block w-1/2 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-1/2 bg-blue-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-slate-700'
                       onClick={handleSaveClick}>Save</button>
             </>
           ) : (
             <>
-              <button className='text-sm md:text-base inline-block w-1/2 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-1/2 bg-blue-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-slate-700'
                       onClick={() => navigate('/properties')}>Back</button>
-              <button className='text-sm md:text-base inline-block w-3/5 bg-cyan-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-[rgb(8_51_68)]'
+              <button className='text-sm md:text-base inline-block w-3/5 bg-blue-700 text-white cursor-pointer m-2 px-2 py-2 rounded-md hover:bg-slate-700'
                       onClick={() => navigate('/my-properties')}>My Properties</button>
             </>
           )}
