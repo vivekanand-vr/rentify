@@ -65,7 +65,7 @@ export const ImageUploader = ({ onImageUpload }) => {
 
   return (
     <div>
-      <div className="w-[calc(100%_-_20px)] bg-gray-100 h-60 md:h-80 flex items-center justify-center cursor-pointer text-center mx-auto my-0 rounded-md border-1 border-gray-500" 
+      <div className="w-6/7 bg-gray-100 h-60 md:h-96 flex items-center justify-center cursor-pointer text-center mx-auto rounded-md border-1 border-gray-500" 
            onClick={handleClick} onDragOver={handleDragOver} onDrop={handleDrop}>
         
         <input id="image-input" type="file" accept="image/*" onChange={handleChange} hidden />

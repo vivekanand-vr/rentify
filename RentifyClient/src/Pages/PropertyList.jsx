@@ -77,12 +77,9 @@ const PropertiesList = () => {
               )
             )}
         </div>
-        <Pagination
-          currentPage={currentPage}
-          totalItems={filteredProperties.length}
-          itemsPerPage={propertiesPerPage}
-          onPageChange={handlePageChange}
-        />
+          { (filteredProperties.length > 0) &&
+             <Pagination currentPage={currentPage} totalItems={filteredProperties.length} itemsPerPage={propertiesPerPage} onPageChange={handlePageChange} />
+          }
       </div>
   );
 }
