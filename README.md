@@ -15,6 +15,27 @@
 - **Backend** : Java, Maven, Spring Boot, REST-APIs, MySQL Database
 - **Additional Packages** : Axios, Yup, Formik, Toastify, Skeleton, Cloudinary
 
+## Web View Snapshots
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/2cec49c0-794b-40bf-bb10-f6c1af88bf44" alt="Web Image 1" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/e0bb6756-6837-4d87-a538-6c79a343f214" alt="Web Image 2" width="500"></td>
+  </tr>
+   <tr>
+    <td><img src="https://github.com/user-attachments/assets/bd7fed3c-879a-4b0f-b271-f9fd533d6464" alt="Web Image 7" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/afdc31ce-0dad-440e-8792-9d4b20d9cba1" alt="Web Image 8" width="500"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/715bb31a-9613-48eb-87bb-0c558d908cab" alt="Web Image 3" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/47aa5f95-d82f-46ef-8d8d-f42d6d35e6c9" alt="Web Image 4" width="500"></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/a6c87eba-1ce0-4c07-9b9b-f7374b3218a5" alt="Web Image 6" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/14ae19ba-0b33-4b06-bfbe-7d6f7721e6ac" alt="Web Image 5" width="500"></td>
+  </tr>
+</table>
+
 ## Project Structure
 
 ### Frontend Pages
