@@ -17,7 +17,7 @@ const PropertiesList = () => {
   const [filteredProperties, setFilteredProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const propertiesPerPage = 4;
+  const propertiesPerPage = 8;
 
   useEffect(() => {
     axios.get(API_ENDPOINTS.property.getAll)
@@ -58,7 +58,7 @@ const PropertiesList = () => {
           onSearch={handleSearch}
         />
         <div className="flex flex-wrap justify-center gap-y-6 gap-x-6 mb-4 mx-2 p-3">
-            {loading ? ( Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)) :
+            {loading ? ( Array.from({ length: 8 }).map((_, index) => <ShimmerCard key={index} />)) :
              (
               currentProperties.length > 0 ? (
                 currentProperties.map(property => (
