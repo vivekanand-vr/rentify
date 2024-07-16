@@ -71,14 +71,23 @@
 - **PUT  : /properties**: Update property details.
 - **DELETE : /properties/{id}**: Delete a property.
 
+## Mobile View Snapshots 
 
-## Snapshots
-![Screenshot 2024-07-09 113341](https://github.com/vivekanand-vr/Rentify/assets/116813193/6fc2f9d2-dd40-45b0-bccb-aa919dec6d0a) <br></br>
-![Screenshot 2024-07-09 113402](https://github.com/vivekanand-vr/Rentify/assets/116813193/3f59f1dd-ae8c-46bc-85d4-72fee71f093b) <br></br>
-![Screenshot 2024-07-09 113424](https://github.com/vivekanand-vr/Rentify/assets/116813193/9c5e9b58-d503-49af-83de-f06963b9dca2) <br></br>
-![Screenshot 2024-07-09 113441](https://github.com/vivekanand-vr/Rentify/assets/116813193/5c1a7d05-7df1-46bc-8c7a-d934fa941b5e) <br></br>
-
-
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/cc30ac1f-1c72-4e0d-9b5f-1e86b1a27416" alt="Image 2" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/f5b9833e-e4aa-4ae5-81f0-09437d0438be" alt="Image 8" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/789da6f4-a479-4830-a498-31d3798aebfa" alt="Image 7" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/6d520b32-ffe6-42c4-98cc-895fff21f2fc" alt="Image 1" width="225"></td>
+    
+  </tr>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/31204d38-6bdb-403c-96f4-6cbd64bc2e57" alt="Image 5" width="220"></td>
+    <td><img src="https://github.com/user-attachments/assets/631e5004-11e7-4211-bed9-84d5502048ed" alt="Image 4" width="220"></td>
+    <td><img src="https://github.com/user-attachments/assets/ddc52ba8-4818-434d-b6df-263f0bb6a416" alt="Image 3" width="220"></td>
+    <td><img src="https://github.com/user-attachments/assets/d6ecbd2a-dd27-41da-b24c-15ffb5b446e8" alt="Image 6" width="220"></td>
+  </tr>
+</table>
 
 ## Frontend (Client) Directory Structure
 ```
