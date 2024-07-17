@@ -28,7 +28,13 @@ public class PropertyController {
     	String response = propertyService.createProperty(property);
         return ResponseEntity.ok(response);
     }
-
+    
+    @GetMapping("/{pid}")
+    public ResponseEntity<Property> getPropertyDetails(@PathVariable Long pid){
+    	Property property = propertyService.getPropertyDetails(pid);
+    	return ResponseEntity.ok(property);
+    }
+    
     @GetMapping
     public ResponseEntity<List<Property>> getAllProperties() {
         List<Property> properties = propertyService.getAllProperties();
