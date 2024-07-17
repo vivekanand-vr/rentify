@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import PropertyDetailsShimmer from '../Components/PropertyDetailsShimmer';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import { LuIndianRupee, PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdOutlineLocationOn, TbReportMoney,FaCheck,
          RiContractLine, MdBalcony,  PiBathtubLight, PiSecurityCameraBold, PiWheelchair, IoCompassOutline, TbSunElectricity, 
@@ -40,7 +41,7 @@ const PropertyDetails = () => {
     }
   };
 
-  if (!property) return (<div className="min-h-screen">Property Loading...</div>);
+  if (property == null) return (<PropertyDetailsShimmer />);
 
   const imageUrl = PROPERTY_IMAGE + property.imageId;
 
