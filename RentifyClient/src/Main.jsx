@@ -14,6 +14,7 @@ import UpdateProperty from './Pages/UpdateProperty';
 import Error from './Pages/Error';
 import './index.css';
 import "react-toastify/dist/ReactToastify.css";
+import PropertyDetails from './Pages/PropertyDetails';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/my-properties" element={<MyPropertyList />} />
         <Route path="/update-property" element={<UpdateProperty />} />
         <Route path="/properties" element={<PropertiesList />} />
+        <Route path='/property/:pid' element={ <PropertyDetails /> } />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
       </Routes>

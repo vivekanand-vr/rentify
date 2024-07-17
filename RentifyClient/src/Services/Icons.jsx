@@ -19,6 +19,7 @@ import { MdOutlineHomeWork } from "react-icons/md";
 import { IoBedOutline } from "react-icons/io5";
 import { IoImageOutline } from "react-icons/io5";
 import { PiBuildings } from "react-icons/pi";
+import { BsStars } from "react-icons/bs";
 
 export {    MdOutlineLocationOn, 
             GrMapLocation,
@@ -37,4 +38,5 @@ export {    MdOutlineLocationOn,
             MdOutlineHomeWork,
             IoImageOutline,
             IoBedOutline,
-            PiBuildings };
+            PiBuildings,
+            BsStars };

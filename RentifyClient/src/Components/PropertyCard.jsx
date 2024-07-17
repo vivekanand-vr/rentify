@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LuIndianRupee, RiSofaLine, RxDimensions } from '../Services/Icons';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import axios from 'axios';
@@ -7,10 +7,7 @@ import axios from 'axios';
 const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
   const [ownerDetails, setOwnerDetails] = useState(null);
   const navigate = useNavigate();
-  /*
-      For transformations we need to import `AdvancedImage` tag and render image within it.
-      Refer "https://cloudinary.com/documentation/react_integration"
-   */
+
   const imageUrl = PROPERTY_IMAGE + property.imageId;
   
   useEffect(() => {
@@ -55,28 +52,19 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
           {property.furnishing} 
       </p>
       
-      <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
+      <p className='text-sm md:text-base mx-0 my-1 mb-3 flex items-center'>
         <span className='font-semibold flex items-center'>Rent </span> <LuIndianRupee className='ml-1' />
           {property.rent} &nbsp; &nbsp; 
         <span className='font-semibold flex items-center'>Deposit </span> <LuIndianRupee className='ml-1' />{property.deposit}
       </p>
        
-      <button className='text-sm md:text-base text-white bg-blue-700 mt-2 px-3 py-2 rounded-md border-[none] hover:bg-slate-700'
-              onClick={handleViewDetails}>
-        {isExpanded ? 'Hide Details' : 'More Details'}
-      </button>
+      <Link
+        to={`/property/${property.id}`}
+        className='text-sm md:text-base text-white bg-blue-700 my-2 px-3 py-2 rounded-md border-none hover:bg-slate-700'
+      >
+        More Details
+      </Link>
 
-      {isExpanded && ownerDetails && (
-        <div className="bg-[#f9f9f9] mt-3 p-2 pt-3 border-t-[#008080] border-t border-solid">
-        <h5 className='text-base md:text-xl font-semibold'>Additional Details:</h5>
-        <p className='text-sm md:text-base'>{property.description}</p>
-        <br />
-        <h5 className='text-base md:text-xl font-semibold'>Owner Contact</h5>
-          <p className='text-sm md:text-base my-1'>Name :  {ownerDetails.firstName} {ownerDetails.lastName} </p>
-          <p className='text-sm md:text-base my-1'>Email :&nbsp; {ownerDetails.email}</p>
-          <p className='text-sm md:text-base my-1'>Phone : {ownerDetails.phoneNumber}</p>
-        </div>
-      )}
     </div>
   );
 }

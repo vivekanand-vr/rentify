@@ -9,6 +9,7 @@ export const API_ENDPOINTS = {
   },
   property: {
       add: `${BASE_URL}/properties`,
+      details: `${BASE_URL}/properties/`,
       getAll: `${BASE_URL}/properties`,
       getByOwner: `${BASE_URL}/properties/owner/`,
       update: `${BASE_URL}/properties`,
