@@ -49,13 +49,13 @@ const PropertyCard = ({ property, isLoggedIn, isExpanded, onExpand }) => {
       
       <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
         <span className='font-semibold flex items-center'>Furnishing <RiSofaLine className='mx-1' /></span> 
-          {property.furnishing} 
+          {property.additionalDetails.furnishing} 
       </p>
       
       <p className='text-sm md:text-base mx-0 my-1 mb-3 flex items-center'>
         <span className='font-semibold flex items-center'>Rent </span> <LuIndianRupee className='ml-1' />
           {property.rent} &nbsp; &nbsp; 
-        <span className='font-semibold flex items-center'>Deposit </span> <LuIndianRupee className='ml-1' />{property.deposit}
+        <span className='font-semibold flex items-center'>Deposit </span> <LuIndianRupee className='ml-1' />{property.additionalDetails.deposit}
       </p>
        
       <Link

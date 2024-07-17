@@ -1,32 +1,35 @@
 /* Sign in and Login Icons */
-import { MdOutlineMail } from "react-icons/md";
+import { MdOutlineMail, MdOutlineLocationOn } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoCallOutline } from "react-icons/io5";
 import { RiLockPasswordLine } from "react-icons/ri";
-import { MdOutlineLocationOn } from "react-icons/md";
 import { GrMapLocation } from "react-icons/gr";
-import { FaGlobeAmericas } from "react-icons/fa";
+import { FaGlobeAmericas, FaCheck } from "react-icons/fa";
 
 /* Property Related Icons */
-import { PiMoneyWavy } from "react-icons/pi";
+import { PiMoneyWavy, PiNoteDuotone, PiBathtubLight, PiWheelchair, PiSecurityCameraBold, PiBuildings } from "react-icons/pi";
 import { LuIndianRupee } from "react-icons/lu";
-import { TbReportMoney } from "react-icons/tb";
-import { RiSofaLine } from "react-icons/ri";
+import { TbReportMoney, TbSunElectricity } from "react-icons/tb";
+import { RiSofaLine, RiContractLine  } from "react-icons/ri";
 import { RxDimensions } from "react-icons/rx";
-import { PiNoteDuotone } from "react-icons/pi";
 import { GrMoney } from "react-icons/gr";
-import { MdOutlineHomeWork } from "react-icons/md";
-import { IoBedOutline } from "react-icons/io5";
-import { IoImageOutline } from "react-icons/io5";
-import { PiBuildings } from "react-icons/pi";
+import { MdOutlineWatchLater, MdOutlineHomeWork, MdBalcony } from "react-icons/md";
+import { IoImageOutline, IoCompassOutline, IoBedOutline } from "react-icons/io5";
 import { BsStars } from "react-icons/bs";
+import { CgGym } from "react-icons/cg";
+import { FaCar } from "react-icons/fa";
 
 export {    MdOutlineLocationOn, 
+            MdOutlineWatchLater,
+            MdBalcony,
             GrMapLocation,
             FaGlobeAmericas,
+            FaCheck,
             CgProfile, 
-            IoCallOutline, 
-            RiLockPasswordLine, 
+            IoCallOutline,
+            IoCompassOutline, 
+            RiLockPasswordLine,
+            RiContractLine, 
             MdOutlineMail,
             PiMoneyWavy,
             LuIndianRupee,
@@ -39,4 +42,10 @@ export {    MdOutlineLocationOn,
             IoImageOutline,
             IoBedOutline,
             PiBuildings,
-            BsStars };
+            PiBathtubLight,
+            PiSecurityCameraBold,
+            PiWheelchair,
+            BsStars,
+            TbSunElectricity,
+            CgGym,
+            FaCar };
