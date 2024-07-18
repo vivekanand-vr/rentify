@@ -4,6 +4,7 @@ export const API_ENDPOINTS = {
   user: {
       login: `${BASE_URL}/user/login`,
       signin: `${BASE_URL}/user/signin`,
+      checkEmail: `${BASE_URL}/user/check-email`,
       details: `${BASE_URL}/user/`,
       update: `${BASE_URL}/user`,
   },
