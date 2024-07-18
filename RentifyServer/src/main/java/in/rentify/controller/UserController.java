@@ -5,6 +5,9 @@ import in.rentify.dto.UserDTO;
 import in.rentify.service.UserService;
 import in.rentify.model.User;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +18,16 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
+    
+    @PostMapping("/check-email")
+    public ResponseEntity<Map<String, Boolean>> checkEmail(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        boolean exists = userService.emailExists(email);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("exists", exists);
+        return ResponseEntity.ok(response);
+    }
+    
     @PostMapping("/signin")
     public UserDTO registerUser(@RequestBody User user) {
         return userService.saveUser(user);

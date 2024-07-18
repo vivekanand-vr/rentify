@@ -16,7 +16,11 @@ public class UserService {
     private UserRepository userRepository;
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
+    
+    public boolean emailExists(String email) {
+        return userRepository.existsByEmail(email);
+    }
+    
     public UserDTO saveUser(User user) {
         // Encrypt the password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
