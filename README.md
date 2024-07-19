@@ -1,9 +1,19 @@
-# RENTIFY - Where Renting Meets Simplicity
-
 <div align="center">
- <kbd> <img src="https://github.com/vivekanand-vr/Rentify/assets/116813193/f8eac940-7e7f-4c72-9973-3aef5f9ddc2a)" alt="banner"> </kbd>
-</div>
+  <br />
+  <a href="https://youtu.be/y5vE8y_f_OM" target="_blank">
+    <img src="https://github.com/user-attachments/assets/a9742a69-b43f-4a2d-a05e-9d01a73316be" alt="Project Banner" style="border-radius: 5px;">
+  </a>
+  <br> </ br>
+  <br> </ br>
 
+  <div>
+    <img src="https://img.shields.io/badge/-React-black?style=for-the-badge&logo=react&logoColor=white&color=61DAFB" alt="react" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logo=tailwindcss&logoColor=white&color=06B6D4" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-Spring_Boot-black?style=for-the-badge&logo=springboot&logoColor=white&color=6DB33F" alt="springboot" />
+    <img src="https://img.shields.io/badge/-MySQL-black?style=for-the-badge&logo=mysql&logoColor=white&color=4479A1" alt="mysql" />
+  </div>
+  </div>
+  
 ## Overview
 
 **Rentify** is a web application designed to simplify the rental process for both property owners and tenants. In the post-pandemic world, the demand for real estate has surged, especially in cities with high populations and IT offices. RENTIFY aims to bridge the gap between property owners and tenants by providing a platform where they can easily connect based on their requirements.
