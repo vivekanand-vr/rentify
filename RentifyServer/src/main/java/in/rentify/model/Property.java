@@ -19,9 +19,7 @@ public class Property {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String city;
-    private String state;
-    private String country;
+    private String location;
     private Double area;
     private Double rent;
     private Integer bedrooms;
