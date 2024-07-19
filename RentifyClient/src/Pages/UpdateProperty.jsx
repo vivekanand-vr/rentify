@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toast } from "react-toastify";
 import { API_ENDPOINTS } from '../Services/Endpoints';
-import { PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdOutlineHomeWork,
-         MdOutlineLocationOn, GrMapLocation, FaGlobeAmericas, TbReportMoney, RiContractLine, 
+import { PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdOutlineHomeWork, PiMapPinSimpleAreaLight,
+         MdOutlineLocationOn, GrMapLocation, FaGlobeAmericas, TbReportMoney, RiContractLine, PiMailbox,
          MdBalcony, MdOutlineWatchLater, IoBedOutline, PiBathtubLight, PiSecurityCameraBold,
          PiWheelchair, IoCompassOutline, TbSunElectricity, CgGym, FaCar, BsStars } from '../Services/Icons';
 
@@ -13,14 +13,20 @@ const UpdateProperty = () => {
   const userId = useSelector((state) => state.userData.id);
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const navigate = useNavigate();
-  const location = useLocation();
-  const { property } = location.state || {}; // Destructure the property object from location state
+  const local = useLocation();
+  const { property } = local.state || {}; // Destructure the property object from location state
 
-  const [formData, setFormData] = useState({
-    name: '',
+  const [location, setLocation] = useState({
+    streetAddress: '',
     city: '',
     state: '',
     country: '',
+    postalCode: '',
+  });
+
+  const [formData, setFormData] = useState({
+    name: '',
+    location: '',
     area: '',
     rent: '',
     bedrooms: '',
@@ -44,10 +50,23 @@ const UpdateProperty = () => {
     }
   });
 
+  // Split the location string and remove the postal code part
+  const locationWithoutPostalCode = property.location.split(' - ')[0];
+  const locationPostalCode = property.location.split('-')[1];
+
   // Set current property details in the formdata to modify
   useEffect(() => {
     if (property) {
-      setFormData(property);
+      // Split location string into separate fields
+      const locationParts = locationWithoutPostalCode.split(',').map(part => part.trim());
+      setFormData({
+        ...property,
+        streetAddress: locationParts[0],
+        city: locationParts[1],
+        state: locationParts[2],
+        country: locationParts[3],
+        postalCode: locationPostalCode,
+      });
     } else {
       toast.error('No property data found.');
     }
@@ -81,7 +100,15 @@ const UpdateProperty = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(API_ENDPOINTS.property.update, formData)
+    // Combine location fields into a single string
+    const locationString = `${formData.streetAddress}, ${formData.city}, ${formData.state}, ${formData.country} - ${formData.postalCode}`;
+
+    const updatedFormData = {
+      ...formData,
+      location: locationString, // Update location field with combined string
+    };
+
+    axios.put(API_ENDPOINTS.property.update, updatedFormData)
       .then(response => {
         toast.success("Property details updated successfully.")
         setTimeout(() => { navigate('/my-properties'); }, 2000);
@@ -101,25 +128,40 @@ const UpdateProperty = () => {
       <div className="bg-white p-6 border border-black rounded-lg w-full max-w-4xl">
         <h2 className='font-nunito text-center font-bold mb-6 text-2xl md:text-4xl'>UPDATE PROPERTY DETAILS</h2>
         <form onSubmit={handleSubmit}>
-          {/* Two-column layout for name, city, state, country */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+           {/* Two-column layout for name, city, state, country */}
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div className="flex items-center space-x-3">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>Name <MdOutlineHomeWork className='ml-1 text-xl' /></label>
               <input className='w-full md:w-5/6 p-2 border-1 border-zinc-300 rounded-md'
                      type="text" name="name" value={formData.name} onChange={handleChange} required />
             </div>
+
+            <div className="flex items-center space-x-2">
+              <label className='flex items-center w-2/5 md:w-1/4 font-medium'>Street <MdOutlineLocationOn className='ml-1 text-xl' /></label>
+              <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
+                     type="text" name="streetAddress" value={formData.streetAddress} onChange={handleChange} required />
+            </div>
+
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>City <MdOutlineLocationOn className='ml-1 text-[22px]' /></label>
               <input className='w-full md:w-5/6 p-2 border-1 border-zinc-300 rounded-md'
                      type="text" name="city" value={formData.city} onChange={handleChange} required />
             </div>
+
+            <div className="flex items-center space-x-2">
+              <label className='flex items-center w-3/4 md:w-1/2 font-medium'>Postal Code <PiMailbox className='ml-1 text-xl' /></label>
+              <input className='w-4/5 p-2 border-1 border-zinc-300 rounded-md'
+                     type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required />
+            </div>
+
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>State <GrMapLocation className='ml-1 text-xl' /> </label>
               <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
                      type="text" name="state" value={formData.state} onChange={handleChange} required />
             </div>
+
             <div className="flex items-center space-x-2">
-              <label className='flex items-center w-2/5 md:w-1/4 font-medium'>Country <FaGlobeAmericas className='ml-1 text-lg' /></label>
+              <label className='flex items-center w-2/5 md:w-1/2 font-medium'>Country <FaGlobeAmericas className='ml-1 text-lg' /></label>
               <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
                      type="text" name="country" value={formData.country} onChange={handleChange} required />
             </div>

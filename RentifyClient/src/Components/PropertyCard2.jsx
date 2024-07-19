@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { deleteAsset } from '../Services/DeleteAsset';
-import { LuIndianRupee, PiBuildings, RiSofaLine, RxDimensions } from '../Services/Icons';
+import { LuIndianRupee, MdOutlineLocationOn, RiSofaLine, RxDimensions } from '../Services/Icons';
 import { API_ENDPOINTS } from '../Services/Endpoints';
 import axios from 'axios';
 
 const PropertyCard2 = ({ property, onDelete }) => {
   const navigate = useNavigate();
+  // Split the location string and remove the postal code part
+  const locationWithoutPostalCode = property.location.split(' - ')[0];
 
   const handleUpdate = () => {
     // Send the Property object to UpdateProperty Component as a state variable
@@ -26,7 +28,7 @@ const PropertyCard2 = ({ property, onDelete }) => {
     <div className="bg-white relative mt-2.5 p-3 [transition:transform_0.2s_ease] rounded-md border-1 border-slate-400 hover:scale-[1.025] w-[420px]">
       
       <h4 className='text-lg mb-2 mx-0 font-semibold md:text-2xl'>{property.name}</h4>
-      <p className='text-sm -mt-2 mb-2 md:text-base' id='location'> {property.city}, {property.state}, {property.country} </p>
+      <p className='flex items-center text-sm -mt-2 mb-2 md:text-base' id='location'> <MdOutlineLocationOn className='mx-1' /> {locationWithoutPostalCode} </p>
 
       <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
         <span className='font-semibold flex items-center mr-1'>Property Type :</span>

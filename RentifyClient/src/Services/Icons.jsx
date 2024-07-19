@@ -7,7 +7,7 @@ import { GrMapLocation } from "react-icons/gr";
 import { FaGlobeAmericas, FaCheck } from "react-icons/fa";
 
 /* Property Related Icons */
-import { PiMoneyWavy, PiNoteDuotone, PiBathtubLight, PiWheelchair, PiSecurityCameraBold, PiBuildings } from "react-icons/pi";
+import { PiMoneyWavy, PiMailbox, PiNoteDuotone, PiBathtubLight, PiWheelchair, PiSecurityCameraBold, PiBuildings, PiMapPinSimpleAreaLight } from "react-icons/pi";
 import { LuIndianRupee } from "react-icons/lu";
 import { TbReportMoney, TbSunElectricity } from "react-icons/tb";
 import { RiSofaLine, RiContractLine  } from "react-icons/ri";
@@ -37,6 +37,8 @@ export {    MdOutlineLocationOn,
             RiSofaLine,
             RxDimensions,
             PiNoteDuotone,
+            PiMapPinSimpleAreaLight,
+            PiMailbox,
             GrMoney,
             MdOutlineHomeWork,
             IoImageOutline,

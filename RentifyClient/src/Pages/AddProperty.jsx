@@ -6,20 +6,26 @@ import { toast } from "react-toastify";
 import { ImageUploader } from '../Components/ImageUploader';
 import { API_ENDPOINTS } from '../Services/Endpoints';
 import { CgProfile, PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdOutlineHomeWork, 
-         IoImageOutline, MdOutlineLocationOn, GrMapLocation, FaGlobeAmericas, TbReportMoney,
+         IoImageOutline, MdOutlineLocationOn, GrMapLocation, FaGlobeAmericas, TbReportMoney, PiMapPinSimpleAreaLight,
          RiContractLine, MdBalcony, MdOutlineWatchLater, IoBedOutline, PiBathtubLight, PiSecurityCameraBold,
-         PiWheelchair, IoCompassOutline, TbSunElectricity, CgGym, FaCar, BsStars } from '../Services/Icons';
+         PiWheelchair, IoCompassOutline, TbSunElectricity, CgGym, FaCar, BsStars,PiMailbox } from '../Services/Icons';
 
 const AddProperty = () => {
   const userId = useSelector((state) => state.userData.id);
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    name: '',
+  const [location, setLocation] = useState({
+    streetAddress: '',
     city: '',
     state: '',
     country: '',
+    postalCode: '',
+  });
+
+  const [formData, setFormData] = useState({
+    name: '',
+    location: '',
     area: '',
     rent: '',
     bedrooms: '',
@@ -47,18 +53,26 @@ const AddProperty = () => {
     setFormData({ ...formData, imageId });
   };
 
+  const handleLocationChange = (e) => {
+    const { name, value } = e.target;
+    setLocation({
+      ...location,
+      [name]: value,
+    });
+  };
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name in formData) {
       setFormData({ ...formData, [name]: value });
     } else {
       setFormData({ 
-      ...formData, 
-      additionalDetails: { 
-        ...formData.additionalDetails, 
-        [name]: value 
-      } 
-    });
+        ...formData, 
+        additionalDetails: { 
+          ...formData.additionalDetails, 
+          [name]: value 
+        } 
+      });
     }
   };
 
@@ -81,7 +95,15 @@ const AddProperty = () => {
       return;
     }
 
-    axios.post(API_ENDPOINTS.property.add, formData, {
+    // Concat addres as a single string and save it in formData as `location`
+    const locationString = `${location.streetAddress}, ${location.city}, ${location.state}, ${location.country} - ${location.postalCode}`;
+
+    const updatedFormData = {
+      ...formData,
+      state: locationString,
+    };
+
+    axios.post(API_ENDPOINTS.property.add, updatedFormData, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -89,7 +111,7 @@ const AddProperty = () => {
       .then((response) => {
         toast.success("Property added successfully.");
         setTimeout(() => { navigate('/properties'); }, 2000);
-        console.log(formData);
+        console.log(updatedFormData);
       })
       .catch((error) => {
         toast.error('There was an error adding the property.');
@@ -112,20 +134,35 @@ const AddProperty = () => {
               <input className='w-full md:w-5/6 p-2 border-1 border-zinc-300 rounded-md'
                      type="text" name="name" value={formData.name} onChange={handleChange} required />
             </div>
+
+            <div className="flex items-center space-x-2">
+              <label className='flex items-center w-2/5 md:w-1/4 font-medium'>Street <PiMapPinSimpleAreaLight className='ml-1 text-xl' /></label>
+              <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
+                     type="text" name="streetAddress" value={location.streetAddress} onChange={handleLocationChange} required />
+            </div>
+
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>City <MdOutlineLocationOn className='ml-1 text-[22px]' /></label>
               <input className='w-full md:w-5/6 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="city" value={formData.city} onChange={handleChange} required />
+                     type="text" name="city" value={location.city} onChange={handleLocationChange} required />
             </div>
+
+            <div className="flex items-center space-x-2">
+              <label className='flex items-center w-3/4 md:w-1/2 font-medium'>Postal Code <PiMailbox className='ml-1 text-xl' /></label>
+              <input className='w-4/5 p-2 border-1 border-zinc-300 rounded-md'
+                     type="text" name="postalCode" value={location.postalCode} onChange={handleLocationChange} required />
+            </div>
+
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>State <GrMapLocation className='ml-1 text-xl' /> </label>
               <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="state" value={formData.state} onChange={handleChange} required />
+                     type="text" name="state" value={location.state} onChange={handleLocationChange} required />
             </div>
+
             <div className="flex items-center space-x-2">
-              <label className='flex items-center w-2/5 md:w-1/4 font-medium'>Country <FaGlobeAmericas className='ml-1 text-lg' /></label>
+              <label className='flex items-center w-2/5 md:w-1/2 font-medium'>Country <FaGlobeAmericas className='ml-1 text-lg' /></label>
               <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="country" value={formData.country} onChange={handleChange} required />
+                     type="text" name="country" value={location.country} onChange={handleLocationChange} required />
             </div>
           </div>
 
