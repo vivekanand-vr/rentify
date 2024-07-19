@@ -51,22 +51,25 @@ const UpdateProperty = () => {
   });
 
   // Split the location string and remove the postal code part
-  const locationWithoutPostalCode = property.location.split(' - ')[0];
-  const locationPostalCode = property.location.split('-')[1];
+  const [locationWithoutPostalCode, locationPostalCode] = property.location.split(' - ');
+  console.log(locationPostalCode);
+  
 
   // Set current property details in the formdata to modify
   useEffect(() => {
     if (property) {
       // Split location string into separate fields
       const locationParts = locationWithoutPostalCode.split(',').map(part => part.trim());
-      setFormData({
-        ...property,
+      setLocation({
+        ...location,
         streetAddress: locationParts[0],
         city: locationParts[1],
         state: locationParts[2],
         country: locationParts[3],
         postalCode: locationPostalCode,
       });
+
+      setFormData(property);
     } else {
       toast.error('No property data found.');
     }
@@ -87,6 +90,14 @@ const UpdateProperty = () => {
     }
   };
 
+  const handleLocationChange = (e) => {
+    const { name, value } = e.target;
+    setLocation({
+      ...location,
+      [name]: value,
+    });
+  };
+  
   const handleCheckboxChange = (e) => {
     const { name, checked } = e.target;
     setFormData({ 
@@ -101,7 +112,7 @@ const UpdateProperty = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Combine location fields into a single string
-    const locationString = `${formData.streetAddress}, ${formData.city}, ${formData.state}, ${formData.country} - ${formData.postalCode}`;
+    const locationString = `${location.streetAddress}, ${location.city}, ${location.state}, ${location.country} - ${location.postalCode}`;
 
     const updatedFormData = {
       ...formData,
@@ -139,31 +150,31 @@ const UpdateProperty = () => {
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>Street <MdOutlineLocationOn className='ml-1 text-xl' /></label>
               <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="streetAddress" value={formData.streetAddress} onChange={handleChange} required />
+                     type="text" name="streetAddress" value={location.streetAddress} onChange={handleLocationChange} required />
             </div>
 
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>City <MdOutlineLocationOn className='ml-1 text-[22px]' /></label>
               <input className='w-full md:w-5/6 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="city" value={formData.city} onChange={handleChange} required />
+                     type="text" name="city" value={location.city} onChange={handleLocationChange} required />
             </div>
 
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-3/4 md:w-1/2 font-medium'>Postal Code <PiMailbox className='ml-1 text-xl' /></label>
               <input className='w-4/5 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} required />
+                     type="text" name="postalCode" value={location.postalCode} onChange={handleLocationChange} required />
             </div>
 
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/4 font-medium'>State <GrMapLocation className='ml-1 text-xl' /> </label>
               <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="state" value={formData.state} onChange={handleChange} required />
+                     type="text" name="state" value={location.state} onChange={handleLocationChange} required />
             </div>
 
             <div className="flex items-center space-x-2">
               <label className='flex items-center w-2/5 md:w-1/2 font-medium'>Country <FaGlobeAmericas className='ml-1 text-lg' /></label>
               <input className='w-full md:w-4/5 p-2 border-1 border-zinc-300 rounded-md'
-                     type="text" name="country" value={formData.country} onChange={handleChange} required />
+                     type="text" name="country" value={location.country} onChange={handleLocationChange} required />
             </div>
           </div>
 

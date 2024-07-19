@@ -4,7 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { IoCallOutline } from "react-icons/io5";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { GrMapLocation } from "react-icons/gr";
-import { FaGlobeAmericas, FaCheck } from "react-icons/fa";
+import { FaGlobeAmericas, FaCheck, FaTimes } from "react-icons/fa";
 
 /* Property Related Icons */
 import { PiMoneyWavy, PiMailbox, PiNoteDuotone, PiBathtubLight, PiWheelchair, PiSecurityCameraBold, PiBuildings, PiMapPinSimpleAreaLight } from "react-icons/pi";
@@ -25,6 +25,7 @@ export {    MdOutlineLocationOn,
             GrMapLocation,
             FaGlobeAmericas,
             FaCheck,
+            FaTimes,
             CgProfile, 
             IoCallOutline,
             IoCompassOutline, 

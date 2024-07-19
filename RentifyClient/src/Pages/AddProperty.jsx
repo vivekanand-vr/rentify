@@ -30,7 +30,6 @@ const AddProperty = () => {
     rent: '',
     bedrooms: '',
     propertyType: '',
-    furnishing: '',
     imageId: '',
     ownerId: userId,
     additionalDetails: {
@@ -45,6 +44,7 @@ const AddProperty = () => {
       security: '',
       leaseTerms: '',
       carParking: false,
+      furnishing: '',
       amenities: '',
     }
   });
@@ -100,7 +100,7 @@ const AddProperty = () => {
 
     const updatedFormData = {
       ...formData,
-      state: locationString,
+      location: locationString,
     };
 
     axios.post(API_ENDPOINTS.property.add, updatedFormData, {
@@ -216,7 +216,7 @@ const AddProperty = () => {
               <label className='flex items-center w-3/5 md:w-1/3 font-medium'>Furnishing <RiSofaLine className='ml-1 text-xl' /></label>
               <select className='w-3/4 p-2 border-1 border-zinc-300 rounded-md'
                       name="furnishing" value={formData.additionalDetails.furnishing} onChange={handleChange} required>
-                <option className='text-sm md:text-base' value="" disabled>Select</option>
+                <option className='text-sm md:text-base' value="" >Select</option>
                 <option className='text-sm md:text-base' value="Furnished">Furnished</option>
                 <option className='text-sm md:text-base' value="Semi-furnished">Semi-furnished</option>
                 <option className='text-sm md:text-base' value="Unfurnished">Unfurnished</option>

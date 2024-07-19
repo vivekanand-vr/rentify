@@ -6,7 +6,7 @@ import PropertyDetailsShimmer from '../Components/PropertyDetailsShimmer';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import { LuIndianRupee, PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdOutlineLocationOn, TbReportMoney,FaCheck,
          RiContractLine, MdBalcony,  PiBathtubLight, PiSecurityCameraBold, PiWheelchair, IoCompassOutline, TbSunElectricity, 
-         FaCar, BsStars, CgGym } from '../Services/Icons';
+         FaCar, FaTimes, BsStars, CgGym } from '../Services/Icons';
 
 
 
