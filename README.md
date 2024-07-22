@@ -1,10 +1,11 @@
 <div align="center">
   <br />
   <a href="https://youtu.be/y5vE8y_f_OM" target="_blank">
-    <img src="https://github.com/user-attachments/assets/a9742a69-b43f-4a2d-a05e-9d01a73316be" alt="Project Banner" style="border-radius: 5px;">
+    <img src="https://github.com/user-attachments/assets/9595038e-4c65-4ef7-8a6e-ac672dd8f4c1" alt="Project Banner" style="border-radius: 5px;">
   </a>
   <br> </ br>
   <br> </ br>
+
 
   <div>
     <img src="https://img.shields.io/badge/-React-black?style=for-the-badge&logo=react&logoColor=white&color=61DAFB" alt="react" />
@@ -13,7 +14,7 @@
     <img src="https://img.shields.io/badge/-MySQL-black?style=for-the-badge&logo=mysql&logoColor=white&color=4479A1" alt="mysql" />
   </div>
   </div>
-  
+
 ## Overview
 
 **Rentify** is a web application designed to simplify the rental process for both property owners and tenants. In the post-pandemic world, the demand for real estate has surged, especially in cities with high populations and IT offices. RENTIFY aims to bridge the gap between property owners and tenants by providing a platform where they can easily connect based on their requirements.
