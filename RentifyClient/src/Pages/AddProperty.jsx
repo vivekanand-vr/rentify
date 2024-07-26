@@ -125,7 +125,7 @@ const AddProperty = () => {
   return (
     <div className="flex justify-center mx-auto my-3 p-3">
       <div className="bg-white p-6 border border-black rounded-lg w-full max-w-4xl">
-        <h2 className='font-nunito text-center font-bold mb-6 text-2xl md:text-4xl'>ADD PROPERTY DETAILS</h2>
+        <h2 className='font-nunito text-center font-bold mb-6 text-2xl md:text-3xl'>Add Property Details</h2>
         <form onSubmit={handleSubmit}>
           {/* Two-column layout for name, city, state, country */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">

@@ -2,13 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { deleteAsset } from '../Services/DeleteAsset';
 import { LuIndianRupee, MdOutlineLocationOn, RiSofaLine, RxDimensions } from '../Services/Icons';
-import { API_ENDPOINTS } from '../Services/Endpoints';
+import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import axios from 'axios';
 
 const PropertyCard2 = ({ property, onDelete }) => {
   const navigate = useNavigate();
   // Split the location string and remove the postal code part
   const locationWithoutPostalCode = property.location.split(' - ')[0];
+  const imageUrl = PROPERTY_IMAGE + property.imageId;
 
   const handleUpdate = () => {
     // Send the Property object to UpdateProperty Component as a state variable
@@ -25,41 +26,36 @@ const PropertyCard2 = ({ property, onDelete }) => {
   };
 
   return (
-    <div className="bg-white relative mt-2.5 p-3 [transition:transform_0.2s_ease] rounded-md border-1 border-slate-400 hover:scale-[1.025] w-[420px]">
+    <div className="text-sm bg-white relative mt-2.5 p-2 rounded-md border-1 border-slate-400 w-[360px]">
       
-      <h4 className='text-lg mb-2 mx-0 font-semibold md:text-2xl'>{property.name}</h4>
-      <p className='flex items-center text-sm -mt-2 mb-2 md:text-base' id='location'> <MdOutlineLocationOn className='mx-1' /> {locationWithoutPostalCode} </p>
-
-      <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center mr-1'>Property Type :</span>
-           {property.propertyType} {property.bedrooms} BHK 
-      </p>
-
-      <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center'>Area <RxDimensions className='mx-1' /></span> 
-          {property.area} square ft.
-      </p>
+      <img className='w-full h-54 mx-0 rounded-sm md:h-[250px] [transition:transform_0.2s_ease] hover:scale-105'
+           src={imageUrl} alt='property' />
       
-      <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center'>Furnishing <RiSofaLine className='mx-1' /></span> 
-          {property.additionalDetails.furnishing} 
-      </p>
-      
-      <p className='text-sm md:text-base mx-0 my-1 flex items-center'>
-        <span className='font-semibold flex items-center'>Rent </span> <LuIndianRupee className='ml-1' />
-          {property.rent} &nbsp; &nbsp; 
-        <span className='font-semibold flex items-center'>Deposit </span> <LuIndianRupee className='ml-1' />{property.additionalDetails.deposit}
-      </p>
+      <div className='p-2'>
+        <h4 className='text-lg mb-2 mx-0 font-semibold'>{property.name}</h4>
+        <p className='flex items-center -mt-2 mb-2 text-red-600 ' id='location'>
+          <MdOutlineLocationOn className='mr-1 md:text-xl' /> {locationWithoutPostalCode} 
+        </p>
 
-      <div className='text-center'>
-        <button className='text-sm md:text-base mt-3.5 mx-2 p-2 text-white w-[calc(50%-20px)] bg-blue-700 border-none rounded-md
-                         hover:bg-slate-700' 
-                onClick={handleUpdate}>Update</button>
+        <p className='mx-0 my-1'>
+            <span className='font-semibold'> {property.propertyType} {property.bedrooms} BHK </span> - {property.additionalDetails.highlights}
+        </p>
+        
+        <p className='font-semibold mx-0 my-1 flex items-center text-green-700'>
+            <LuIndianRupee /> {property.rent} / month
+        </p>
 
-        <button  className='text-sm md:text-base mt-3.5 mx-2 p-2 text-white w-[calc(50%-20px)] bg-blue-700 border-none rounded-md 
-                          hover:bg-slate-700'
-                onClick={handleDelete}>Delete</button>
+        <div className='text-center text-sm mt-2'>
+          <button className='mx-2 p-2 text-white w-2/5 bg-blue-700 border-none rounded-md
+                          hover:bg-slate-700' 
+                  onClick={handleUpdate}>Update</button>
+
+          <button  className='mx-2 p-2 text-white w-2/5 bg-blue-700 border-none rounded-md 
+                            hover:bg-slate-700'
+                  onClick={handleDelete}>Delete</button>
+        </div>
       </div>
+      
     </div>
   );
 }

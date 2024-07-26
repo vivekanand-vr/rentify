@@ -61,8 +61,8 @@ const SignIn = () => {
 
   return (
     <div className="flex justify-center mx-[auto] my-6 p-4">
-      <div className="bg-white p-3 border-1 border-black rounded-lg w-[450px]">
-        <h2 className='font-nunito text-center font-bold mb-3 text-3xl md:text-4xl'>SIGN IN</h2>
+      <div className="text-sm md:text-base bg-white p-3 border-1 border-black rounded-lg w-[450px]">
+        <h2 className='font-nunito text-center font-bold mb-3 text-2xl md:text-3xl'>Sign In</h2>
 
         <span className='block text-center font-medium mb-4'>Already have an account? <Link className='text-blue-700 font-medium' to={"/login"}>Login</Link></span>
         

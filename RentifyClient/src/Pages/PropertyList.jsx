@@ -57,7 +57,7 @@ const PropertiesList = () => {
           setSearchKeyword={setSearchKeyword}
           onSearch={handleSearch}
         />
-        <div className="flex flex-wrap justify-center gap-y-6 gap-x-6 mb-4 mx-2 p-3">
+        <div className="flex flex-wrap gap-3 mx-auto p-3 max-w-screen-2xl">
             {loading ? ( Array.from({ length: 8 }).map((_, index) => <ShimmerCard key={index} />)) :
              (
               currentProperties.length > 0 ? (

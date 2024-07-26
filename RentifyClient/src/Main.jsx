@@ -15,6 +15,7 @@ import Error from './Pages/Error';
 import './index.css';
 import "react-toastify/dist/ReactToastify.css";
 import PropertyDetails from './Pages/PropertyDetails';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginUser/>} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/about" element={ <About /> } />
         <Route path="/add-property" element={<AddProperty />} />
         <Route path="/profile" element={<MyProfile />} />
         <Route path="/my-properties" element={<MyPropertyList />} />

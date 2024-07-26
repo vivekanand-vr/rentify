@@ -60,9 +60,9 @@ const LoginUser = () => {
 
   return (
     <div className='h-[84vh] md:h-screen'>
-      <div className="flex justify-center mx-[auto] my-6 p-5">
+      <div className="text-sm md:text-base flex justify-center mx-[auto] my-6 p-5">
         <div className="bg-white p-2 md:p-4 border-[1px] border-[solid] border-black rounded-lg w-[450px]">
-          <h2 className='font-nunito text-center font-bold my-3 text-3xl md:text-4xl'>LOGIN</h2>
+          <h2 className='font-nunito text-center font-bold my-3 text-2xl md:text-3xl'>Login</h2>
           
           <form onSubmit={formik.handleSubmit}>
             <div className="mb-4">
