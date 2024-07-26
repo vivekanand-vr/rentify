@@ -1,8 +1,17 @@
-# RENTIFY - Where Renting Meets Simplicity
-
 <div align="center">
- <kbd> <img src="https://github.com/vivekanand-vr/Rentify/assets/116813193/f8eac940-7e7f-4c72-9973-3aef5f9ddc2a)" alt="banner"> </kbd>
-</div>
+  <br />
+    <img src="https://github.com/user-attachments/assets/9595038e-4c65-4ef7-8a6e-ac672dd8f4c1" alt="Project Banner" style="border-radius: 5px;">
+  <br> </ br>
+  <br> </ br>
+
+
+  <div>
+    <img src="https://img.shields.io/badge/-React-black?style=for-the-badge&logo=react&logoColor=white&color=61DAFB" alt="react" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logo=tailwindcss&logoColor=white&color=06B6D4" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-Spring_Boot-black?style=for-the-badge&logo=springboot&logoColor=white&color=6DB33F" alt="springboot" />
+    <img src="https://img.shields.io/badge/-MySQL-black?style=for-the-badge&logo=mysql&logoColor=white&color=4479A1" alt="mysql" />
+  </div>
+  </div>
 
 ## Overview
 
