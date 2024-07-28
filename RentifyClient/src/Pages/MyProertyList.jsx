@@ -33,7 +33,7 @@ const MyPropertyList = () => {
       <div className='my-properties'>
         <h2 className="font-nunito mt-4 ml-6 text-3xl md:text-4xl font-bold flex flex-center">My Listings<TbHomeStar className='ml-1.5' /></h2>
         
-        <div className="flex flex-wrap gap-3 p-3">
+        <div className="flex flex-wrap gap-3 p-3 justify-center md:justify-normal">
           {loading ? (Array.from({ length: 10 }).map((_, index) => <ShimmerCard key={index} />)) :
             properties.length > 0 ? (
               properties.map(property => (

@@ -20,18 +20,18 @@ function About() {
       </p>
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-10'>
-        <div className='text-center'>
-          <img src={Image1} alt="Hassle Free Paperwork" className='mx-auto w-52 h-52 object-cover rounded-full' />
+        <div className='text-center bg-gray-100 p-3 shadow-lg rounded-lg'>
+          <img src={Image1} alt="Hassle Free Paperwork" className='mx-auto w-40 h-40 object-cover rounded-full' />
           <h3 className='mt-4 text-xl font-semibold text-slate-800'>Hassle Free Paperwork</h3>
           <p className='mt-2 text-slate-700'>We take care of all the documentation and legal formalities to ensure a smooth and hassle-free process.</p>
         </div>
-        <div className='text-center'>
-          <img src={Image2} alt="Home Shifting Assist" className='mx-auto w-52 h-52 object-cover rounded-full' />
+        <div className='text-center bg-gray-100 p-3 shadow-lg rounded-lg'>
+          <img src={Image2} alt="Home Shifting Assist" className='mx-auto w-40 h-40 object-cover rounded-full' />
           <h3 className='mt-4 text-xl font-semibold text-slate-800'>Home Shifting Assist</h3>
           <p className='mt-2 text-slate-700'>Our team provides assistance with home shifting, making your move as seamless as possible.</p>
         </div>
-        <div className='text-center'>
-          <img src={Image3} alt="Popular Locations" className='mx-auto w-52 h-52 object-cover rounded-full' />
+        <div className='text-center bg-gray-100 p-3 shadow-lg rounded-lg'>
+          <img src={Image3} alt="Popular Locations" className='mx-auto w-40 h-40 object-cover rounded-full' />
           <h3 className='mt-4 text-xl font-semibold text-slate-800'>Popular Locations</h3>
           <p className='mt-2 text-slate-700'>We offer properties in the most popular and desirable locations to match your preferences.</p>
         </div>
