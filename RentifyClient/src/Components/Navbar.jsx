@@ -5,20 +5,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { userLogout } from '../Redux/Reducers/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  const userName = useSelector((state) => state.userData.firstName);
+  const userName = useSelector((state) => state.userData?.firstName || '');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [mobileView, setMobileView] = useState(false);
-  const toggleMobileMenu = () => setMobileView(!mobileView);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+  const toggleMobileMenu = () => setMobileView(!mobileView);
+  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const toggleProfileDropdown = () => setProfileDropdownOpen(!profileDropdownOpen);
 
   const handleLogout = () => {
     dispatch(userLogout());
@@ -31,23 +32,26 @@ const Navbar = () => {
       if (dropdownOpen && !event.target.closest('.dropdown')) {
         setDropdownOpen(false);
       }
+      if (profileDropdownOpen && !event.target.closest('.profile-dropdown')) {
+        setProfileDropdownOpen(false);
+      }
     };
 
     document.addEventListener('click', handleOutsideClick);
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
-  }, [dropdownOpen]);
+  }, [dropdownOpen, profileDropdownOpen]);
 
   return (
     <>
       <nav className="bg-blue-700 text-[white] z-[1000] flex justify-between items-center px-2.5 py-0 relative">
-        <div className="flex items-center text-white text-4xl py-1 font-bold no-underline sm:text-[40px]">
+        <div className="flex items-center text-white text-4xl py-1.5 font-bold no-underline sm:text-[40px]">
           <img className="h-10 md:h-12 mt-[-5px]" src={Logo} alt="rentify-icon" />
           <Link to="/" className='ml-1'>RENTIFY</Link>
         </div>
-        <div className="text-[larger] grow text-center hidden sm:block">
-          {isLoggedIn && <span>Welcome {userName}!</span>}
+        <div className="text-lg grow text-center hidden sm:block">
+          {isLoggedIn && <span>Hey there 👋 {userName}!</span>}
         </div>
         <button
           className="text-2xl sm:hidden ml-auto"
@@ -70,21 +74,30 @@ const Navbar = () => {
                     </svg>
                   </div>
                   {dropdownOpen && (
-                    <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg">
-                      <li className="px-4 py-2 hover:bg-gray-100 text-black">
+                    <ul className="absolute right-0 mt-3 w-48 bg-white border border-gray-300 rounded-md shadow-lg">
+                      <li className="px-4 py-2 hover:bg-neutral-300 text-black">
                         <Link to="/add-property">Add Property</Link>
                       </li>
-                      <li className="px-4 py-2 hover:bg-gray-100 text-black">
+                      <li className="px-4 py-2 hover:bg-neutral-300 text-black">
                         <Link to="/my-properties">My Listings</Link>
                       </li>
                     </ul>
                   )}
                 </li>
-                <li className='cursor-pointer mx-2.5 my-0 hidden sm:block'>
-                  <Link to="/profile">Profile</Link>
-                </li>
-                <li className='cursor-pointer mx-2.5 my-0 hidden sm:block' onClick={handleLogout}>
-                  Logout
+                <li className='relative cursor-pointer mx-2.5 my-0 hidden sm:block profile-dropdown'>
+                  <div onClick={toggleProfileDropdown} className="flex items-center">
+                    <CgProfile className='size-7' />
+                  </div>
+                  {profileDropdownOpen && (
+                    <ul className="absolute right-0 mt-3 min-w-32 bg-white border-1 border-gray-300 rounded-md shadow-lg">
+                      <li className="px-3 py-2  hover:bg-neutral-300 text-black">
+                        <Link to="/profile">My Profile</Link>
+                      </li>
+                      <li className="px-3 py-2 hover:bg-neutral-300 text-black" onClick={handleLogout}>
+                        Logout
+                      </li>
+                    </ul>
+                  )}
                 </li>
               </>
             ) : (

@@ -4,7 +4,7 @@ import Image3 from "../Assets/ab-3.jpg";
 
 function About() {
   return (
-    <div className='py-20 px-4 max-w-screen-xl  mx-auto min-h-screen'>
+    <div className='py-20 px-4 max-w-screen-2xl  mx-auto min-h-screen'>
       <h1 className='font-nunito text-2xl md:text-3xl font-bold mb-4 text-slate-800'>About Rentify</h1>
       <p className='mb-4 text-slate-700'>
         Rentify is your go-to platform for finding, renting, and managing properties with ease. We specialize in connecting tenants with landlords and providing a seamless rental experience through our user-friendly platform. Our mission is to simplify the rental process and make it more transparent for everyone involved.
@@ -18,7 +18,7 @@ function About() {
       <p className='mb-4 text-slate-700'>
         Join us at Rentify and discover a new way of renting properties that is simple, efficient, and hassle-free. We are excited to be a part of your rental journey and look forward to helping you find your perfect home.
       </p>
-      {/* Add images to enhance the presentation */}
+
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mt-10'>
         <div className='text-center'>
           <img src={Image1} alt="Hassle Free Paperwork" className='mx-auto w-52 h-52 object-cover rounded-full' />
