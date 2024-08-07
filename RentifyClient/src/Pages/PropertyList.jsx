@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropertyCard from '../Components/PropertyCard';
 import PropertySearch from '../Components/PropertySearch';
+import CarouselBanner from '../Components/CarouselBanner';
 import ShimmerCard from "../Components/ShimmerCard";
 import Pagination from '../Components/Pagination';
 import { useSelector } from 'react-redux';
@@ -57,6 +58,7 @@ const PropertiesList = () => {
           setSearchKeyword={setSearchKeyword}
           onSearch={handleSearch}
         />
+                <CarouselBanner />
         <div className="flex flex-wrap gap-3 mx-auto p-3 max-w-screen-2xl justify-center md:justify-normal">
             {loading ? ( Array.from({ length: 8 }).map((_, index) => <ShimmerCard key={index} />)) :
              (

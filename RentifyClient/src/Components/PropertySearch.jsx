@@ -11,8 +11,8 @@ const PropertySearch = ({ searchKeyword, setSearchKeyword, onSearch }) => {
   };
 
   return (
-    <div className="flex justify-center mt-7">
-      <div className="flex items-center w-80 rounded-md border-1 border-slate-400 md:w-[700px]">
+    <div className="flex justify-center mt-4">
+      <div className="flex items-center w-96 rounded-md border-1 border-slate-400 md:w-[900px]">
       <input
         type="text"
         className="flex-1 p-2 text-sm rounded-md md:p-2.5 md:text-base"
