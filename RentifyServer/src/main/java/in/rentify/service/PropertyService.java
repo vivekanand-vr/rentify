@@ -5,6 +5,8 @@ import in.rentify.dao.PropertyRepository;
 import in.rentify.model.AdditionalDetails;
 import in.rentify.model.Property;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +27,11 @@ public class PropertyService {
 
     public List<Property> getAllProperties() {
         return propertyRepository.findAll();
+    }
+    
+    public List<Property> getLatestProperties() {
+        Pageable topFour = PageRequest.of(0, 4);
+        return propertyRepository.findLatestProperties(topFour);
     }
 
     public Property getPropertyDetails(Long pid) {

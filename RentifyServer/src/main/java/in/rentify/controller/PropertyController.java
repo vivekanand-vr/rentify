@@ -32,6 +32,11 @@ public class PropertyController {
         List<Property> properties = propertyService.getAllProperties();
         return ResponseEntity.ok(properties);
     }
+    
+    @GetMapping("/latest-properties")
+    public List<Property> getLatestProperties() {
+        return propertyService.getLatestProperties();
+    }
 
     @GetMapping("/owner/{ownerId}")
     public ResponseEntity<List<Property>> getPropertiesByOwnerId(@PathVariable Long ownerId) {

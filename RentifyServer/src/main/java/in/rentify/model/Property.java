@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -25,6 +26,7 @@ public class Property {
     private Integer bedrooms;
     private String propertyType;
     private String imageId;
+    private LocalDate datePosted; 
     private Long ownerId;
 
     @OneToOne(mappedBy = "property", cascade = CascadeType.ALL)
