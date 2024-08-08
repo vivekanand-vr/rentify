@@ -13,33 +13,34 @@
 
 ## Overview
 
-**Rentify** is a web application designed to simplify the rental process for both property owners and tenants. In the post-pandemic world, the demand for real estate has surged, especially in cities with high populations and IT offices. RENTIFY aims to bridge the gap between property owners and tenants by providing a platform where they can easily connect based on their requirements.
+**Rentify** is a web application designed to simplify the rental process for both property owners and tenants.\
+In the post-pandemic world, the demand for real estate has surged, especially in cities with high populations and IT offices. RENTIFY aims to bridge the gap between property owners and tenants by providing a platform where they can easily connect based on their requirements.
 
 
 ## Technologies Used
 
 - **Frontend** : Vite, Redux Toolkit, React JS, Tailwind CSS
 - **Backend** : Java, Maven, Spring Boot, REST-APIs, MySQL Database
-- **Additional Packages** : Axios, Yup, Formik, Toastify, Skeleton, Swiper, Cloudinary
+- **Additional Packages** : Axios, Animate.CSS, Yup, Formik, Toastify, Skeleton, Swiper, Cloudinary
 
 ## Web View Snapshots
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/f95bd05e-e76f-43f1-b0f5-dfb7c5eaa7f6" alt="Web Image 1" width="500"></td>
-    <td><img src="https://github.com/user-attachments/assets/64dca60f-0892-4371-b524-2625b307a817" alt="Web Image 2" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/2b578ca1-0be4-4ef2-94da-100ed527b1d2" alt="Web Image 1" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/37c1b74e-db7b-4eba-a69c-059c19298e78" alt="Web Image 2" width="500"></td>
   </tr>
    <tr>
-    <td><img src="https://github.com/user-attachments/assets/f0345e3f-d257-4202-880d-db071e207e9f" alt="Web Image 7" width="500"></td>
-    <td><img src="https://github.com/user-attachments/assets/122287eb-d835-431d-8570-5d83ed8cb378" alt="Web Image 8" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/ef3e9570-92b1-4f92-8c44-f8b83dbc506b" alt="Web Image 7" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/b8d646d6-d080-42b0-b0c2-153c030d1887" alt="Web Image 8" width="500"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/2c347595-6cbc-499a-bfbe-1961d33c678b" alt="Web Image 3" width="500"></td>
-    <td><img src="https://github.com/user-attachments/assets/e49cecf8-518a-47b7-9a16-d6b907f8e325" alt="Web Image 4" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/17a24cc5-bf5f-418f-a3c4-631926473de2" alt="Web Image 3" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/5e6324c3-3719-4ef3-a309-77f67291b494" alt="Web Image 4" width="500"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/084738fc-3f18-4600-af92-99db3c0b579d" alt="Web Image 6" width="500"></td>
-    <td><img src="https://github.com/user-attachments/assets/342b0940-9725-45f9-8f4b-3f6360890366" alt="Web Image 5" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/34b46b22-8662-447b-91f2-f7c5972cd6fd" alt="Web Image 6" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/01b4ab9b-ce73-4c1e-b929-5333db8ba20f" alt="Web Image 5" width="500"></td>
   </tr>
 </table>
 
@@ -47,17 +48,19 @@
 
 ### Frontend Pages
 
-- **Home**: Landing page which gives brief of the platform.
+- **Home**: Landing page which gives overview about the company, milestones, awards and testimonials.
 - **About** : About us page displays company details and services.
 - **PropertyList**: Shows a list of available properties.
 - **PropertyDetails**: Displays additional information of a property.
-- **Sign In**: User Sign in form.
-- **LoginPage**: User login form.
-- **AddProperty**: Form to add a new property.
 - **MyProfile**: Displays user's profile information, also allows users to edit details.
 - **MyPropertyList**: Lists properties added by the user.
-- **UpdateProperty**: Form to update the property details.
 - **Error**: 404 Error page for invalid paths.
+  
+### Forms
+- **LoginPage**: User login form.
+- **Sign In**: User Sign in form.
+- **AddProperty**: Form to add a new property.
+- **UpdateProperty**: Form to update the property details.
 
 ### Backend Layers
 
@@ -97,6 +100,7 @@
 ### Property APIs
 
 - **POST : /properties**: Add a new property.
+- **GET : /properties/latest-properties**: Get recent listing by date
 - **GET : /properties**: Get all properties.
 - **GET : /properties/{pid}**: Get property details.
 - **GET : /properties/{id}**: Get propeties of user.
@@ -107,17 +111,17 @@
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/8a059ec0-af1c-46eb-ae6c-bd7f0595fbcb" alt="Image 1" width="225"></td>
-    <td><img src="https://github.com/user-attachments/assets/f753e189-016d-475a-9297-078cce9aa611" alt="Image 2" width="225"></td>
-    <td><img src="https://github.com/user-attachments/assets/2616d193-25ae-4cd5-a290-48080bf505c6" alt="Image 3" width="225"></td>
-    <td><img src="https://github.com/user-attachments/assets/b6d30113-83cb-4614-965d-b3c7222f09d9" alt="Image 4" width="225"></td>
-    
+    <td><img src="https://github.com/user-attachments/assets/903e19df-c94b-4dc0-b598-edfdfe724699" alt="Image 1" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/99af3375-bffd-44c1-be05-376c0518c2d1" alt="Image 2" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/37723b0a-d995-4b4e-a884-bfac7f105ae7" alt="Image 3" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/65e8c6d7-0c8c-4dd3-a6d5-d41e47f69fa4" alt="Image 4" width="225"></td>
   </tr>
+    
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/91d3e2ae-2ea9-400b-b645-fe9e7cbf911f" alt="Image 5" width="220"></td>
-    <td><img src="https://github.com/user-attachments/assets/d0c52027-051f-4dc5-aed4-979fb2097178" alt="Image 6" width="220"></td>
-    <td><img src="https://github.com/user-attachments/assets/0b623469-3d31-4306-b14f-4bdb8f68d942" alt="Image 7" width="220"></td>
-    <td><img src="https://github.com/user-attachments/assets/fe04af67-45c2-45b5-805a-485206b9fcf0" alt="Image 8" width="220"></td>
+    <td><img src="https://github.com/user-attachments/assets/e9b4415e-eaf4-4c60-8687-78fb5a7bf677" alt="Image 5" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/3ea675db-dc25-4555-b2db-47da17af785b" alt="Image 6" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/456be20c-5423-46d8-8e26-729f79919d81" alt="Image 7" width="225"></td>
+    <td><img src="https://github.com/user-attachments/assets/b28f6dcc-96c7-48ff-8038-f8e3de6c1f46" alt="Image 8" width="225"></td>
   </tr>
 </table>
 
@@ -139,27 +143,28 @@ RentifyClient
           │       │         ├── PropertyDetailsShimmer.jsx
           │       │         ├── Testimonials.jsx
           │       ├── Pages
-          │       │         ├── AddProperty.jsx
-          │       │         ├── Error.jsx
+          │       │         ├── Forms
+          │       │                 ├── LoginUser.jsx
+          │       │                 ├── SignIn.jsx
+          │       │                 ├── AddProperty.jsx
+          │       │                 ├── UpdateProperty.jsx
+          │       │         ├── About.jsx
           │       │         ├── Home.jsx
-          │       │         ├── LoginUser.jsx
+          │       │         ├── Error.jsx
           │       │         ├── MyProertyList.jsx
           │       │         ├── MyProfile.jsx
           │       │         ├── PropertyDetails.jsx
           │       │         ├── PropertyList.jsx
-          │       │         ├── SignIn.jsx
-          │       │         ├── UpdateProperty.jsx
+          │       │         
           │       ├── Redux
           │       |         ├── Reducers
           │       |         │         ├── uerSlice.jsx
           |       |         ├── redux-store.jsx
           │       ├── Services
+          │       |         ├── Constants.jsx
           │       |         ├── DeleteAsset.jsx
           │       |         ├── Endpoints.jsx
-          │       |         ├── FilterProperties.jsx
           │       |         ├── Icons.jsx
-          │       |         ├── LocalStorage.jsx
-          │       |         ├── TestimonialsData.jsx
           │       ├── custom.css
           │       ├── index.css
           │       ├── index.jsx
