@@ -1,14 +1,11 @@
 /**
  * Returns the arry after filtering the properties with the search keyword.
- * @returns {array} Filtered Properties.
  */
 export const filterProperties = (properties, keyword) => {
     const lowerKeyword = keyword.toLowerCase();
     return properties.filter(property => {
       return property.name.toLowerCase().includes(lowerKeyword)  ||
-             property.city.toLowerCase().includes(lowerKeyword)  ||
-             property.state.toLowerCase().includes(lowerKeyword) ||
-             property.country.toLowerCase().includes(lowerKeyword);
+             property.location.toLowerCase().includes(lowerKeyword);
     });
   };
 

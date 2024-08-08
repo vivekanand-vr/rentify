@@ -60,8 +60,6 @@ const PropertiesList = () => {
           </div>
         </section>
 
-       
-
         <div className="flex flex-wrap gap-3 mx-auto p-3 max-w-screen-2xl justify-center md:justify-normal">
             {loading ? ( Array.from({ length: 8 }).map((_, index) => <ShimmerCard key={index} />)) :
              ( currentProperties.length > 0 ? (
