@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { deleteAsset } from '../Services/DeleteAsset';
-import { LuIndianRupee, MdOutlineLocationOn, RiSofaLine, RxDimensions } from '../Services/Icons';
+import { LuIndianRupee, MdLocationOn } from '../Services/Icons';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import axios from 'axios';
 
@@ -33,19 +33,19 @@ const PropertyCard2 = ({ property, onDelete }) => {
       
       <div className='p-2'>
         <h4 className='text-lg mb-2 mx-0 font-semibold'>{property.name}</h4>
-        <p className='flex items-center -mt-2 mb-2 text-red-600 ' id='location'>
-          <MdOutlineLocationOn className='mr-1 md:text-xl' /> {locationWithoutPostalCode} 
+        <p className='flex items-center -mt-2 mb-2' id='location'>
+          <MdLocationOn className='mr-1 text-green-600 md:text-xl' /> {locationWithoutPostalCode} 
         </p>
 
         <p className='mx-0 my-1'>
             <span className='font-semibold'> {property.propertyType} {property.bedrooms} BHK </span> - {property.additionalDetails.highlights}
         </p>
         
-        <p className='font-semibold mx-0 my-1 flex items-center text-green-700'>
+        <p className='font-semibold mx-0 my-1 flex items-center'>
             <LuIndianRupee /> {property.rent} / month
         </p>
 
-        <div className='text-center text-sm mt-2'>
+        <div className='text-center text-sm mt-3'>
           <button className='mx-2 p-2 text-white w-2/5 bg-blue-700 border-none rounded-md
                           hover:bg-slate-700' 
                   onClick={handleUpdate}>Update</button>

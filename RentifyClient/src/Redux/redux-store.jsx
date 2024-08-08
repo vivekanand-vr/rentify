@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from './Reducers/userSlice';
-import { saveStateToLocalStorage, loadStateFromLocalStorage } from '../Services/LocalStorage';
+import { saveStateToLocalStorage, loadStateFromLocalStorage } from '../Services/Utils';
 
 const preloadedState = loadStateFromLocalStorage();
 

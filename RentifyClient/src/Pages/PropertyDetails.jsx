@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import PropertyDetailsShimmer from '../Components/PropertyDetailsShimmer';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
-import { LuIndianRupee, PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdOutlineLocationOn, TbReportMoney,FaCheck,
+import { LuIndianRupee, PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdLocationOn, TbReportMoney,FaCheck,
          RiContractLine, MdBalcony,  PiBathtubLight, PiSecurityCameraBold, PiWheelchair, IoCompassOutline, TbSunElectricity, 
          FaCar, FaTimes, BsStars, CgGym } from '../Services/Icons';
 
@@ -49,7 +49,7 @@ const PropertyDetails = () => {
     <div className='min-h-screen p-2 md:p-0'>
       <div className="max-w-6xl mx-auto my-3 p-3 bg-white border border-gray-300 rounded-lg shadow-lg">
         <h2 className="text-2xl md:text-3xl font-semibold mb-1">{property.name}</h2>
-        <p className="flex items-center md:text-lg mb-2"><MdOutlineLocationOn className='mx-1' /> {property.location}</p>
+        <p className="flex items-center md:text-lg mb-2"><MdLocationOn className='mx-1' /> {property.location}</p>
 
         <img className="w-full h-68 object-cover rounded-md mb-4" src={imageUrl} alt={property.name} />
 

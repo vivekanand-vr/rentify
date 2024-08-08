@@ -1,10 +1,10 @@
 /* Sign in and Login Icons */
-import { MdOutlineMail, MdOutlineLocationOn } from "react-icons/md";
+import { MdOutlineMail, MdLocationOn } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoCallOutline } from "react-icons/io5";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { GrMapLocation } from "react-icons/gr";
-import { FaGlobeAmericas, FaCheck, FaTimes } from "react-icons/fa";
+import { FaGlobeAmericas, FaCheck, FaTimes, FaAward, FaCar, FaStar } from "react-icons/fa";
 
 /* Property Related Icons */
 import { PiMoneyWavy, PiMailbox, PiNoteDuotone, PiBathtubLight, PiWheelchair, PiSecurityCameraBold, PiBuildings, PiMapPinSimpleAreaLight } from "react-icons/pi";
@@ -17,38 +17,14 @@ import { MdOutlineWatchLater, MdOutlineHomeWork, MdBalcony } from "react-icons/m
 import { IoImageOutline, IoCompassOutline, IoBedOutline } from "react-icons/io5";
 import { BsStars } from "react-icons/bs";
 import { CgGym } from "react-icons/cg";
-import { FaCar } from "react-icons/fa";
 
-export {    MdOutlineLocationOn, 
-            MdOutlineWatchLater,
-            MdBalcony,
-            GrMapLocation,
-            FaGlobeAmericas,
-            FaCheck,
-            FaTimes,
-            CgProfile, 
-            IoCallOutline,
-            IoCompassOutline, 
-            RiLockPasswordLine,
-            RiContractLine, 
-            MdOutlineMail,
-            PiMoneyWavy,
-            LuIndianRupee,
-            TbReportMoney,
-            RiSofaLine,
-            RxDimensions,
-            PiNoteDuotone,
-            PiMapPinSimpleAreaLight,
-            PiMailbox,
-            GrMoney,
-            MdOutlineHomeWork,
-            IoImageOutline,
-            IoBedOutline,
-            PiBuildings,
-            PiBathtubLight,
-            PiSecurityCameraBold,
-            PiWheelchair,
-            BsStars,
-            TbSunElectricity,
-            CgGym,
-            FaCar };
+export {    CgProfile, CgGym,
+            GrMapLocation, GrMoney,
+            TbReportMoney, TbSunElectricity,
+            RiLockPasswordLine, RiContractLine, RiSofaLine,
+            FaGlobeAmericas, FaCheck, FaTimes, FaAward, FaStar, FaCar,
+            IoCallOutline, IoCompassOutline,  IoImageOutline,IoBedOutline,
+            MdLocationOn, MdOutlineWatchLater, MdBalcony, MdOutlineMail, MdOutlineHomeWork,
+            PiMoneyWavy, PiNoteDuotone, PiMapPinSimpleAreaLight, PiMailbox, PiBuildings, PiBathtubLight, PiSecurityCameraBold, PiWheelchair,
+            LuIndianRupee, RxDimensions, BsStars,
+        };

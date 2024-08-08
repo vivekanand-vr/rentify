@@ -10,6 +10,7 @@ export default {
         nunito: ['Nunito', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
+        nanum: ['Nanum Myeongjo', 'serif'],
       },
     },
   },

@@ -76,7 +76,7 @@ const Navbar = () => {
                   {dropdownOpen && (
                     <ul className="absolute right-0 mt-3 w-48 bg-white border border-gray-300 rounded-md shadow-lg">
                       <li className="px-4 py-2 hover:bg-neutral-300 text-black">
-                        <Link to="/add-property">Add Property</Link>
+                        <Link to="/add-property">Add Listing</Link>
                       </li>
                       <li className="px-4 py-2 hover:bg-neutral-300 text-black">
                         <Link to="/my-properties">My Listings</Link>
@@ -133,7 +133,7 @@ const Navbar = () => {
             {isLoggedIn ? (
               <>
                 <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
-                  <Link to="/add-property" onClick={() => setMobileView(false)}>Add Property</Link>
+                  <Link to="/add-property" onClick={() => setMobileView(false)}>Add Listing</Link>
                 </li>
                 <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
                   <Link to="/my-properties" onClick={() => setMobileView(false)}>My Listings</Link>
