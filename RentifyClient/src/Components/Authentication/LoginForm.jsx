@@ -3,7 +3,6 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import { toast } from "react-toastify";
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../../Redux/Reducers/userSlice';
 import { MdOutlineMail, RiLockPasswordLine } from "../../Services/Icons";
@@ -14,8 +13,7 @@ const validationSchema = Yup.object({
   password: Yup.string().required('Password is required')
 });
 
-const LoginUser = () => {
-  const navigate = useNavigate();
+const LoginForm = ({ closeModal, switchToSignin }) => {
   const dispatch = useDispatch();
 
   const formik = useFormik({
@@ -34,7 +32,7 @@ const LoginUser = () => {
         if (response.data.status === 'You need to sign in first.') {
           toast.error("Email not found. You need to sign in first.");
           // Navigate to Signin after 2 seconds
-          setTimeout(() => { navigate('/signin'); }, 2000);
+          setTimeout(() => { switchToSignin(); }, 1000);
         }
         else if (response.data.status === 'Incorrect password, try again!'){
           toast.error("Invalid Credentials");
@@ -45,7 +43,7 @@ const LoginUser = () => {
           dispatch(userLogin(response.data));
           toast.success("Login successful! Redirecting...");
           // Navigate to home after 2 seconds
-          setTimeout(() => { navigate('/');} , 2000); 
+          setTimeout(() => { closeModal();} , 1000); 
         }
       })
       .catch(error => {
@@ -59,9 +57,11 @@ const LoginUser = () => {
   });
 
   return (
-    <div className='h-[84vh] md:h-screen'>
-      <div className="text-sm md:text-base flex justify-center mx-[auto] my-6 p-5">
-        <div className="bg-white p-2 md:p-4 border-[1px] border-[solid] border-black rounded-lg w-[450px]">
+        <div className="bg-white rounded-2xl p-3 w-80 md:w-96">
+          <button onClick={closeModal} className="float-right text-xl font-bold">
+            &times;
+          </button>
+
           <h2 className='font-nunito text-center font-bold my-3 text-2xl md:text-3xl'>Login</h2>
           
           <form onSubmit={formik.handleSubmit}>
@@ -81,17 +81,17 @@ const LoginUser = () => {
                   ( <div className="text-[red] text-center mx-0 my-[5px]">{formik.errors.password}</div> ) : null}
             </div>
             
-            <div className='text-center'>
-              <button className='bg-blue-700 w-1/2 md:w-2/5 p-2 text-white border-[none] rounded-md cursor-pointer mb-2
-                                 hover:bg-slate-700'
+            <div className='flex flex-col items-center'>
+              <button className='bg-blue-700 w-1/2 p-2 text-white rounded-md cursor-pointer hover:bg-slate-700'
                       type="submit" disabled={formik.isSubmitting}>Login</button>
+              
+              <span className='text-gray-700 mx-auto mt-3'>Don't have an account ? 
+                <span className='text-blue-700 cursor-pointer' onClick={switchToSignin}> Register</span> 
+              </span>
             </div>
-
           </form>
-        </div>
       </div>
-    </div>
   );
 };
 
-export default LoginUser;
+export default LoginForm;

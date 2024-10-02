@@ -8,9 +8,7 @@ import { LuIndianRupee, PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdLo
          RiContractLine, MdBalcony,  PiBathtubLight, PiSecurityCameraBold, PiWheelchair, IoCompassOutline, TbSunElectricity, 
          FaCar, FaTimes, BsStars, CgGym } from '../Services/Icons';
 
-
-
-const PropertyDetails = () => {
+const PropertyDetails = ({ openModal }) => {
   const { pid } = useParams();
   const navigate = useNavigate();
   const isLoggedIn = useSelector(state => state.isLoggedIn);
@@ -37,7 +35,7 @@ const PropertyDetails = () => {
         setShowOwnerDetails(false);
       }
     } else {
-      navigate('/login');
+      openModal();
     }
   };
 

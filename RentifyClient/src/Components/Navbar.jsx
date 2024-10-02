@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import { CgProfile } from "react-icons/cg";
 
-const Navbar = () => {
+const Navbar = ({ openLoginModal, openSigninModal }) => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const userName = useSelector((state) => state.userData?.firstName || '');
   const dispatch = useDispatch();
@@ -103,10 +103,10 @@ const Navbar = () => {
             ) : (
               <>
                 <li className='cursor-pointer mx-2.5 my-0 hidden sm:block'>
-                  <Link to="/signin">Sign In</Link>
+                  <span onClick={openSigninModal}>Sign In</span>
                 </li>
                 <li className='cursor-pointer mx-2.5 my-0 hidden sm:block'>
-                  <Link to="/login">Login</Link>
+                  <span onClick={openLoginModal}>Login</span>
                 </li>
               </>
             )}
@@ -146,10 +146,10 @@ const Navbar = () => {
             ) : (
               <>
                 <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
-                  <Link to="/signin" onClick={() => setMobileView(false)}>Sign In</Link>
+                  <span onClick={() => {setMobileView(false); openSigninModal(); }}>Sign In</span>
                 </li>
                 <li className='cursor-pointer mx-1 my-2 pb-1 border-b border-gray-300'>
-                  <Link to="/login" onClick={() => setMobileView(false)}>Login</Link>
+                  <span onClick={() => {setMobileView(false); openLoginModal(); }}>Login</span>
                 </li>
               </>
             )}
