@@ -57,8 +57,8 @@ In the post-pandemic world, the demand for real estate has surged, especially in
 - **Error**: 404 Error page for invalid paths.
   
 ### Forms
-- **LoginPage**: User login form.
-- **Sign In**: User Sign in form.
+- **LoginForm**: User login form.
+- **SignUpForm**: User Sign up form.
 - **AddProperty**: Form to add a new property.
 - **UpdateProperty**: Form to update the property details.
 
@@ -73,7 +73,7 @@ In the post-pandemic world, the demand for real estate has surged, especially in
 
 ### User Authentication
 
-- **Sign in**: Users can sign in with their details.
+- **Sign up**: Users can sign up with their details.
 - **Login**: Users can log in to the application.
 - **Logout**: Users can log out from the application.
 - **Edit Details**: Users can edit their details (name, city).
@@ -132,6 +132,10 @@ RentifyClient
           ├─── src
           │       ├── Assets
           │       ├── Components
+          │       │         ├── Authentication
+          │       │                 ├── AuthModal.jsx
+          │       │                 ├── LoginForm.jsx
+          │       │                 ├── SignUpForm.jsx
           │       │         ├── Footer.jsx
           │       │         ├── ImageUploader.jsx
           │       │         ├── Navbar.jsx
@@ -144,10 +148,8 @@ RentifyClient
           │       │         ├── Testimonials.jsx
           │       ├── Pages
           │       │         ├── Forms
-          │       │                 ├── LoginUser.jsx
-          │       │                 ├── SignIn.jsx
-          │       │                 ├── AddProperty.jsx
-          │       │                 ├── UpdateProperty.jsx
+          │       │                ├── AddProperty.jsx
+          │       │                ├── UpdateProperty.jsx
           │       │         ├── About.jsx
           │       │         ├── Home.jsx
           │       │         ├── Error.jsx
