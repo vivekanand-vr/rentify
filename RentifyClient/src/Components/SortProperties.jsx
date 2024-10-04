@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { handleSort } from '../Services/Utils';
 
-const SortComponent = ({ properties, setProperties }) => {
+const SortProperties = ({ properties, setProperties }) => {
   const [dropDown, setDropDown] = useState(false);
 
   const toggleDropDown = () => setDropDown(!dropDown);
@@ -46,4 +46,4 @@ const SortComponent = ({ properties, setProperties }) => {
   );
 };
 
-export default SortComponent;
+export default SortProperties;

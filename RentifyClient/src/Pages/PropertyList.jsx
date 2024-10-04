@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SortComponent from '../Components/SortComponent';
+import SortProperties from '../Components/SortProperties';
 import PropertyCard from '../Components/PropertyCard';
 import PropertySearch from '../Components/PropertySearch';
 import ShimmerCard from "../Components/ShimmerCard";
@@ -61,7 +61,7 @@ const PropertiesList = () => {
           </div>
         </section>
 
-        <SortComponent properties={filteredProperties} setProperties={setFilteredProperties} />
+        <SortProperties properties={filteredProperties} setProperties={setFilteredProperties} />
 
         <div className="flex flex-wrap gap-3 mx-auto p-3 max-w-screen-2xl justify-center md:justify-normal">
             {loading ? ( Array.from({ length: 8 }).map((_, index) => <ShimmerCard key={index} />)) :
