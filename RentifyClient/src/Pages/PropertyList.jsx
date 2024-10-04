@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import SortComponent from '../Components/SortComponent';
 import PropertyCard from '../Components/PropertyCard';
 import PropertySearch from '../Components/PropertySearch';
 import ShimmerCard from "../Components/ShimmerCard";
@@ -47,7 +48,7 @@ const PropertiesList = () => {
 
       <div className="min-h-screen">
         
-        {/* Hero Section */}
+        {/* Hero Section with Search Bar */}
         <section className="relative w-full h-80 md:h-[440px] bg-cover bg-center"
           style={{ backgroundImage: 'url(src/Assets/BG-3.jpg)' }}
         >
@@ -59,6 +60,8 @@ const PropertiesList = () => {
             </div>
           </div>
         </section>
+
+        <SortComponent properties={filteredProperties} setProperties={setFilteredProperties} />
 
         <div className="flex flex-wrap gap-3 mx-auto p-3 max-w-screen-2xl justify-center md:justify-normal">
             {loading ? ( Array.from({ length: 8 }).map((_, index) => <ShimmerCard key={index} />)) :
