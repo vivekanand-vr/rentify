@@ -35,7 +35,7 @@ In the post-pandemic world, the demand for real estate has surged, especially in
     <td><img src="https://github.com/user-attachments/assets/b8d646d6-d080-42b0-b0c2-153c030d1887" alt="Web Image 8" width="500"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/17a24cc5-bf5f-418f-a3c4-631926473de2" alt="Web Image 3" width="500"></td>
+    <td><img src="https://github.com/user-attachments/assets/fe163b68-bcd6-4327-b55b-1a36e510e176" alt="Web Image 3" width="500"></td>
     <td><img src="https://github.com/user-attachments/assets/5e6324c3-3719-4ef3-a309-77f67291b494" alt="Web Image 4" width="500"></td>
   </tr>
   <tr>
@@ -85,6 +85,7 @@ In the post-pandemic world, the demand for real estate has surged, especially in
 - **View Properties**: All users can view the list of available properties.
 - **View Property Details**: Logged-in users can view detailed information about a property.
 - **My Properties**: Logged-in users can view, update, and delete their properties.
+- **Sort Properties**: Users can sort property by rent and by date posted (both high to low and low to high)
 - **Pagination**: Properties are fetched all at once and displayed in a paginated view, ensuring efficient navigation through large lists of properties.
 
 ## API Endpoints
@@ -143,6 +144,7 @@ RentifyClient
           │       │         ├── PropertyCard.jsx
           │       │         ├── PropertyCard2.jsx
           │       │         ├── PropertySearch.jsx
+          │       │         ├── SortProperties.jsx
           │       │         ├── ShimmerCard.jsx
           │       │         ├── PropertyDetailsShimmer.jsx
           │       │         ├── Testimonials.jsx
