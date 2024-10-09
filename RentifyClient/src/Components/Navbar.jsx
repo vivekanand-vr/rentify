@@ -118,7 +118,7 @@ const Navbar = ({ openLoginModal, openSigninModal }) => {
         <div className="fixed inset-y-0 right-0 bg-white w-1/2 sm:hidden p-4 shadow-lg z-[1100] flex flex-col">
           <button
             type="button"
-            className="text-black text-2xl ml-auto mb-4"
+            className="text-black text-2xl ml-32 mb-4"
             onClick={toggleMobileMenu}
           >
             ✖

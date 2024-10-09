@@ -99,14 +99,35 @@ In the post-pandemic world, the demand for real estate has surged, especially in
 - **PUT : /user**: Update user details.
 
 ### Property APIs
-
 - **POST : /properties**: Add a new property.
-- **GET : /properties/latest-properties**: Get recent listing by date
-- **GET : /properties**: Get all properties.
-- **GET : /properties/{pid}**: Get property details.
-- **GET : /properties/{id}**: Get propeties of user.
+- **GET : /properties/latest-properties**: Get recent listings by date.
+- **GET : /properties**: Get all properties with pagination, searching, and sorting.
+  - Query Parameters:
+    - `page`: Page number (default: 0)
+    - `size`: Number of items per page (default: 8)
+    - `search`: Search term for property name or location
+    - `sort`: Sort field and direction (e.g., 'rent,desc' or 'createdAt,asc')
+- **GET : /properties/{pid}**: Get property details by property ID.
+- **GET : /properties/owner/{id}**: Get properties of a specific user.
 - **PUT : /properties**: Update property details.
 - **DELETE : /properties/{id}**: Delete a property.
+
+## Pagination, Searching, and Sorting
+- The `/properties` endpoint now supports server-side pagination, searching, and sorting.
+- Clients should use the query parameters to request specific pages, apply search filters, and specify sorting criteria.
+- The API returns paginated results along with metadata about the total number of pages and items.
+
+## Example API Usage
+
+### Fetching Properties
+```
+GET /properties?page=0&size=10&search=apartment&sort=rent,desc
+```
+This request will:
+- Fetch the first page of results
+- Return 10 items per page
+- Search for properties with "apartment" in the name or location
+- Sort the results by rent in descending order
 
 ## Mobile View Snapshots 
 

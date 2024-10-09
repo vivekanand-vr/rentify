@@ -3,6 +3,8 @@ package in.rentify.controller;
 import in.rentify.model.Property;
 import in.rentify.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,9 +30,20 @@ public class PropertyController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Property>> getAllProperties() {
-        List<Property> properties = propertyService.getAllProperties();
-        return ResponseEntity.ok(properties);
+    public ResponseEntity<?> getAllProperties(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "8") int size,
+            @RequestParam(required = false) String search,
+            @RequestParam(required = false) String sort) {
+        
+        try {
+            Page<Property> properties = propertyService.getAllProperties(page, size, search, sort);
+            return ResponseEntity.ok(properties);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred while fetching properties");
+        }
     }
     
     @GetMapping("/latest-properties")

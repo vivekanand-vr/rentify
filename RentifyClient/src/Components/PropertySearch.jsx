@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { FaSearch } from 'react-icons/fa';
 
-const PropertySearch = ({ searchKeyword, setSearchKeyword, onSearch }) => {
+const PropertySearch = ({ onSearch }) => {
+  const [searchKeyword, setSearchKeyword] = useState('');
+
   const handleInputChange = (event) => {
     setSearchKeyword(event.target.value);
   };
 
   const handleSearchClick = () => {
-    onSearch();
+    onSearch(searchKeyword);
   };
 
   return (

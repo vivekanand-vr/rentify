@@ -5,8 +5,10 @@ import in.rentify.dao.PropertyRepository;
 import in.rentify.model.AdditionalDetails;
 import in.rentify.model.Property;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -25,8 +27,32 @@ public class PropertyService {
         return "Your Property Has Been Saved Successfully";
     }
 
-    public List<Property> getAllProperties() {
-        return propertyRepository.findAll();
+    public Page<Property> getAllProperties(int page, int size, String search, String sort) {
+        
+    	if (page < 0 || size <= 0) {
+            throw new IllegalArgumentException("Invalid page or size parameters");
+        }
+    	
+    	Pageable pageable = PageRequest.of(page, size, createSort(sort));
+        
+        if (search != null && !search.isEmpty()) {
+            return propertyRepository.findByNameContainingOrLocationContaining(search, search, pageable);
+        } else {
+            return propertyRepository.findAll(pageable);
+        }
+    }
+   /* 
+    * 	Method with Sort Object to pass it as a criteria during data fetching
+    */
+    private Sort createSort(String sort) {
+        if (sort != null && !sort.isEmpty()) {
+            String[] parts = sort.split(",");
+            String property = parts[0];
+            Sort.Direction direction = parts.length > 1 && parts[1].equalsIgnoreCase("desc") ? 
+                Sort.Direction.DESC : Sort.Direction.ASC;
+            return Sort.by(direction, property);
+        }
+        return Sort.unsorted();
     }
     
     public List<Property> getLatestProperties() {
