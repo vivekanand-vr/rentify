@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import * as Yup from 'yup';
+import { IoCloseCircleOutline } from '../../Services/Icons';
 import { toast } from "react-toastify";
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
@@ -58,8 +59,8 @@ const LoginForm = ({ closeModal, switchToSignin }) => {
 
   return (
         <div className="bg-white rounded-2xl p-3 w-80 md:w-96">
-          <button onClick={closeModal} className="float-right text-xl font-bold">
-            &times;
+          <button onClick={closeModal} className="absolute right-4 top-4 text-xl font-bold">
+            <IoCloseCircleOutline className='size-6' />
           </button>
 
           <h2 className='font-nunito text-center font-bold my-3 text-2xl md:text-3xl'>Login</h2>

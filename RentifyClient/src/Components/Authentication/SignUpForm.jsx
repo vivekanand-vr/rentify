@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 import { userLogin } from '../../Redux/Reducers/userSlice';
 import { toast } from "react-toastify";
 import { API_ENDPOINTS } from '../../Services/Endpoints';
-import { MdLocationOn, CgProfile, IoCallOutline, RiLockPasswordLine, MdOutlineMail } from '../../Services/Icons';
+import { MdLocationOn, CgProfile, IoCallOutline, RiLockPasswordLine, 
+         MdOutlineMail, IoCloseCircleOutline } from '../../Services/Icons';
 
 /* Yup Validation Schema */
 const validationSchema = Yup.object({
@@ -59,8 +60,8 @@ const SignUpForm = ({ closeModal, switchToLogin }) => {
   return (
       <div className="flex justify-center mx-[auto]">
         <div className="text-sm md:text-base rounded-2xl w-80 md:w-96 p-3">
-          <button onClick={closeModal} className="float-right text-xl font-bold">
-            &times;
+          <button onClick={closeModal} className="absolute right-4 top-4 text-xl font-bold">
+            <IoCloseCircleOutline className='md:size-6' />
           </button>
 
           <h2 className='font-nunito text-center font-bold mb-3 text-2xl md:text-3xl'>Sign In</h2>

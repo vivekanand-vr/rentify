@@ -1,7 +1,7 @@
 /* Sign in and Login Icons */
 import { MdOutlineMail, MdLocationOn } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { IoCallOutline } from "react-icons/io5";
+import { IoCallOutline, IoCloseCircleOutline } from "react-icons/io5";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { GrMapLocation } from "react-icons/gr";
 import { FaGlobeAmericas, FaCheck, FaTimes, FaAward, FaCar, FaStar } from "react-icons/fa";
@@ -23,7 +23,7 @@ export {    CgProfile, CgGym,
             TbReportMoney, TbSunElectricity,
             RiLockPasswordLine, RiContractLine, RiSofaLine,
             FaGlobeAmericas, FaCheck, FaTimes, FaAward, FaStar, FaCar,
-            IoCallOutline, IoCompassOutline,  IoImageOutline,IoBedOutline,
+            IoCallOutline, IoCompassOutline,  IoImageOutline,IoBedOutline, IoCloseCircleOutline,
             MdLocationOn, MdOutlineWatchLater, MdBalcony, MdOutlineMail, MdOutlineHomeWork,
             PiMoneyWavy, PiNoteDuotone, PiMapPinSimpleAreaLight, PiMailbox, PiBuildings, PiBathtubLight, PiSecurityCameraBold, PiWheelchair,
             LuIndianRupee, RxDimensions, BsStars,
