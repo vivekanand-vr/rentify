@@ -17,11 +17,17 @@ public class UserService {
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     
-    public boolean emailExists(String email) {
-        return userRepository.existsByEmail(email);
-    }
-    
     public UserDTO saveUser(User user) {
+    	
+    	// Check if email already exists
+    	String email = user.getEmail();
+    	
+    	if(userRepository.existsByEmail(email)) {
+    		UserDTO duser = new UserDTO();
+    		duser.setStatus("Email is already registered.");
+    		return duser; // return dummy user with status
+    	}
+    	
         // Encrypt the password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User savedUser = userRepository.save(user);
