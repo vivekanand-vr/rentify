@@ -36,21 +36,20 @@ const SignUpForm = ({ closeModal, switchToLogin }) => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        // Check if email is already registered
-        const emailCheckResponse = await axios.post(API_ENDPOINTS.user.checkEmail, { email: values.email });
-        if (emailCheckResponse.data.exists) {
+        const response = await axios.post(API_ENDPOINTS.user.signin, values);
+        if(response.data.status === "Email is already registered."){
           toast.error('Email is already registered.');
           return;
         }
 
-        // Proceed with registration if email is not registered
-        const response = await axios.post(API_ENDPOINTS.user.signin, values);
+        // If email not registered, proceed with the registeration
         toast.success('You have signed in successfully');
 
         /* Updating the Login State after Signup & storing user details */
         dispatch(userLogin(response.data));
         setTimeout(() => { closeModal(); }, 2000); 
-      } catch (error) {
+      } 
+      catch (error) {
         console.error('There was an error Signing in:', error);
         toast.error('There was an error Signing in.');
       }
