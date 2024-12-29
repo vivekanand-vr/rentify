@@ -88,6 +88,39 @@ In the post-pandemic world, the demand for real estate has surged, especially in
 - **Sort Properties**: Users can sort property by rent and by date posted (both high to low and low to high)
 - **Pagination**: Properties are fetched all at once and displayed in a paginated view, ensuring efficient navigation through large lists of properties.
 
+## Swagger UI
+This application includes Swagger UI for API documentation and testing. Swagger provides an interactive interface to explore and test all available endpoints in the application.
+
+### Accessing Swagger UI:
+The Swagger UI can be accessed at the following URL once the server is running: \
+**`Note:` Use the same `username` and `password` added in Spring Security Configuration**
+```
+http://localhost:9999/Rentify/swagger-ui.html
+```
+
+### Features:
+- View all available API endpoints with detailed documentation.
+- Test endpoints directly from the browser using the Swagger interface.
+- Supports Basic Authentication: Enter the username and password when prompted to access secured endpoints.
+
+## Authentication: Username and Password
+This application uses Basic Authentication to secure the APIs. The username and password for authentication are configured as follows:
+
+### Server Side:
+The username and password are set in the Spring Boot application properties (`application.yml` or `.properties`) as shown below. These credentials are required to access the secured endpoints.
+```properties
+spring.security.user.name = username
+spring.security.user.password = password
+```
+
+### Client Side:
+The same username and password are stored in the `.env` file in the React application for API requests. The .env file ensures these credentials are not hardcoded in the codebase. Ensure the .env file is included in .gitignore to avoid exposing sensitive data.
+```properties
+VITE_APP_USERNAME = username
+VITE_APP_PASSWORD = password
+```
+
+
 ## API Endpoints
 
 ### User APIs
