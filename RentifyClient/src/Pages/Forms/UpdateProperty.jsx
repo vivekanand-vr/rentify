@@ -1,4 +1,4 @@
-import axios from 'axios';
+import apiClient from "../../Services/ApiClient";
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -119,7 +119,7 @@ const UpdateProperty = () => {
       location: locationString, // Update location field with combined string
     };
 
-    axios.put(API_ENDPOINTS.property.update, updatedFormData)
+    apiClient.put(API_ENDPOINTS.property.update, updatedFormData)
       .then(response => {
         toast.success("Property details updated successfully.")
         setTimeout(() => { navigate('/my-properties'); }, 2000);

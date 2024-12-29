@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaAward } from '../Services/Icons';
 import { API_ENDPOINTS } from '../Services/Endpoints';
 import { awards, milestones } from '../Services/Constants';
-import axios from 'axios';
+import apiClient  from "../Services/ApiClient";
 import '../custom.css';
 import 'animate.css';
 
@@ -53,7 +53,7 @@ function RecentListings(){
   };
 
   useEffect(() => {
-    axios.get(API_ENDPOINTS.property.getLatest)
+    apiClient.get(API_ENDPOINTS.property.getLatest)
       .then(response => {
         setRecentProperties(response.data);
         setLoading(false); 

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { deleteAsset } from '../Services/DeleteAsset';
 import { LuIndianRupee, MdLocationOn } from '../Services/Icons';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
-import axios from 'axios';
+import apiClient from "../Services/ApiClient";
 
 const PropertyCard2 = ({ property, onDelete }) => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const PropertyCard2 = ({ property, onDelete }) => {
   };
 
   const handleDelete = () => {
-    axios.delete(API_ENDPOINTS.property.delete + property.id)
+    apiClient.delete(API_ENDPOINTS.property.delete + property.id)
       .then(() => onDelete(property.id))
       .catch(error => console.error('There was an error deleting the property:', error));
     

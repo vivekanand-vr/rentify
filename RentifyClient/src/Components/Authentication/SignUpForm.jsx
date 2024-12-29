@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import apiClient from "../../Services/ApiClient";
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
@@ -36,7 +36,7 @@ const SignUpForm = ({ closeModal, switchToLogin }) => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await axios.post(API_ENDPOINTS.user.signin, values);
+        const response = await apiClient.post(API_ENDPOINTS.user.signin, values);
         if(response.data.status === "Email is already registered."){
           toast.error('Email is already registered.');
           return;

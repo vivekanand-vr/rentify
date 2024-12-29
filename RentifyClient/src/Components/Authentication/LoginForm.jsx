@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import apiClient from "../../Services/ApiClient";
 import * as Yup from 'yup';
 import { IoCloseCircleOutline } from '../../Services/Icons';
 import { toast } from "react-toastify";
@@ -24,7 +24,7 @@ const LoginForm = ({ closeModal, switchToSignin }) => {
     },
     validationSchema,
     onSubmit: (values, { setSubmitting }) => {
-      axios.post(API_ENDPOINTS.user.login, values, {
+      apiClient.post(API_ENDPOINTS.user.login, values, {
         headers: {
           'Content-Type': 'application/json'
         }

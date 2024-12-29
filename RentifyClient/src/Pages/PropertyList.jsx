@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import apiClient from "../Services/ApiClient";
 import SortProperties from '../Components/SortProperties';
 import PropertyCard from '../Components/PropertyCard';
 import PropertySearch from '../Components/PropertySearch';
@@ -28,7 +28,7 @@ const PropertiesList = () => {
     });
     
     // Passing all the paramaters as query parameters
-    axios.get(`${API_ENDPOINTS.property.getAll}?${params.toString()}`)
+    apiClient.get(`${API_ENDPOINTS.property.getAll}?${params.toString()}`)
       .then(response => {
         setProperties(response.data.content);
         setTotalPages(response.data.totalPages);

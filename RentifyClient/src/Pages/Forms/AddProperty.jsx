@@ -1,4 +1,4 @@
-import axios from 'axios';
+import apiClient from "../../Services/ApiClient";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -106,7 +106,7 @@ const AddProperty = () => {
       location: locationString,
     };
 
-    axios.post(API_ENDPOINTS.property.add, updatedFormData, {
+    apiClient.post(API_ENDPOINTS.property.add, updatedFormData, {
       headers: {
         'Content-Type': 'application/json',
       },

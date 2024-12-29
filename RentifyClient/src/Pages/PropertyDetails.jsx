@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import apiClient from "../Services/ApiClient";
 import PropertyDetailsShimmer from '../Components/PropertyDetailsShimmer';
 import { API_ENDPOINTS, PROPERTY_IMAGE } from '../Services/Endpoints';
 import { LuIndianRupee, PiMoneyWavy, RiSofaLine, RxDimensions, PiBuildings, MdLocationOn, TbReportMoney,FaCheck,
@@ -17,7 +17,7 @@ const PropertyDetails = ({ openModal }) => {
   const [showOwnerDetails, setShowOwnerDetails] = useState(false);
 
   useEffect(() => {
-    axios.get(API_ENDPOINTS.property.details + pid)
+    apiClient.get(API_ENDPOINTS.property.details + pid)
       .then(response => setProperty(response.data))
       .catch(error => console.error('There was an error fetching the property details:', error));
   }, [pid]);
@@ -25,7 +25,7 @@ const PropertyDetails = ({ openModal }) => {
   const handleContactOwner = () => {
     if (isLoggedIn) {
       if (!showOwnerDetails) {
-        axios.get(API_ENDPOINTS.user.details + property.ownerId)
+        apiClient.get(API_ENDPOINTS.user.details + property.ownerId)
           .then(response => {
             setOwnerDetails(response.data);
             setShowOwnerDetails(true);

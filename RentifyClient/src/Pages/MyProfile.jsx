@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 import { FaEdit } from 'react-icons/fa';
 import { API_ENDPOINTS } from '../Services/Endpoints';
-import axios from 'axios';
+import apiClient from "../Services/ApiClient";
 
 const MyProfile = () => {
   const user = useSelector((state) => state.userData);
@@ -24,7 +24,7 @@ const MyProfile = () => {
   }
   const handleSaveClick = () => {
     /* Update the User Details in the backend */
-    axios.put(API_ENDPOINTS.user.update, formData)
+    apiClient.put(API_ENDPOINTS.user.update, formData)
     .then(response =>{
       dispatch(userLogin(response.data));
       toast.success("Profile Details Updated Sucessfully.")
